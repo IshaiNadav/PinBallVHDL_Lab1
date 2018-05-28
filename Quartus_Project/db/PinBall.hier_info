@@ -1,0 +1,29 @@
+|hp_down_counter
+clk => current_lives_sig[0].CLK
+clk => current_lives_sig[1].CLK
+clk => current_lives_sig[2].CLK
+clk => current_lives_sig[3].CLK
+resetN => game_over.IN1
+resetN => current_lives_sig[0].ALOAD
+resetN => current_lives_sig[1].ALOAD
+resetN => current_lives_sig[2].ALOAD
+resetN => current_lives_sig[3].ALOAD
+lives_num_start[0] => current_lives_sig[0].ADATA
+lives_num_start[1] => current_lives_sig[1].ADATA
+lives_num_start[2] => current_lives_sig[2].ADATA
+lives_num_start[3] => current_lives_sig[3].ADATA
+died => current_lives_sig.OUTPUTSELECT
+died => current_lives_sig.OUTPUTSELECT
+died => current_lives_sig.OUTPUTSELECT
+died => current_lives_sig.OUTPUTSELECT
+enable => current_lives_sig[3].ENA
+enable => current_lives_sig[2].ENA
+enable => current_lives_sig[1].ENA
+enable => current_lives_sig[0].ENA
+lives_num_current[0] <= current_lives_sig[0].DB_MAX_OUTPUT_PORT_TYPE
+lives_num_current[1] <= current_lives_sig[1].DB_MAX_OUTPUT_PORT_TYPE
+lives_num_current[2] <= current_lives_sig[2].DB_MAX_OUTPUT_PORT_TYPE
+lives_num_current[3] <= current_lives_sig[3].DB_MAX_OUTPUT_PORT_TYPE
+game_over <= game_over$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+

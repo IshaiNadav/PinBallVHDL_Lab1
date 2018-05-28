@@ -1,0 +1,61 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "lives_num_current[0]",
+					"strict" : false
+				},
+				{
+					"name" : "lives_num_current[1]",
+					"strict" : false
+				},
+				{
+					"name" : "lives_num_current[2]",
+					"strict" : false
+				},
+				{
+					"name" : "lives_num_current[3]",
+					"strict" : false
+				},
+				{
+					"name" : "game_over",
+					"strict" : false
+				},
+				{
+					"name" : "resetN",
+					"strict" : false
+				},
+				{
+					"name" : "lives_num_start[0]",
+					"strict" : false
+				},
+				{
+					"name" : "lives_num_start[1]",
+					"strict" : false
+				},
+				{
+					"name" : "lives_num_start[2]",
+					"strict" : false
+				},
+				{
+					"name" : "lives_num_start[3]",
+					"strict" : false
+				},
+				{
+					"name" : "died",
+					"strict" : false
+				},
+				{
+					"name" : "enable",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
