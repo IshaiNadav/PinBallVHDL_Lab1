@@ -1,5 +1,5 @@
 Flow report for PinBall
-Mon May 28 20:52:17 2018
+Mon May 28 21:31:33 2018
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Mon May 28 20:52:17 2018       ;
+; Flow Status                     ; Successful - Mon May 28 21:31:25 2018       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; PinBall                                     ;
 ; Top-level Entity Name           ; hp_down_counter                             ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/28/2018 20:50:21 ;
+; Start date & time ; 05/28/2018 21:30:01 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; PinBall             ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-----------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name     ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-----------------+------------+
-; COMPILER_SIGNATURE_ID               ; 10995770589194.152752982102104         ; --            ; --              ; --         ;
+; COMPILER_SIGNATURE_ID               ; 10995770589194.152753220106200         ; --            ; --              ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --              ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --              ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; hp_down_counter ; Top        ;
@@ -95,13 +95,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:19     ; 1.0                     ; 703 MB              ; 00:00:42                           ;
-; Fitter                    ; 00:00:56     ; 1.0                     ; 2064 MB             ; 00:01:24                           ;
-; Assembler                 ; 00:00:10     ; 1.0                     ; 691 MB              ; 00:00:09                           ;
-; TimeQuest Timing Analyzer ; 00:00:07     ; 1.0                     ; 960 MB              ; 00:00:07                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 571 MB              ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 580 MB              ; 00:00:01                           ;
-; Total                     ; 00:01:36     ; --                      ; --                  ; 00:02:25                           ;
+; Analysis & Synthesis      ; 00:00:17     ; 1.0                     ; 704 MB              ; 00:00:39                           ;
+; Fitter                    ; 00:00:55     ; 1.0                     ; 2065 MB             ; 00:01:23                           ;
+; Assembler                 ; 00:00:09     ; 1.0                     ; 694 MB              ; 00:00:09                           ;
+; TimeQuest Timing Analyzer ; 00:00:07     ; 1.0                     ; 957 MB              ; 00:00:07                           ;
+; Total                     ; 00:01:28     ; --                      ; --                  ; 00:02:18                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -114,8 +112,6 @@ agreement for further details.
 ; Fitter                    ; ישי-נייד         ; Windows 8.1 ; 6.3        ; x86_64         ;
 ; Assembler                 ; ישי-נייד         ; Windows 8.1 ; 6.3        ; x86_64         ;
 ; TimeQuest Timing Analyzer ; ישי-נייד         ; Windows 8.1 ; 6.3        ; x86_64         ;
-; EDA Netlist Writer        ; ישי-נייד         ; Windows 8.1 ; 6.3        ; x86_64         ;
-; EDA Netlist Writer        ; ישי-נייד         ; Windows 8.1 ; 6.3        ; x86_64         ;
 +---------------------------+------------------+-------------+------------+----------------+
 
 
@@ -126,8 +122,6 @@ quartus_map --read_settings_files=on --write_settings_files=off PinBall -c PinBa
 quartus_fit --read_settings_files=off --write_settings_files=off PinBall -c PinBall
 quartus_asm --read_settings_files=off --write_settings_files=off PinBall -c PinBall
 quartus_sta PinBall -c PinBall
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off PinBall -c PinBall --vector_source=C:/pinball_vhdl/PinBallVHDL_Lab1/Quartus_Project/Waveform.vwf --testbench_file=C:/pinball_vhdl/PinBallVHDL_Lab1/Quartus_Project/simulation/qsim/Waveform.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/pinball_vhdl/PinBallVHDL_Lab1/Quartus_Project/simulation/qsim/ PinBall -c PinBall
 
 
 

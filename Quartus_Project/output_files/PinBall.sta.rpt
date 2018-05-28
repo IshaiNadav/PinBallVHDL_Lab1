@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for PinBall
-Mon May 28 20:51:56 2018
+Mon May 28 21:31:34 2018
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -102,12 +102,12 @@ agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.03        ;
+; Average used               ; 1.02        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   2.5%      ;
+;     Processor 2            ;   2.3%      ;
 +----------------------------+-------------+
 
 
@@ -590,7 +590,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Mon May 28 20:51:49 2018
+    Info: Processing started: Mon May 28 21:31:26 2018
 Info: Command: quartus_sta PinBall -c PinBall
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -712,8 +712,8 @@ Info (332146): Worst-case minimum pulse width slack is -0.077
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 960 megabytes
-    Info: Processing ended: Mon May 28 20:51:56 2018
+    Info: Peak virtual memory: 957 megabytes
+    Info: Processing ended: Mon May 28 21:31:33 2018
     Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:07
 

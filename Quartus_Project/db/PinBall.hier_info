@@ -20,10 +20,10 @@ enable => current_lives_sig[3].ENA
 enable => current_lives_sig[2].ENA
 enable => current_lives_sig[1].ENA
 enable => current_lives_sig[0].ENA
-lives_num_current[0] <= current_lives_sig[0].DB_MAX_OUTPUT_PORT_TYPE
-lives_num_current[1] <= current_lives_sig[1].DB_MAX_OUTPUT_PORT_TYPE
-lives_num_current[2] <= current_lives_sig[2].DB_MAX_OUTPUT_PORT_TYPE
-lives_num_current[3] <= current_lives_sig[3].DB_MAX_OUTPUT_PORT_TYPE
-game_over <= game_over$latch.DB_MAX_OUTPUT_PORT_TYPE
+lives_num_current[0] << current_lives_sig[0].DB_MAX_OUTPUT_PORT_TYPE
+lives_num_current[1] << current_lives_sig[1].DB_MAX_OUTPUT_PORT_TYPE
+lives_num_current[2] << current_lives_sig[2].DB_MAX_OUTPUT_PORT_TYPE
+lives_num_current[3] << current_lives_sig[3].DB_MAX_OUTPUT_PORT_TYPE
+game_over << game_over$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 

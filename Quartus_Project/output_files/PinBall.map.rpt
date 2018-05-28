@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PinBall
-Mon May 28 20:50:39 2018
+Mon May 28 21:30:18 2018
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -44,7 +44,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon May 28 20:50:39 2018       ;
+; Analysis & Synthesis Status     ; Successful - Mon May 28 21:30:18 2018       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; PinBall                                     ;
 ; Top-level Entity Name           ; hp_down_counter                             ;
@@ -276,13 +276,16 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Mon May 28 20:50:20 2018
+    Info: Processing started: Mon May 28 21:30:00 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PinBall -c PinBall
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file hp_down_counter.vhd
     Info (12022): Found design unit 1: hp_down_counter-hp_down_counter_arch File: C:/pinball_vhdl/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd Line: 17
     Info (12023): Found entity 1: hp_down_counter File: C:/pinball_vhdl/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file score_up_counter.vhd
+    Info (12022): Found design unit 1: score_up_counter-score_up_counter_arch File: C:/pinball_vhdl/PinBallVHDL_Lab1/Quartus_Project/score_up_counter.vhd Line: 17
+    Info (12023): Found entity 1: score_up_counter File: C:/pinball_vhdl/PinBallVHDL_Lab1/Quartus_Project/score_up_counter.vhd Line: 6
 Info (12127): Elaborating entity "hp_down_counter" for the top level hierarchy
 Warning (10492): VHDL Process Statement warning at hp_down_counter.vhd(24): signal "lives_num_start" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/pinball_vhdl/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd Line: 24
 Warning (10492): VHDL Process Statement warning at hp_down_counter.vhd(36): signal "current_lives_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/pinball_vhdl/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd Line: 36
@@ -301,9 +304,9 @@ Info (21057): Implemented 32 device resources after synthesis - the final resour
     Info (21059): Implemented 5 output pins
     Info (21061): Implemented 19 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 703 megabytes
-    Info: Processing ended: Mon May 28 20:50:39 2018
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:43
+    Info: Peak virtual memory: 704 megabytes
+    Info: Processing ended: Mon May 28 21:30:18 2018
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:39
 
 

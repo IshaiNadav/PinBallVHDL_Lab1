@@ -85,11 +85,11 @@ R19
 Ahp_down_counter_arch
 R8
 R9
-Z25 DEx4 work 27 hp_down_counter_vhd_vec_tst 0 22 DPSdnzoZEnIEICL6Mo3`12
+DEx4 work 27 hp_down_counter_vhd_vec_tst 0 22 DPSdnzoZEnIEICL6Mo3`12
 l55
 L34
-Z26 VfZh`R7RC[^VCZ;>EJJCM13
-Z27 !s100 ;XhWiYK7=Da3Doz0lQ4Hl3
+VfZh`R7RC[^VCZ;>EJJCM13
+!s100 ;XhWiYK7=Da3Doz0lQ4Hl3
 R13
 32
 R14
@@ -97,6 +97,98 @@ R14
 R15
 R23
 R24
+!i113 1
+R18
+R19
+Escore_up_counter
+Z25 w1527531951
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+R0
+R11
+R12
+l0
+L39
+VgbkS9R35RR^;JaDeaVRVn1
+!s100 0IiQonG9n;dR>68[ZYDkK0
+R13
+32
+Z26 !s110 1527531952
+!i10b 1
+Z27 !s108 1527531952.000000
+R16
+R17
+!i113 1
+R18
+R19
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+DEx4 work 16 score_up_counter 0 22 gbkS9R35RR^;JaDeaVRVn1
+l147
+L78
+VI=CgM2_AdLB[LzF<z_AIk3
+!s100 Fdb8O>2BEE_0laJX^ZDeg3
+R13
+32
+R26
+!i10b 1
+R27
+R16
+R17
+!i113 1
+R18
+R19
+Escore_up_counter_vhd_vec_tst
+Z28 w1527531949
+R8
+R9
+R0
+Z29 8Waveform1.vwf.vht
+Z30 FWaveform1.vwf.vht
+l0
+L32
+VcjHeOD@NaX;SEO^Vlmz<Z0
+!s100 [mkzAgP=MOV0E=O<NNn[52
+R13
+32
+R26
+!i10b 1
+R27
+Z31 !s90 -work|work|Waveform1.vwf.vht|
+Z32 !s107 Waveform1.vwf.vht|
+!i113 1
+R18
+R19
+Ascore_up_counter_arch
+R8
+R9
+DEx4 work 28 score_up_counter_vhd_vec_tst 0 22 cjHeOD@NaX;SEO^Vlmz<Z0
+l53
+L34
+V1nhmE1B?Fci8D01Y<J4c12
+!s100 lJYAB32M4M?iL<lL;<V?@0
+R13
+32
+R26
+!i10b 1
+R27
+R31
+R32
 !i113 1
 R18
 R19

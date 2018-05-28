@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition"
 
--- DATE "05/28/2018 20:52:17"
+-- DATE "05/28/2018 21:25:51"
 
 -- 
 -- Device: Altera 5CSXFC6D6F31C6 Package FBGA896
@@ -36,35 +36,46 @@ USE ALTERA_LNSIM.ALTERA_LNSIM_COMPONENTS.ALL;
 USE CYCLONEV.CYCLONEV_COMPONENTS.ALL;
 USE IEEE.STD_LOGIC_1164.ALL;
 
-ENTITY 	hp_down_counter IS
+ENTITY 	score_up_counter IS
     PORT (
 	clk : IN std_logic;
 	resetN : IN std_logic;
-	lives_num_start : IN std_logic_vector(3 DOWNTO 0);
-	died : IN std_logic;
 	enable : IN std_logic;
-	lives_num_current : OUT std_logic_vector(3 DOWNTO 0);
-	game_over : OUT std_logic
+	score_in : IN std_logic_vector(3 DOWNTO 0);
+	scored : IN std_logic;
+	score_out : OUT std_logic_vector(16 DOWNTO 0)
 	);
-END hp_down_counter;
+END score_up_counter;
 
 -- Design Ports Information
--- lives_num_current[0]	=>  Location: PIN_AF28,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- lives_num_current[1]	=>  Location: PIN_AE28,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- lives_num_current[2]	=>  Location: PIN_AA24,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- lives_num_current[3]	=>  Location: PIN_AB25,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- game_over	=>  Location: PIN_AE27,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- resetN	=>  Location: PIN_Y24,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- lives_num_start[0]	=>  Location: PIN_W24,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- lives_num_start[1]	=>  Location: PIN_AF29,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- lives_num_start[2]	=>  Location: PIN_V23,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- lives_num_start[3]	=>  Location: PIN_Y23,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- died	=>  Location: PIN_AG28,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- enable	=>  Location: PIN_AF30,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- score_out[0]	=>  Location: PIN_AF29,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- score_out[1]	=>  Location: PIN_AA24,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- score_out[2]	=>  Location: PIN_AG28,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- score_out[3]	=>  Location: PIN_AA28,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- score_out[4]	=>  Location: PIN_V23,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- score_out[5]	=>  Location: PIN_Y23,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- score_out[6]	=>  Location: PIN_AE27,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- score_out[7]	=>  Location: PIN_AC27,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- score_out[8]	=>  Location: PIN_AH30,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- score_out[9]	=>  Location: PIN_AF30,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- score_out[10]	=>  Location: PIN_AG30,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- score_out[11]	=>  Location: PIN_Y24,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- score_out[12]	=>  Location: PIN_W24,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- score_out[13]	=>  Location: PIN_AB25,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- score_out[14]	=>  Location: PIN_AB26,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- score_out[15]	=>  Location: PIN_AE28,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- score_out[16]	=>  Location: PIN_AF28,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- clk	=>  Location: PIN_Y27,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- resetN	=>  Location: PIN_W25,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- enable	=>  Location: PIN_AC28,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- scored	=>  Location: PIN_AB30,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- score_in[0]	=>  Location: PIN_V25,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- score_in[1]	=>  Location: PIN_AC29,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- score_in[2]	=>  Location: PIN_AA30,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- score_in[3]	=>  Location: PIN_AD26,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
-ARCHITECTURE structure OF hp_down_counter IS
+ARCHITECTURE structure OF score_up_counter IS
 SIGNAL gnd : std_logic := '0';
 SIGNAL vcc : std_logic := '1';
 SIGNAL unknown : std_logic := 'X';
@@ -76,112 +87,100 @@ SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
 SIGNAL ww_clk : std_logic;
 SIGNAL ww_resetN : std_logic;
-SIGNAL ww_lives_num_start : std_logic_vector(3 DOWNTO 0);
-SIGNAL ww_died : std_logic;
 SIGNAL ww_enable : std_logic;
-SIGNAL ww_lives_num_current : std_logic_vector(3 DOWNTO 0);
-SIGNAL ww_game_over : std_logic;
+SIGNAL ww_score_in : std_logic_vector(3 DOWNTO 0);
+SIGNAL ww_scored : std_logic;
+SIGNAL ww_score_out : std_logic_vector(16 DOWNTO 0);
 SIGNAL \~QUARTUS_CREATED_GND~I_combout\ : std_logic;
-SIGNAL \resetN~input_o\ : std_logic;
-SIGNAL \lives_num_start[0]~input_o\ : std_logic;
-SIGNAL \current_lives_sig[0]~1_combout\ : std_logic;
 SIGNAL \clk~input_o\ : std_logic;
 SIGNAL \clk~inputCLKENA0_outclk\ : std_logic;
-SIGNAL \lives_num_start[3]~input_o\ : std_logic;
-SIGNAL \current_lives_sig[3]~13_combout\ : std_logic;
-SIGNAL \lives_num_start[2]~input_o\ : std_logic;
-SIGNAL \current_lives_sig[2]~9_combout\ : std_logic;
-SIGNAL \lives_num_start[1]~input_o\ : std_logic;
-SIGNAL \current_lives_sig[1]~5_combout\ : std_logic;
-SIGNAL \died~input_o\ : std_logic;
+SIGNAL \score_in[0]~input_o\ : std_logic;
+SIGNAL \Add0~1_sumout\ : std_logic;
+SIGNAL \resetN~input_o\ : std_logic;
 SIGNAL \enable~input_o\ : std_logic;
-SIGNAL \current_lives_sig[0]~21_combout\ : std_logic;
-SIGNAL \current_lives_sig[1]~7_combout\ : std_logic;
-SIGNAL \current_lives_sig[1]~_emulated_q\ : std_logic;
-SIGNAL \current_lives_sig[1]~6_combout\ : std_logic;
-SIGNAL \Equal0~1_combout\ : std_logic;
-SIGNAL \current_lives_sig[2]~11_combout\ : std_logic;
-SIGNAL \current_lives_sig[2]~_emulated_q\ : std_logic;
-SIGNAL \current_lives_sig[2]~10_combout\ : std_logic;
-SIGNAL \Equal0~2_combout\ : std_logic;
-SIGNAL \current_lives_sig[3]~15_combout\ : std_logic;
-SIGNAL \current_lives_sig[3]~_emulated_q\ : std_logic;
-SIGNAL \current_lives_sig[3]~14_combout\ : std_logic;
-SIGNAL \current_lives_sig[0]~20_combout\ : std_logic;
-SIGNAL \current_lives_sig[0]~3_combout\ : std_logic;
-SIGNAL \current_lives_sig[0]~_emulated_q\ : std_logic;
-SIGNAL \current_lives_sig[0]~2_combout\ : std_logic;
-SIGNAL \comb~0_combout\ : std_logic;
-SIGNAL \Equal0~0_combout\ : std_logic;
-SIGNAL \game_over$latch~combout\ : std_logic;
+SIGNAL \scored~input_o\ : std_logic;
+SIGNAL \score_keeper[0]~0_combout\ : std_logic;
+SIGNAL \score_in[1]~input_o\ : std_logic;
+SIGNAL \Add0~2\ : std_logic;
+SIGNAL \Add0~5_sumout\ : std_logic;
+SIGNAL \score_in[2]~input_o\ : std_logic;
+SIGNAL \Add0~6\ : std_logic;
+SIGNAL \Add0~9_sumout\ : std_logic;
+SIGNAL \score_in[3]~input_o\ : std_logic;
+SIGNAL \Add0~10\ : std_logic;
+SIGNAL \Add0~13_sumout\ : std_logic;
+SIGNAL \Add0~14\ : std_logic;
+SIGNAL \Add0~17_sumout\ : std_logic;
+SIGNAL \Add0~18\ : std_logic;
+SIGNAL \Add0~21_sumout\ : std_logic;
+SIGNAL \Add0~22\ : std_logic;
+SIGNAL \Add0~25_sumout\ : std_logic;
+SIGNAL \Add0~26\ : std_logic;
+SIGNAL \Add0~29_sumout\ : std_logic;
+SIGNAL \Add0~30\ : std_logic;
+SIGNAL \Add0~33_sumout\ : std_logic;
+SIGNAL \Add0~34\ : std_logic;
+SIGNAL \Add0~37_sumout\ : std_logic;
+SIGNAL \Add0~38\ : std_logic;
+SIGNAL \Add0~41_sumout\ : std_logic;
+SIGNAL \Add0~42\ : std_logic;
+SIGNAL \Add0~45_sumout\ : std_logic;
+SIGNAL \Add0~46\ : std_logic;
+SIGNAL \Add0~49_sumout\ : std_logic;
+SIGNAL \Add0~50\ : std_logic;
+SIGNAL \Add0~53_sumout\ : std_logic;
+SIGNAL \Add0~54\ : std_logic;
+SIGNAL \Add0~57_sumout\ : std_logic;
+SIGNAL \Add0~58\ : std_logic;
+SIGNAL \Add0~61_sumout\ : std_logic;
+SIGNAL \Add0~62\ : std_logic;
+SIGNAL \Add0~65_sumout\ : std_logic;
+SIGNAL score_keeper : std_logic_vector(16 DOWNTO 0);
+SIGNAL \ALT_INV_score_in[3]~input_o\ : std_logic;
+SIGNAL \ALT_INV_score_in[2]~input_o\ : std_logic;
+SIGNAL \ALT_INV_score_in[1]~input_o\ : std_logic;
+SIGNAL \ALT_INV_score_in[0]~input_o\ : std_logic;
+SIGNAL \ALT_INV_scored~input_o\ : std_logic;
 SIGNAL \ALT_INV_enable~input_o\ : std_logic;
-SIGNAL \ALT_INV_died~input_o\ : std_logic;
-SIGNAL \ALT_INV_lives_num_start[3]~input_o\ : std_logic;
-SIGNAL \ALT_INV_lives_num_start[2]~input_o\ : std_logic;
-SIGNAL \ALT_INV_lives_num_start[1]~input_o\ : std_logic;
-SIGNAL \ALT_INV_lives_num_start[0]~input_o\ : std_logic;
-SIGNAL \ALT_INV_resetN~input_o\ : std_logic;
-SIGNAL \ALT_INV_current_lives_sig[3]~13_combout\ : std_logic;
-SIGNAL \ALT_INV_current_lives_sig[2]~9_combout\ : std_logic;
-SIGNAL \ALT_INV_current_lives_sig[1]~5_combout\ : std_logic;
-SIGNAL \ALT_INV_current_lives_sig[0]~1_combout\ : std_logic;
-SIGNAL \ALT_INV_game_over$latch~combout\ : std_logic;
-SIGNAL \ALT_INV_Equal0~2_combout\ : std_logic;
-SIGNAL \ALT_INV_Equal0~1_combout\ : std_logic;
-SIGNAL \ALT_INV_current_lives_sig[0]~21_combout\ : std_logic;
-SIGNAL \ALT_INV_current_lives_sig[0]~20_combout\ : std_logic;
-SIGNAL \ALT_INV_Equal0~0_combout\ : std_logic;
-SIGNAL \ALT_INV_comb~0_combout\ : std_logic;
-SIGNAL \ALT_INV_current_lives_sig[3]~14_combout\ : std_logic;
-SIGNAL \ALT_INV_current_lives_sig[3]~_emulated_q\ : std_logic;
-SIGNAL \ALT_INV_current_lives_sig[2]~10_combout\ : std_logic;
-SIGNAL \ALT_INV_current_lives_sig[2]~_emulated_q\ : std_logic;
-SIGNAL \ALT_INV_current_lives_sig[1]~6_combout\ : std_logic;
-SIGNAL \ALT_INV_current_lives_sig[1]~_emulated_q\ : std_logic;
-SIGNAL \ALT_INV_current_lives_sig[0]~2_combout\ : std_logic;
-SIGNAL \ALT_INV_current_lives_sig[0]~_emulated_q\ : std_logic;
+SIGNAL ALT_INV_score_keeper : std_logic_vector(16 DOWNTO 0);
 
 BEGIN
 
 ww_clk <= clk;
 ww_resetN <= resetN;
-ww_lives_num_start <= lives_num_start;
-ww_died <= died;
 ww_enable <= enable;
-lives_num_current <= ww_lives_num_current;
-game_over <= ww_game_over;
+ww_score_in <= score_in;
+ww_scored <= scored;
+score_out <= ww_score_out;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
+\ALT_INV_score_in[3]~input_o\ <= NOT \score_in[3]~input_o\;
+\ALT_INV_score_in[2]~input_o\ <= NOT \score_in[2]~input_o\;
+\ALT_INV_score_in[1]~input_o\ <= NOT \score_in[1]~input_o\;
+\ALT_INV_score_in[0]~input_o\ <= NOT \score_in[0]~input_o\;
+\ALT_INV_scored~input_o\ <= NOT \scored~input_o\;
 \ALT_INV_enable~input_o\ <= NOT \enable~input_o\;
-\ALT_INV_died~input_o\ <= NOT \died~input_o\;
-\ALT_INV_lives_num_start[3]~input_o\ <= NOT \lives_num_start[3]~input_o\;
-\ALT_INV_lives_num_start[2]~input_o\ <= NOT \lives_num_start[2]~input_o\;
-\ALT_INV_lives_num_start[1]~input_o\ <= NOT \lives_num_start[1]~input_o\;
-\ALT_INV_lives_num_start[0]~input_o\ <= NOT \lives_num_start[0]~input_o\;
-\ALT_INV_resetN~input_o\ <= NOT \resetN~input_o\;
-\ALT_INV_current_lives_sig[3]~13_combout\ <= NOT \current_lives_sig[3]~13_combout\;
-\ALT_INV_current_lives_sig[2]~9_combout\ <= NOT \current_lives_sig[2]~9_combout\;
-\ALT_INV_current_lives_sig[1]~5_combout\ <= NOT \current_lives_sig[1]~5_combout\;
-\ALT_INV_current_lives_sig[0]~1_combout\ <= NOT \current_lives_sig[0]~1_combout\;
-\ALT_INV_game_over$latch~combout\ <= NOT \game_over$latch~combout\;
-\ALT_INV_Equal0~2_combout\ <= NOT \Equal0~2_combout\;
-\ALT_INV_Equal0~1_combout\ <= NOT \Equal0~1_combout\;
-\ALT_INV_current_lives_sig[0]~21_combout\ <= NOT \current_lives_sig[0]~21_combout\;
-\ALT_INV_current_lives_sig[0]~20_combout\ <= NOT \current_lives_sig[0]~20_combout\;
-\ALT_INV_Equal0~0_combout\ <= NOT \Equal0~0_combout\;
-\ALT_INV_comb~0_combout\ <= NOT \comb~0_combout\;
-\ALT_INV_current_lives_sig[3]~14_combout\ <= NOT \current_lives_sig[3]~14_combout\;
-\ALT_INV_current_lives_sig[3]~_emulated_q\ <= NOT \current_lives_sig[3]~_emulated_q\;
-\ALT_INV_current_lives_sig[2]~10_combout\ <= NOT \current_lives_sig[2]~10_combout\;
-\ALT_INV_current_lives_sig[2]~_emulated_q\ <= NOT \current_lives_sig[2]~_emulated_q\;
-\ALT_INV_current_lives_sig[1]~6_combout\ <= NOT \current_lives_sig[1]~6_combout\;
-\ALT_INV_current_lives_sig[1]~_emulated_q\ <= NOT \current_lives_sig[1]~_emulated_q\;
-\ALT_INV_current_lives_sig[0]~2_combout\ <= NOT \current_lives_sig[0]~2_combout\;
-\ALT_INV_current_lives_sig[0]~_emulated_q\ <= NOT \current_lives_sig[0]~_emulated_q\;
+ALT_INV_score_keeper(16) <= NOT score_keeper(16);
+ALT_INV_score_keeper(15) <= NOT score_keeper(15);
+ALT_INV_score_keeper(14) <= NOT score_keeper(14);
+ALT_INV_score_keeper(13) <= NOT score_keeper(13);
+ALT_INV_score_keeper(12) <= NOT score_keeper(12);
+ALT_INV_score_keeper(11) <= NOT score_keeper(11);
+ALT_INV_score_keeper(10) <= NOT score_keeper(10);
+ALT_INV_score_keeper(9) <= NOT score_keeper(9);
+ALT_INV_score_keeper(8) <= NOT score_keeper(8);
+ALT_INV_score_keeper(7) <= NOT score_keeper(7);
+ALT_INV_score_keeper(6) <= NOT score_keeper(6);
+ALT_INV_score_keeper(5) <= NOT score_keeper(5);
+ALT_INV_score_keeper(4) <= NOT score_keeper(4);
+ALT_INV_score_keeper(3) <= NOT score_keeper(3);
+ALT_INV_score_keeper(2) <= NOT score_keeper(2);
+ALT_INV_score_keeper(1) <= NOT score_keeper(1);
+ALT_INV_score_keeper(0) <= NOT score_keeper(0);
 
--- Location: IOOBUF_X89_Y13_N56
-\lives_num_current[0]~output\ : cyclonev_io_obuf
+-- Location: IOOBUF_X89_Y15_N39
+\score_out[0]~output\ : cyclonev_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -189,25 +188,12 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \current_lives_sig[0]~2_combout\,
+	i => score_keeper(0),
 	devoe => ww_devoe,
-	o => ww_lives_num_current(0));
-
--- Location: IOOBUF_X89_Y11_N96
-\lives_num_current[1]~output\ : cyclonev_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false",
-	shift_series_termination_control => "false")
--- pragma translate_on
-PORT MAP (
-	i => \current_lives_sig[1]~6_combout\,
-	devoe => ww_devoe,
-	o => ww_lives_num_current(1));
+	o => ww_score_out(0));
 
 -- Location: IOOBUF_X89_Y11_N45
-\lives_num_current[2]~output\ : cyclonev_io_obuf
+\score_out[1]~output\ : cyclonev_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -215,12 +201,12 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \current_lives_sig[2]~10_combout\,
+	i => score_keeper(1),
 	devoe => ww_devoe,
-	o => ww_lives_num_current(2));
+	o => ww_score_out(1));
 
--- Location: IOOBUF_X89_Y11_N62
-\lives_num_current[3]~output\ : cyclonev_io_obuf
+-- Location: IOOBUF_X89_Y13_N39
+\score_out[2]~output\ : cyclonev_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -228,12 +214,51 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \current_lives_sig[3]~14_combout\,
+	i => score_keeper(2),
 	devoe => ww_devoe,
-	o => ww_lives_num_current(3));
+	o => ww_score_out(2));
+
+-- Location: IOOBUF_X89_Y21_N56
+\score_out[3]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => score_keeper(3),
+	devoe => ww_devoe,
+	o => ww_score_out(3));
+
+-- Location: IOOBUF_X89_Y15_N5
+\score_out[4]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => score_keeper(4),
+	devoe => ww_devoe,
+	o => ww_score_out(4));
+
+-- Location: IOOBUF_X89_Y13_N5
+\score_out[5]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => score_keeper(5),
+	devoe => ww_devoe,
+	o => ww_score_out(5));
 
 -- Location: IOOBUF_X89_Y11_N79
-\game_over~output\ : cyclonev_io_obuf
+\score_out[6]~output\ : cyclonev_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -241,48 +266,139 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \game_over$latch~combout\,
+	i => score_keeper(6),
 	devoe => ww_devoe,
-	o => ww_game_over);
+	o => ww_score_out(6));
 
--- Location: IOIBUF_X89_Y13_N21
-\resetN~input\ : cyclonev_io_ibuf
+-- Location: IOOBUF_X89_Y16_N22
+\score_out[7]~output\ : cyclonev_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
-	simulate_z_as => "z")
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => ww_resetN,
-	o => \resetN~input_o\);
+	i => score_keeper(7),
+	devoe => ww_devoe,
+	o => ww_score_out(7));
 
--- Location: IOIBUF_X89_Y15_N21
-\lives_num_start[0]~input\ : cyclonev_io_ibuf
+-- Location: IOOBUF_X89_Y16_N39
+\score_out[8]~output\ : cyclonev_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
-	simulate_z_as => "z")
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => ww_lives_num_start(0),
-	o => \lives_num_start[0]~input_o\);
+	i => score_keeper(8),
+	devoe => ww_devoe,
+	o => ww_score_out(8));
 
--- Location: LABCELL_X88_Y13_N27
-\current_lives_sig[0]~1\ : cyclonev_lcell_comb
--- Equation(s):
--- \current_lives_sig[0]~1_combout\ = ( \resetN~input_o\ & ( \current_lives_sig[0]~1_combout\ ) ) # ( !\resetN~input_o\ & ( \lives_num_start[0]~input_o\ ) )
-
+-- Location: IOOBUF_X89_Y15_N56
+\score_out[9]~output\ : cyclonev_io_obuf
 -- pragma translate_off
 GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0101010101010101010101010101010100000000111111110000000011111111",
-	shared_arith => "off")
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_lives_num_start[0]~input_o\,
-	datad => \ALT_INV_current_lives_sig[0]~1_combout\,
-	dataf => \ALT_INV_resetN~input_o\,
-	combout => \current_lives_sig[0]~1_combout\);
+	i => score_keeper(9),
+	devoe => ww_devoe,
+	o => ww_score_out(9));
+
+-- Location: IOOBUF_X89_Y16_N56
+\score_out[10]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => score_keeper(10),
+	devoe => ww_devoe,
+	o => ww_score_out(10));
+
+-- Location: IOOBUF_X89_Y13_N22
+\score_out[11]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => score_keeper(11),
+	devoe => ww_devoe,
+	o => ww_score_out(11));
+
+-- Location: IOOBUF_X89_Y15_N22
+\score_out[12]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => score_keeper(12),
+	devoe => ww_devoe,
+	o => ww_score_out(12));
+
+-- Location: IOOBUF_X89_Y11_N62
+\score_out[13]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => score_keeper(13),
+	devoe => ww_devoe,
+	o => ww_score_out(13));
+
+-- Location: IOOBUF_X89_Y9_N56
+\score_out[14]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => score_keeper(14),
+	devoe => ww_devoe,
+	o => ww_score_out(14));
+
+-- Location: IOOBUF_X89_Y11_N96
+\score_out[15]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => score_keeper(15),
+	devoe => ww_devoe,
+	o => ww_score_out(15));
+
+-- Location: IOOBUF_X89_Y13_N56
+\score_out[16]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => score_keeper(16),
+	devoe => ww_devoe,
+	o => ww_score_out(16));
 
 -- Location: IOIBUF_X89_Y25_N21
 \clk~input\ : cyclonev_io_ibuf
@@ -309,102 +425,48 @@ PORT MAP (
 	inclk => \clk~input_o\,
 	outclk => \clk~inputCLKENA0_outclk\);
 
--- Location: IOIBUF_X89_Y13_N4
-\lives_num_start[3]~input\ : cyclonev_io_ibuf
+-- Location: IOIBUF_X89_Y20_N61
+\score_in[0]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_lives_num_start(3),
-	o => \lives_num_start[3]~input_o\);
+	i => ww_score_in(0),
+	o => \score_in[0]~input_o\);
 
--- Location: LABCELL_X88_Y13_N36
-\current_lives_sig[3]~13\ : cyclonev_lcell_comb
+-- Location: LABCELL_X88_Y15_N0
+\Add0~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \current_lives_sig[3]~13_combout\ = ( \lives_num_start[3]~input_o\ & ( (!\resetN~input_o\) # (\current_lives_sig[3]~13_combout\) ) ) # ( !\lives_num_start[3]~input_o\ & ( (\resetN~input_o\ & \current_lives_sig[3]~13_combout\) ) )
+-- \Add0~1_sumout\ = SUM(( score_keeper(0) ) + ( \score_in[0]~input_o\ ) + ( !VCC ))
+-- \Add0~2\ = CARRY(( score_keeper(0) ) + ( \score_in[0]~input_o\ ) + ( !VCC ))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000001111000000000000111111110000111111111111000011111111",
+	lut_mask => "0000000000000000110011001100110000000000000000000000000011111111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datac => \ALT_INV_resetN~input_o\,
-	datad => \ALT_INV_current_lives_sig[3]~13_combout\,
-	dataf => \ALT_INV_lives_num_start[3]~input_o\,
-	combout => \current_lives_sig[3]~13_combout\);
+	datab => \ALT_INV_score_in[0]~input_o\,
+	datad => ALT_INV_score_keeper(0),
+	cin => GND,
+	sumout => \Add0~1_sumout\,
+	cout => \Add0~2\);
 
--- Location: IOIBUF_X89_Y15_N4
-\lives_num_start[2]~input\ : cyclonev_io_ibuf
+-- Location: IOIBUF_X89_Y20_N44
+\resetN~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_lives_num_start(2),
-	o => \lives_num_start[2]~input_o\);
+	i => ww_resetN,
+	o => \resetN~input_o\);
 
--- Location: LABCELL_X88_Y13_N21
-\current_lives_sig[2]~9\ : cyclonev_lcell_comb
--- Equation(s):
--- \current_lives_sig[2]~9_combout\ = ( \lives_num_start[2]~input_o\ & ( (!\resetN~input_o\) # (\current_lives_sig[2]~9_combout\) ) ) # ( !\lives_num_start[2]~input_o\ & ( (\resetN~input_o\ & \current_lives_sig[2]~9_combout\) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000001111000000000000111111110000111111111111000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datac => \ALT_INV_resetN~input_o\,
-	datad => \ALT_INV_current_lives_sig[2]~9_combout\,
-	dataf => \ALT_INV_lives_num_start[2]~input_o\,
-	combout => \current_lives_sig[2]~9_combout\);
-
--- Location: IOIBUF_X89_Y15_N38
-\lives_num_start[1]~input\ : cyclonev_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_lives_num_start(1),
-	o => \lives_num_start[1]~input_o\);
-
--- Location: LABCELL_X88_Y13_N24
-\current_lives_sig[1]~5\ : cyclonev_lcell_comb
--- Equation(s):
--- \current_lives_sig[1]~5_combout\ = ( \current_lives_sig[1]~5_combout\ & ( (\resetN~input_o\) # (\lives_num_start[1]~input_o\) ) ) # ( !\current_lives_sig[1]~5_combout\ & ( (\lives_num_start[1]~input_o\ & !\resetN~input_o\) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000111100000000000011110000000000001111111111110000111111111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datac => \ALT_INV_lives_num_start[1]~input_o\,
-	datad => \ALT_INV_resetN~input_o\,
-	dataf => \ALT_INV_current_lives_sig[1]~5_combout\,
-	combout => \current_lives_sig[1]~5_combout\);
-
--- Location: IOIBUF_X89_Y13_N38
-\died~input\ : cyclonev_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_died,
-	o => \died~input_o\);
-
--- Location: IOIBUF_X89_Y15_N55
+-- Location: IOIBUF_X89_Y20_N78
 \enable~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -415,49 +477,35 @@ PORT MAP (
 	i => ww_enable,
 	o => \enable~input_o\);
 
--- Location: LABCELL_X88_Y13_N0
-\current_lives_sig[0]~21\ : cyclonev_lcell_comb
+-- Location: IOIBUF_X89_Y21_N4
+\scored~input\ : cyclonev_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_scored,
+	o => \scored~input_o\);
+
+-- Location: LABCELL_X88_Y15_N54
+\score_keeper[0]~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \current_lives_sig[0]~21_combout\ = ( \current_lives_sig[1]~6_combout\ & ( \current_lives_sig[0]~2_combout\ & ( (\died~input_o\ & \enable~input_o\) ) ) ) # ( !\current_lives_sig[1]~6_combout\ & ( \current_lives_sig[0]~2_combout\ & ( (\died~input_o\ & 
--- \enable~input_o\) ) ) ) # ( \current_lives_sig[1]~6_combout\ & ( !\current_lives_sig[0]~2_combout\ & ( (\died~input_o\ & \enable~input_o\) ) ) ) # ( !\current_lives_sig[1]~6_combout\ & ( !\current_lives_sig[0]~2_combout\ & ( (\died~input_o\ & 
--- (\enable~input_o\ & ((\current_lives_sig[2]~10_combout\) # (\current_lives_sig[3]~14_combout\)))) ) ) )
+-- \score_keeper[0]~0_combout\ = ( \enable~input_o\ & ( \scored~input_o\ ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000000111000000000000111100000000000011110000000000001111",
+	lut_mask => "0000000000000000000000000000000000000000000000001111111111111111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_current_lives_sig[3]~14_combout\,
-	datab => \ALT_INV_current_lives_sig[2]~10_combout\,
-	datac => \ALT_INV_died~input_o\,
-	datad => \ALT_INV_enable~input_o\,
-	datae => \ALT_INV_current_lives_sig[1]~6_combout\,
-	dataf => \ALT_INV_current_lives_sig[0]~2_combout\,
-	combout => \current_lives_sig[0]~21_combout\);
+	datae => \ALT_INV_enable~input_o\,
+	dataf => \ALT_INV_scored~input_o\,
+	combout => \score_keeper[0]~0_combout\);
 
--- Location: LABCELL_X88_Y13_N42
-\current_lives_sig[1]~7\ : cyclonev_lcell_comb
--- Equation(s):
--- \current_lives_sig[1]~7_combout\ = ( \current_lives_sig[1]~6_combout\ & ( !\current_lives_sig[1]~5_combout\ $ (((!\current_lives_sig[0]~2_combout\ & \current_lives_sig[0]~21_combout\))) ) ) # ( !\current_lives_sig[1]~6_combout\ & ( 
--- !\current_lives_sig[1]~5_combout\ $ (((!\current_lives_sig[0]~21_combout\) # (\current_lives_sig[0]~2_combout\))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000110011110011000011001111001111110011000011001111001100001100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datab => \ALT_INV_current_lives_sig[0]~2_combout\,
-	datac => \ALT_INV_current_lives_sig[0]~21_combout\,
-	datad => \ALT_INV_current_lives_sig[1]~5_combout\,
-	dataf => \ALT_INV_current_lives_sig[1]~6_combout\,
-	combout => \current_lives_sig[1]~7_combout\);
-
--- Location: FF_X88_Y13_N44
-\current_lives_sig[1]~_emulated\ : dffeas
+-- Location: FF_X88_Y15_N2
+\score_keeper[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -465,67 +513,45 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~inputCLKENA0_outclk\,
-	d => \current_lives_sig[1]~7_combout\,
+	d => \Add0~1_sumout\,
 	clrn => \resetN~input_o\,
+	ena => \score_keeper[0]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \current_lives_sig[1]~_emulated_q\);
+	q => score_keeper(0));
 
--- Location: LABCELL_X88_Y13_N9
-\current_lives_sig[1]~6\ : cyclonev_lcell_comb
+-- Location: IOIBUF_X89_Y20_N95
+\score_in[1]~input\ : cyclonev_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_score_in(1),
+	o => \score_in[1]~input_o\);
+
+-- Location: LABCELL_X88_Y15_N3
+\Add0~5\ : cyclonev_lcell_comb
 -- Equation(s):
--- \current_lives_sig[1]~6_combout\ = ( \resetN~input_o\ & ( !\current_lives_sig[1]~5_combout\ $ (!\current_lives_sig[1]~_emulated_q\) ) ) # ( !\resetN~input_o\ & ( \lives_num_start[1]~input_o\ ) )
+-- \Add0~5_sumout\ = SUM(( score_keeper(1) ) + ( \score_in[1]~input_o\ ) + ( \Add0~2\ ))
+-- \Add0~6\ = CARRY(( score_keeper(1) ) + ( \score_in[1]~input_o\ ) + ( \Add0~2\ ))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000011111111000000001111111101011010010110100101101001011010",
+	lut_mask => "0000000000000000101010101010101000000000000000000000000011111111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_current_lives_sig[1]~5_combout\,
-	datac => \ALT_INV_current_lives_sig[1]~_emulated_q\,
-	datad => \ALT_INV_lives_num_start[1]~input_o\,
-	dataf => \ALT_INV_resetN~input_o\,
-	combout => \current_lives_sig[1]~6_combout\);
+	dataa => \ALT_INV_score_in[1]~input_o\,
+	datad => ALT_INV_score_keeper(1),
+	cin => \Add0~2\,
+	sumout => \Add0~5_sumout\,
+	cout => \Add0~6\);
 
--- Location: LABCELL_X88_Y13_N45
-\Equal0~1\ : cyclonev_lcell_comb
--- Equation(s):
--- \Equal0~1_combout\ = ( !\current_lives_sig[0]~2_combout\ & ( !\current_lives_sig[1]~6_combout\ ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1010101010101010101010101010101000000000000000000000000000000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ALT_INV_current_lives_sig[1]~6_combout\,
-	dataf => \ALT_INV_current_lives_sig[0]~2_combout\,
-	combout => \Equal0~1_combout\);
-
--- Location: LABCELL_X88_Y13_N30
-\current_lives_sig[2]~11\ : cyclonev_lcell_comb
--- Equation(s):
--- \current_lives_sig[2]~11_combout\ = ( \current_lives_sig[2]~10_combout\ & ( !\current_lives_sig[2]~9_combout\ $ (((\Equal0~1_combout\ & \current_lives_sig[0]~21_combout\))) ) ) # ( !\current_lives_sig[2]~10_combout\ & ( !\current_lives_sig[2]~9_combout\ $ 
--- (((!\Equal0~1_combout\) # (!\current_lives_sig[0]~21_combout\))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000001111111100000000111111110011111100000000111111110000000011",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datab => \ALT_INV_Equal0~1_combout\,
-	datac => \ALT_INV_current_lives_sig[0]~21_combout\,
-	datad => \ALT_INV_current_lives_sig[2]~9_combout\,
-	dataf => \ALT_INV_current_lives_sig[2]~10_combout\,
-	combout => \current_lives_sig[2]~11_combout\);
-
--- Location: FF_X88_Y13_N32
-\current_lives_sig[2]~_emulated\ : dffeas
+-- Location: FF_X88_Y15_N5
+\score_keeper[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -533,69 +559,45 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~inputCLKENA0_outclk\,
-	d => \current_lives_sig[2]~11_combout\,
+	d => \Add0~5_sumout\,
 	clrn => \resetN~input_o\,
+	ena => \score_keeper[0]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \current_lives_sig[2]~_emulated_q\);
+	q => score_keeper(1));
 
--- Location: LABCELL_X88_Y13_N39
-\current_lives_sig[2]~10\ : cyclonev_lcell_comb
+-- Location: IOIBUF_X89_Y21_N21
+\score_in[2]~input\ : cyclonev_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_score_in(2),
+	o => \score_in[2]~input_o\);
+
+-- Location: LABCELL_X88_Y15_N6
+\Add0~9\ : cyclonev_lcell_comb
 -- Equation(s):
--- \current_lives_sig[2]~10_combout\ = ( \current_lives_sig[2]~_emulated_q\ & ( (!\resetN~input_o\ & (\lives_num_start[2]~input_o\)) # (\resetN~input_o\ & ((!\current_lives_sig[2]~9_combout\))) ) ) # ( !\current_lives_sig[2]~_emulated_q\ & ( 
--- (!\resetN~input_o\ & (\lives_num_start[2]~input_o\)) # (\resetN~input_o\ & ((\current_lives_sig[2]~9_combout\))) ) )
+-- \Add0~9_sumout\ = SUM(( \score_in[2]~input_o\ ) + ( score_keeper(2) ) + ( \Add0~6\ ))
+-- \Add0~10\ = CARRY(( \score_in[2]~input_o\ ) + ( score_keeper(2) ) + ( \Add0~6\ ))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0010011100100111001001110010011101110010011100100111001001110010",
+	lut_mask => "0000000000000000110011001100110000000000000000000000000011111111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_resetN~input_o\,
-	datab => \ALT_INV_lives_num_start[2]~input_o\,
-	datac => \ALT_INV_current_lives_sig[2]~9_combout\,
-	dataf => \ALT_INV_current_lives_sig[2]~_emulated_q\,
-	combout => \current_lives_sig[2]~10_combout\);
+	datab => ALT_INV_score_keeper(2),
+	datad => \ALT_INV_score_in[2]~input_o\,
+	cin => \Add0~6\,
+	sumout => \Add0~9_sumout\,
+	cout => \Add0~10\);
 
--- Location: LABCELL_X88_Y13_N6
-\Equal0~2\ : cyclonev_lcell_comb
--- Equation(s):
--- \Equal0~2_combout\ = ( !\current_lives_sig[0]~2_combout\ & ( (!\current_lives_sig[2]~10_combout\ & !\current_lives_sig[1]~6_combout\) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1100000011000000110000001100000000000000000000000000000000000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datab => \ALT_INV_current_lives_sig[2]~10_combout\,
-	datac => \ALT_INV_current_lives_sig[1]~6_combout\,
-	dataf => \ALT_INV_current_lives_sig[0]~2_combout\,
-	combout => \Equal0~2_combout\);
-
--- Location: LABCELL_X88_Y13_N12
-\current_lives_sig[3]~15\ : cyclonev_lcell_comb
--- Equation(s):
--- \current_lives_sig[3]~15_combout\ = ( \current_lives_sig[3]~14_combout\ & ( !\current_lives_sig[3]~13_combout\ $ (((\Equal0~2_combout\ & \current_lives_sig[0]~21_combout\))) ) ) # ( !\current_lives_sig[3]~14_combout\ & ( !\current_lives_sig[3]~13_combout\ 
--- $ (((!\Equal0~2_combout\) # (!\current_lives_sig[0]~21_combout\))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000001111111100000000111111110011111100000000111111110000000011",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datab => \ALT_INV_Equal0~2_combout\,
-	datac => \ALT_INV_current_lives_sig[0]~21_combout\,
-	datad => \ALT_INV_current_lives_sig[3]~13_combout\,
-	dataf => \ALT_INV_current_lives_sig[3]~14_combout\,
-	combout => \current_lives_sig[3]~15_combout\);
-
--- Location: FF_X88_Y13_N14
-\current_lives_sig[3]~_emulated\ : dffeas
+-- Location: FF_X88_Y15_N8
+\score_keeper[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -603,71 +605,45 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~inputCLKENA0_outclk\,
-	d => \current_lives_sig[3]~15_combout\,
+	d => \Add0~9_sumout\,
 	clrn => \resetN~input_o\,
+	ena => \score_keeper[0]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \current_lives_sig[3]~_emulated_q\);
+	q => score_keeper(2));
 
--- Location: LABCELL_X88_Y13_N51
-\current_lives_sig[3]~14\ : cyclonev_lcell_comb
+-- Location: IOIBUF_X89_Y16_N4
+\score_in[3]~input\ : cyclonev_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_score_in(3),
+	o => \score_in[3]~input_o\);
+
+-- Location: LABCELL_X88_Y15_N9
+\Add0~13\ : cyclonev_lcell_comb
 -- Equation(s):
--- \current_lives_sig[3]~14_combout\ = ( \current_lives_sig[3]~_emulated_q\ & ( (!\resetN~input_o\ & ((\lives_num_start[3]~input_o\))) # (\resetN~input_o\ & (!\current_lives_sig[3]~13_combout\)) ) ) # ( !\current_lives_sig[3]~_emulated_q\ & ( 
--- (!\resetN~input_o\ & ((\lives_num_start[3]~input_o\))) # (\resetN~input_o\ & (\current_lives_sig[3]~13_combout\)) ) )
+-- \Add0~13_sumout\ = SUM(( \score_in[3]~input_o\ ) + ( score_keeper(3) ) + ( \Add0~10\ ))
+-- \Add0~14\ = CARRY(( \score_in[3]~input_o\ ) + ( score_keeper(3) ) + ( \Add0~10\ ))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0001000110111011000100011011101101000100111011100100010011101110",
+	lut_mask => "0000000000000000111100001111000000000000000000000101010101010101",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_resetN~input_o\,
-	datab => \ALT_INV_current_lives_sig[3]~13_combout\,
-	datad => \ALT_INV_lives_num_start[3]~input_o\,
-	dataf => \ALT_INV_current_lives_sig[3]~_emulated_q\,
-	combout => \current_lives_sig[3]~14_combout\);
+	dataa => \ALT_INV_score_in[3]~input_o\,
+	datac => ALT_INV_score_keeper(3),
+	cin => \Add0~10\,
+	sumout => \Add0~13_sumout\,
+	cout => \Add0~14\);
 
--- Location: LABCELL_X88_Y13_N54
-\current_lives_sig[0]~20\ : cyclonev_lcell_comb
--- Equation(s):
--- \current_lives_sig[0]~20_combout\ = ( \current_lives_sig[1]~6_combout\ & ( \current_lives_sig[0]~2_combout\ & ( (!\died~input_o\) # (!\enable~input_o\) ) ) ) # ( !\current_lives_sig[1]~6_combout\ & ( \current_lives_sig[0]~2_combout\ & ( (!\died~input_o\) 
--- # (!\enable~input_o\) ) ) ) # ( \current_lives_sig[1]~6_combout\ & ( !\current_lives_sig[0]~2_combout\ & ( (\died~input_o\ & \enable~input_o\) ) ) ) # ( !\current_lives_sig[1]~6_combout\ & ( !\current_lives_sig[0]~2_combout\ & ( (\died~input_o\ & 
--- (\enable~input_o\ & ((\current_lives_sig[2]~10_combout\) # (\current_lives_sig[3]~14_combout\)))) ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000111000000000000111111111111111100001111111111110000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ALT_INV_current_lives_sig[3]~14_combout\,
-	datab => \ALT_INV_current_lives_sig[2]~10_combout\,
-	datac => \ALT_INV_died~input_o\,
-	datad => \ALT_INV_enable~input_o\,
-	datae => \ALT_INV_current_lives_sig[1]~6_combout\,
-	dataf => \ALT_INV_current_lives_sig[0]~2_combout\,
-	combout => \current_lives_sig[0]~20_combout\);
-
--- Location: LABCELL_X88_Y13_N48
-\current_lives_sig[0]~3\ : cyclonev_lcell_comb
--- Equation(s):
--- \current_lives_sig[0]~3_combout\ = ( \current_lives_sig[0]~1_combout\ & ( !\current_lives_sig[0]~20_combout\ ) ) # ( !\current_lives_sig[0]~1_combout\ & ( \current_lives_sig[0]~20_combout\ ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000111100001111000011110000111111110000111100001111000011110000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datac => \ALT_INV_current_lives_sig[0]~20_combout\,
-	dataf => \ALT_INV_current_lives_sig[0]~1_combout\,
-	combout => \current_lives_sig[0]~3_combout\);
-
--- Location: FF_X88_Y13_N50
-\current_lives_sig[0]~_emulated\ : dffeas
+-- Location: FF_X88_Y15_N11
+\score_keeper[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -675,87 +651,454 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~inputCLKENA0_outclk\,
-	d => \current_lives_sig[0]~3_combout\,
+	d => \Add0~13_sumout\,
 	clrn => \resetN~input_o\,
+	ena => \score_keeper[0]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \current_lives_sig[0]~_emulated_q\);
+	q => score_keeper(3));
 
--- Location: LABCELL_X88_Y13_N15
-\current_lives_sig[0]~2\ : cyclonev_lcell_comb
+-- Location: LABCELL_X88_Y15_N12
+\Add0~17\ : cyclonev_lcell_comb
 -- Equation(s):
--- \current_lives_sig[0]~2_combout\ = ( \current_lives_sig[0]~_emulated_q\ & ( (!\resetN~input_o\ & (\lives_num_start[0]~input_o\)) # (\resetN~input_o\ & ((!\current_lives_sig[0]~1_combout\))) ) ) # ( !\current_lives_sig[0]~_emulated_q\ & ( 
--- (!\resetN~input_o\ & (\lives_num_start[0]~input_o\)) # (\resetN~input_o\ & ((\current_lives_sig[0]~1_combout\))) ) )
+-- \Add0~17_sumout\ = SUM(( score_keeper(4) ) + ( GND ) + ( \Add0~14\ ))
+-- \Add0~18\ = CARRY(( score_keeper(4) ) + ( GND ) + ( \Add0~14\ ))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000101001011111000010100101111101011111000010100101111100001010",
+	lut_mask => "0000000000000000111111111111111100000000000000000011001100110011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_resetN~input_o\,
-	datac => \ALT_INV_lives_num_start[0]~input_o\,
-	datad => \ALT_INV_current_lives_sig[0]~1_combout\,
-	dataf => \ALT_INV_current_lives_sig[0]~_emulated_q\,
-	combout => \current_lives_sig[0]~2_combout\);
+	datab => ALT_INV_score_keeper(4),
+	cin => \Add0~14\,
+	sumout => \Add0~17_sumout\,
+	cout => \Add0~18\);
 
--- Location: LABCELL_X88_Y13_N18
-\comb~0\ : cyclonev_lcell_comb
+-- Location: FF_X88_Y15_N14
+\score_keeper[4]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~inputCLKENA0_outclk\,
+	d => \Add0~17_sumout\,
+	clrn => \resetN~input_o\,
+	ena => \score_keeper[0]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => score_keeper(4));
+
+-- Location: LABCELL_X88_Y15_N15
+\Add0~21\ : cyclonev_lcell_comb
 -- Equation(s):
--- \comb~0_combout\ = ( \current_lives_sig[0]~2_combout\ & ( \resetN~input_o\ ) ) # ( !\current_lives_sig[0]~2_combout\ & ( ((!\current_lives_sig[1]~6_combout\ & (!\current_lives_sig[3]~14_combout\ & !\current_lives_sig[2]~10_combout\))) # (\resetN~input_o\) 
--- ) )
+-- \Add0~21_sumout\ = SUM(( score_keeper(5) ) + ( GND ) + ( \Add0~18\ ))
+-- \Add0~22\ = CARRY(( score_keeper(5) ) + ( GND ) + ( \Add0~18\ ))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1101010101010101110101010101010101010101010101010101010101010101",
+	lut_mask => "0000000000000000111111111111111100000000000000000000111100001111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_resetN~input_o\,
-	datab => \ALT_INV_current_lives_sig[1]~6_combout\,
-	datac => \ALT_INV_current_lives_sig[3]~14_combout\,
-	datad => \ALT_INV_current_lives_sig[2]~10_combout\,
-	dataf => \ALT_INV_current_lives_sig[0]~2_combout\,
-	combout => \comb~0_combout\);
+	datac => ALT_INV_score_keeper(5),
+	cin => \Add0~18\,
+	sumout => \Add0~21_sumout\,
+	cout => \Add0~22\);
 
--- Location: LABCELL_X88_Y13_N33
-\Equal0~0\ : cyclonev_lcell_comb
+-- Location: FF_X88_Y15_N17
+\score_keeper[5]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~inputCLKENA0_outclk\,
+	d => \Add0~21_sumout\,
+	clrn => \resetN~input_o\,
+	ena => \score_keeper[0]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => score_keeper(5));
+
+-- Location: LABCELL_X88_Y15_N18
+\Add0~25\ : cyclonev_lcell_comb
 -- Equation(s):
--- \Equal0~0_combout\ = ( !\current_lives_sig[0]~2_combout\ & ( (!\current_lives_sig[3]~14_combout\ & (!\current_lives_sig[1]~6_combout\ & !\current_lives_sig[2]~10_combout\)) ) )
+-- \Add0~25_sumout\ = SUM(( score_keeper(6) ) + ( GND ) + ( \Add0~22\ ))
+-- \Add0~26\ = CARRY(( score_keeper(6) ) + ( GND ) + ( \Add0~22\ ))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1010000000000000101000000000000000000000000000000000000000000000",
+	lut_mask => "0000000000000000111111111111111100000000000000000000111100001111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_current_lives_sig[3]~14_combout\,
-	datac => \ALT_INV_current_lives_sig[1]~6_combout\,
-	datad => \ALT_INV_current_lives_sig[2]~10_combout\,
-	dataf => \ALT_INV_current_lives_sig[0]~2_combout\,
-	combout => \Equal0~0_combout\);
+	datac => ALT_INV_score_keeper(6),
+	cin => \Add0~22\,
+	sumout => \Add0~25_sumout\,
+	cout => \Add0~26\);
 
--- Location: MLABCELL_X87_Y13_N24
-\game_over$latch\ : cyclonev_lcell_comb
+-- Location: FF_X88_Y15_N20
+\score_keeper[6]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~inputCLKENA0_outclk\,
+	d => \Add0~25_sumout\,
+	clrn => \resetN~input_o\,
+	ena => \score_keeper[0]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => score_keeper(6));
+
+-- Location: LABCELL_X88_Y15_N21
+\Add0~29\ : cyclonev_lcell_comb
 -- Equation(s):
--- \game_over$latch~combout\ = ( \game_over$latch~combout\ & ( \comb~0_combout\ ) ) # ( !\game_over$latch~combout\ & ( (\comb~0_combout\ & \Equal0~0_combout\) ) )
+-- \Add0~29_sumout\ = SUM(( score_keeper(7) ) + ( GND ) + ( \Add0~26\ ))
+-- \Add0~30\ = CARRY(( score_keeper(7) ) + ( GND ) + ( \Add0~26\ ))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000001100000011000000110000001100110011001100110011001100110011",
+	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => \ALT_INV_comb~0_combout\,
-	datac => \ALT_INV_Equal0~0_combout\,
-	dataf => \ALT_INV_game_over$latch~combout\,
-	combout => \game_over$latch~combout\);
+	datad => ALT_INV_score_keeper(7),
+	cin => \Add0~26\,
+	sumout => \Add0~29_sumout\,
+	cout => \Add0~30\);
 
--- Location: LABCELL_X43_Y10_N3
+-- Location: FF_X88_Y15_N23
+\score_keeper[7]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~inputCLKENA0_outclk\,
+	d => \Add0~29_sumout\,
+	clrn => \resetN~input_o\,
+	ena => \score_keeper[0]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => score_keeper(7));
+
+-- Location: LABCELL_X88_Y15_N24
+\Add0~33\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \Add0~33_sumout\ = SUM(( score_keeper(8) ) + ( GND ) + ( \Add0~30\ ))
+-- \Add0~34\ = CARRY(( score_keeper(8) ) + ( GND ) + ( \Add0~30\ ))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000111111111111111100000000000000000000111100001111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	datac => ALT_INV_score_keeper(8),
+	cin => \Add0~30\,
+	sumout => \Add0~33_sumout\,
+	cout => \Add0~34\);
+
+-- Location: FF_X88_Y15_N26
+\score_keeper[8]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~inputCLKENA0_outclk\,
+	d => \Add0~33_sumout\,
+	clrn => \resetN~input_o\,
+	ena => \score_keeper[0]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => score_keeper(8));
+
+-- Location: LABCELL_X88_Y15_N27
+\Add0~37\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \Add0~37_sumout\ = SUM(( score_keeper(9) ) + ( GND ) + ( \Add0~34\ ))
+-- \Add0~38\ = CARRY(( score_keeper(9) ) + ( GND ) + ( \Add0~34\ ))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	datad => ALT_INV_score_keeper(9),
+	cin => \Add0~34\,
+	sumout => \Add0~37_sumout\,
+	cout => \Add0~38\);
+
+-- Location: FF_X88_Y15_N29
+\score_keeper[9]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~inputCLKENA0_outclk\,
+	d => \Add0~37_sumout\,
+	clrn => \resetN~input_o\,
+	ena => \score_keeper[0]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => score_keeper(9));
+
+-- Location: LABCELL_X88_Y15_N30
+\Add0~41\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \Add0~41_sumout\ = SUM(( score_keeper(10) ) + ( GND ) + ( \Add0~38\ ))
+-- \Add0~42\ = CARRY(( score_keeper(10) ) + ( GND ) + ( \Add0~38\ ))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000111111111111111100000000000000000011001100110011",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	datab => ALT_INV_score_keeper(10),
+	cin => \Add0~38\,
+	sumout => \Add0~41_sumout\,
+	cout => \Add0~42\);
+
+-- Location: FF_X88_Y15_N32
+\score_keeper[10]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~inputCLKENA0_outclk\,
+	d => \Add0~41_sumout\,
+	clrn => \resetN~input_o\,
+	ena => \score_keeper[0]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => score_keeper(10));
+
+-- Location: LABCELL_X88_Y15_N33
+\Add0~45\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \Add0~45_sumout\ = SUM(( score_keeper(11) ) + ( GND ) + ( \Add0~42\ ))
+-- \Add0~46\ = CARRY(( score_keeper(11) ) + ( GND ) + ( \Add0~42\ ))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000111111111111111100000000000000000101010101010101",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => ALT_INV_score_keeper(11),
+	cin => \Add0~42\,
+	sumout => \Add0~45_sumout\,
+	cout => \Add0~46\);
+
+-- Location: FF_X88_Y15_N35
+\score_keeper[11]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~inputCLKENA0_outclk\,
+	d => \Add0~45_sumout\,
+	clrn => \resetN~input_o\,
+	ena => \score_keeper[0]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => score_keeper(11));
+
+-- Location: LABCELL_X88_Y15_N36
+\Add0~49\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \Add0~49_sumout\ = SUM(( score_keeper(12) ) + ( GND ) + ( \Add0~46\ ))
+-- \Add0~50\ = CARRY(( score_keeper(12) ) + ( GND ) + ( \Add0~46\ ))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000111111111111111100000000000000000000111100001111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	datac => ALT_INV_score_keeper(12),
+	cin => \Add0~46\,
+	sumout => \Add0~49_sumout\,
+	cout => \Add0~50\);
+
+-- Location: FF_X88_Y15_N38
+\score_keeper[12]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~inputCLKENA0_outclk\,
+	d => \Add0~49_sumout\,
+	clrn => \resetN~input_o\,
+	ena => \score_keeper[0]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => score_keeper(12));
+
+-- Location: LABCELL_X88_Y15_N39
+\Add0~53\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \Add0~53_sumout\ = SUM(( score_keeper(13) ) + ( GND ) + ( \Add0~50\ ))
+-- \Add0~54\ = CARRY(( score_keeper(13) ) + ( GND ) + ( \Add0~50\ ))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000111111111111111100000000000000000000111100001111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	datac => ALT_INV_score_keeper(13),
+	cin => \Add0~50\,
+	sumout => \Add0~53_sumout\,
+	cout => \Add0~54\);
+
+-- Location: FF_X88_Y15_N41
+\score_keeper[13]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~inputCLKENA0_outclk\,
+	d => \Add0~53_sumout\,
+	clrn => \resetN~input_o\,
+	ena => \score_keeper[0]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => score_keeper(13));
+
+-- Location: LABCELL_X88_Y15_N42
+\Add0~57\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \Add0~57_sumout\ = SUM(( score_keeper(14) ) + ( GND ) + ( \Add0~54\ ))
+-- \Add0~58\ = CARRY(( score_keeper(14) ) + ( GND ) + ( \Add0~54\ ))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000111111111111111100000000000000000011001100110011",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	datab => ALT_INV_score_keeper(14),
+	cin => \Add0~54\,
+	sumout => \Add0~57_sumout\,
+	cout => \Add0~58\);
+
+-- Location: FF_X88_Y15_N44
+\score_keeper[14]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~inputCLKENA0_outclk\,
+	d => \Add0~57_sumout\,
+	clrn => \resetN~input_o\,
+	ena => \score_keeper[0]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => score_keeper(14));
+
+-- Location: LABCELL_X88_Y15_N45
+\Add0~61\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \Add0~61_sumout\ = SUM(( score_keeper(15) ) + ( GND ) + ( \Add0~58\ ))
+-- \Add0~62\ = CARRY(( score_keeper(15) ) + ( GND ) + ( \Add0~58\ ))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000111111111111111100000000000000000000111100001111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	datac => ALT_INV_score_keeper(15),
+	cin => \Add0~58\,
+	sumout => \Add0~61_sumout\,
+	cout => \Add0~62\);
+
+-- Location: FF_X88_Y15_N47
+\score_keeper[15]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~inputCLKENA0_outclk\,
+	d => \Add0~61_sumout\,
+	clrn => \resetN~input_o\,
+	ena => \score_keeper[0]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => score_keeper(15));
+
+-- Location: LABCELL_X88_Y15_N48
+\Add0~65\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \Add0~65_sumout\ = SUM(( score_keeper(16) ) + ( GND ) + ( \Add0~62\ ))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000111111111111111100000000000000000000111100001111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	datac => ALT_INV_score_keeper(16),
+	cin => \Add0~62\,
+	sumout => \Add0~65_sumout\);
+
+-- Location: FF_X88_Y15_N50
+\score_keeper[16]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~inputCLKENA0_outclk\,
+	d => \Add0~65_sumout\,
+	clrn => \resetN~input_o\,
+	ena => \score_keeper[0]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => score_keeper(16));
+
+-- Location: LABCELL_X7_Y7_N3
 \~QUARTUS_CREATED_GND~I\ : cyclonev_lcell_comb
 -- Equation(s):
 
