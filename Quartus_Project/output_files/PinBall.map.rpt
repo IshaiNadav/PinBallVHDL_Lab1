@@ -1,6 +1,6 @@
 Analysis & Synthesis report for PinBall
-Mon May 28 21:30:18 2018
-Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+Tue May 29 21:08:20 2018
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
 
 
 ---------------------
@@ -10,14 +10,7 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
-  9. General Register Statistics
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -43,25 +36,20 @@ agreement for further details.
 
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
-+---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon May 28 21:30:18 2018       ;
-; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
-; Revision Name                   ; PinBall                                     ;
-; Top-level Entity Name           ; hp_down_counter                             ;
-; Family                          ; Cyclone V                                   ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 4                                           ;
-; Total pins                      ; 13                                          ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 0                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
++-----------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status ; Failed - Tue May 29 21:08:20 2018               ;
+; Quartus Prime Version       ; 17.0.0 Build 595 04/25/2017 SJ Standard Edition ;
+; Revision Name               ; PinBall                                         ;
+; Top-level Entity Name       ; PIN_BALL_GAMEPLAY                               ;
+; Family                      ; Cyclone V                                       ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                       ;
+; Total registers             ; N/A until Partition Merge                       ;
+; Total pins                  ; N/A until Partition Merge                       ;
+; Total virtual pins          ; N/A until Partition Merge                       ;
+; Total block memory bits     ; N/A until Partition Merge                       ;
+; Total PLLs                  ; N/A until Partition Merge                       ;
+; Total DLLs                  ; N/A until Partition Merge                       ;
++-----------------------------+-------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -70,7 +58,7 @@ agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSXFC6D6F31C6     ;                    ;
-; Top-level entity name                                                           ; hp_down_counter    ; PinBall            ;
+; Top-level entity name                                                           ; PIN_BALL_GAMEPLAY  ; PinBall            ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
@@ -156,118 +144,15 @@ agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                         ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
-; hp_down_counter.vhd              ; yes             ; User VHDL File  ; C:/pinball_vhdl/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
-
-
-+------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                ;
-+---------------------------------------------+--------------+
-; Resource                                    ; Usage        ;
-+---------------------------------------------+--------------+
-; Estimate of Logic utilization (ALMs needed) ; 11           ;
-;                                             ;              ;
-; Combinational ALUT usage for logic          ; 19           ;
-;     -- 7 input functions                    ; 0            ;
-;     -- 6 input functions                    ; 2            ;
-;     -- 5 input functions                    ; 1            ;
-;     -- 4 input functions                    ; 8            ;
-;     -- <=3 input functions                  ; 8            ;
-;                                             ;              ;
-; Dedicated logic registers                   ; 4            ;
-;                                             ;              ;
-; I/O pins                                    ; 13           ;
-;                                             ;              ;
-; Total DSP Blocks                            ; 0            ;
-;                                             ;              ;
-; Maximum fan-out node                        ; resetN~input ;
-; Maximum fan-out                             ; 13           ;
-; Total fan-out                               ; 101          ;
-; Average fan-out                             ; 2.06         ;
-+---------------------------------------------+--------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                        ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-----------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name     ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-----------------+--------------+
-; |hp_down_counter           ; 19 (19)             ; 4 (4)                     ; 0                 ; 0          ; 13   ; 0            ; |hp_down_counter    ; hp_down_counter ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-----------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+---------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                               ;
-+----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
-+----------------------------------------------------+---------------------+------------------------+
-; game_over$latch                                    ; GND                 ; yes                    ;
-; Number of user-specified and inferred latches = 1  ;                     ;                        ;
-+----------------------------------------------------+---------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 4     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 4     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_ff             ; 4                           ;
-;     CLR               ; 4                           ;
-; arriav_lcell_comb     ; 19                          ;
-;     normal            ; 19                          ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 6                           ;
-;         4 data inputs ; 8                           ;
-;         5 data inputs ; 1                           ;
-;         6 data inputs ; 2                           ;
-; boundary_port         ; 13                          ;
-;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 2.58                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
 
 
 +-------------------------------+
@@ -275,38 +160,62 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Mon May 28 21:30:00 2018
+    Info: Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
+    Info: Processing started: Tue May 29 21:08:07 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PinBall -c PinBall
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file vga_controller.vhd
+    Info (12022): Found design unit 1: VGA_Controller-behav File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/VGA_Controller.vhd Line: 32
+    Info (12023): Found entity 1: VGA_Controller File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/VGA_Controller.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file objects_mux.vhd
+    Info (12022): Found design unit 1: objects_mux-behav File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/objects_mux.vhd Line: 29
+    Info (12023): Found entity 1: objects_mux File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/objects_mux.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file back_ground_draw.vhd
+    Info (12022): Found design unit 1: back_ground_draw-behav File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/back_ground_draw.vhd Line: 20
+    Info (12023): Found entity 1: back_ground_draw File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/back_ground_draw.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file hexss.vhd
+    Info (12022): Found design unit 1: hexss-arc_hexss File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/hexss.vhd Line: 8
+    Info (12023): Found entity 1: hexss File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/hexss.vhd Line: 3
 Info (12021): Found 2 design units, including 1 entities, in source file hp_down_counter.vhd
-    Info (12022): Found design unit 1: hp_down_counter-hp_down_counter_arch File: C:/pinball_vhdl/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd Line: 17
-    Info (12023): Found entity 1: hp_down_counter File: C:/pinball_vhdl/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd Line: 6
+    Info (12022): Found design unit 1: hp_down_counter-hp_down_counter_arch File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd Line: 17
+    Info (12023): Found entity 1: hp_down_counter File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file score_up_counter.vhd
-    Info (12022): Found design unit 1: score_up_counter-score_up_counter_arch File: C:/pinball_vhdl/PinBallVHDL_Lab1/Quartus_Project/score_up_counter.vhd Line: 17
-    Info (12023): Found entity 1: score_up_counter File: C:/pinball_vhdl/PinBallVHDL_Lab1/Quartus_Project/score_up_counter.vhd Line: 6
-Info (12127): Elaborating entity "hp_down_counter" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at hp_down_counter.vhd(24): signal "lives_num_start" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/pinball_vhdl/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd Line: 24
-Warning (10492): VHDL Process Statement warning at hp_down_counter.vhd(36): signal "current_lives_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/pinball_vhdl/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd Line: 36
-Warning (10631): VHDL Process Statement warning at hp_down_counter.vhd(21): inferring latch(es) for signal or variable "game_over", which holds its previous value in one or more paths through the process File: C:/pinball_vhdl/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd Line: 21
-Info (10041): Inferred latch for "game_over" at hp_down_counter.vhd(21) File: C:/pinball_vhdl/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd Line: 21
-Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
-    Warning (13310): Register "current_lives_sig[0]" is converted into an equivalent circuit using register "current_lives_sig[0]~_emulated" and latch "current_lives_sig[0]~1" File: C:/pinball_vhdl/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd Line: 23
-    Warning (13310): Register "current_lives_sig[1]" is converted into an equivalent circuit using register "current_lives_sig[1]~_emulated" and latch "current_lives_sig[1]~5" File: C:/pinball_vhdl/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd Line: 23
-    Warning (13310): Register "current_lives_sig[2]" is converted into an equivalent circuit using register "current_lives_sig[2]~_emulated" and latch "current_lives_sig[2]~9" File: C:/pinball_vhdl/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd Line: 23
-    Warning (13310): Register "current_lives_sig[3]" is converted into an equivalent circuit using register "current_lives_sig[3]~_emulated" and latch "current_lives_sig[3]~13" File: C:/pinball_vhdl/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd Line: 23
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 32 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 8 input pins
-    Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 19 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 704 megabytes
-    Info: Processing ended: Mon May 28 21:30:18 2018
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:39
+    Info (12022): Found design unit 1: score_up_counter-score_up_counter_arch File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/score_up_counter.vhd Line: 17
+    Info (12023): Found entity 1: score_up_counter File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/score_up_counter.vhd Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file hp_score_module.bdf
+    Info (12023): Found entity 1: HP_Score_Module
+Info (12021): Found 2 design units, including 1 entities, in source file ball_move.vhd
+    Info (12022): Found design unit 1: ball_move-arc_ball_move File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 24
+    Info (12023): Found entity 1: ball_move File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file ball_object.vhd
+    Info (12022): Found design unit 1: ball_object-behav File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_object.vhd Line: 19
+    Info (12023): Found entity 1: ball_object File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_object.vhd Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file pin_ball_gameplay.bdf
+    Info (12023): Found entity 1: PIN_BALL_GAMEPLAY
+Info (12127): Elaborating entity "PIN_BALL_GAMEPLAY" for the top level hierarchy
+Info (12128): Elaborating entity "VGA_Controller" for hierarchy "VGA_Controller:inst"
+Info (12128): Elaborating entity "objects_mux" for hierarchy "objects_mux:inst8"
+Info (12128): Elaborating entity "ball_object" for hierarchy "ball_object:inst3"
+Info (12128): Elaborating entity "ball_move" for hierarchy "ball_move:inst1"
+Info (12128): Elaborating entity "back_ground_draw" for hierarchy "back_ground_draw:inst2"
+Info (12128): Elaborating entity "LPM_CONSTANT" for hierarchy "LPM_CONSTANT:inst4"
+Warning (287013): Variable or input pin "ag" is defined but never used. File: c:/intelfpga/17.0/quartus/libraries/megafunctions/lpm_constant.tdf Line: 46
+Info (12130): Elaborated megafunction instantiation "LPM_CONSTANT:inst4"
+Info (12133): Instantiated megafunction "LPM_CONSTANT:inst4" with the following parameter:
+    Info (12134): Parameter "LPM_CVALUE" = "206"
+    Info (12134): Parameter "LPM_WIDTH" = "32"
+Info (12128): Elaborating entity "LPM_CONSTANT" for hierarchy "LPM_CONSTANT:inst6"
+Warning (287013): Variable or input pin "ag" is defined but never used. File: c:/intelfpga/17.0/quartus/libraries/megafunctions/lpm_constant.tdf Line: 46
+Info (12130): Elaborated megafunction instantiation "LPM_CONSTANT:inst6"
+Info (12133): Instantiated megafunction "LPM_CONSTANT:inst6" with the following parameter:
+    Info (12134): Parameter "LPM_CVALUE" = "186"
+    Info (12134): Parameter "LPM_WIDTH" = "32"
+Error (12006): Node instance "inst9" instantiates undefined entity "KBDINTF". Ensure that required library paths are specified correctly, define the specified entity, or change the instantiation. If this entity represents Intel FPGA or third-party IP, generate the synthesis files for the IP.
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 3 warnings
+    Error: Peak virtual memory: 706 megabytes
+    Error: Processing ended: Tue May 29 21:08:20 2018
+    Error: Elapsed time: 00:00:13
+    Error: Total CPU time (on all processors): 00:00:23
 
 
