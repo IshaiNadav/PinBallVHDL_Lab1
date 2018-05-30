@@ -1,6 +1,6 @@
 Analysis & Synthesis report for PinBall
-Tue May 29 21:08:20 2018
-Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
+Wed May 30 17:49:42 2018
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
 ---------------------
@@ -34,22 +34,22 @@ agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+-----------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Tue May 29 21:08:20 2018               ;
-; Quartus Prime Version       ; 17.0.0 Build 595 04/25/2017 SJ Standard Edition ;
-; Revision Name               ; PinBall                                         ;
-; Top-level Entity Name       ; PIN_BALL_GAMEPLAY                               ;
-; Family                      ; Cyclone V                                       ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                       ;
-; Total registers             ; N/A until Partition Merge                       ;
-; Total pins                  ; N/A until Partition Merge                       ;
-; Total virtual pins          ; N/A until Partition Merge                       ;
-; Total block memory bits     ; N/A until Partition Merge                       ;
-; Total PLLs                  ; N/A until Partition Merge                       ;
-; Total DLLs                  ; N/A until Partition Merge                       ;
-+-----------------------------+-------------------------------------------------+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Failed - Wed May 30 17:49:42 2018           ;
+; Quartus Prime Version       ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Revision Name               ; PinBall                                     ;
+; Top-level Entity Name       ; PIN_BALL_GAMEPLAY                           ;
+; Family                      ; Cyclone V                                   ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
+; Total registers             ; N/A until Partition Merge                   ;
+; Total pins                  ; N/A until Partition Merge                   ;
+; Total virtual pins          ; N/A until Partition Merge                   ;
+; Total block memory bits     ; N/A until Partition Merge                   ;
+; Total PLLs                  ; N/A until Partition Merge                   ;
+; Total DLLs                  ; N/A until Partition Merge                   ;
++-----------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -144,8 +144,8 @@ agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -160,37 +160,37 @@ agreement for further details.
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
-    Info: Processing started: Tue May 29 21:08:07 2018
+    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+    Info: Processing started: Wed May 30 17:49:25 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PinBall -c PinBall
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file vga_controller.vhd
-    Info (12022): Found design unit 1: VGA_Controller-behav File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/VGA_Controller.vhd Line: 32
-    Info (12023): Found entity 1: VGA_Controller File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/VGA_Controller.vhd Line: 7
+    Info (12022): Found design unit 1: VGA_Controller-behav File: C:/pinball_vhdl_real/PinBallVHDL_Lab1/Quartus_Project/VGA_Controller.vhd Line: 32
+    Info (12023): Found entity 1: VGA_Controller File: C:/pinball_vhdl_real/PinBallVHDL_Lab1/Quartus_Project/VGA_Controller.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file objects_mux.vhd
-    Info (12022): Found design unit 1: objects_mux-behav File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/objects_mux.vhd Line: 29
-    Info (12023): Found entity 1: objects_mux File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/objects_mux.vhd Line: 8
+    Info (12022): Found design unit 1: objects_mux-behav File: C:/pinball_vhdl_real/PinBallVHDL_Lab1/Quartus_Project/objects_mux.vhd Line: 29
+    Info (12023): Found entity 1: objects_mux File: C:/pinball_vhdl_real/PinBallVHDL_Lab1/Quartus_Project/objects_mux.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file back_ground_draw.vhd
-    Info (12022): Found design unit 1: back_ground_draw-behav File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/back_ground_draw.vhd Line: 20
-    Info (12023): Found entity 1: back_ground_draw File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/back_ground_draw.vhd Line: 9
+    Info (12022): Found design unit 1: back_ground_draw-behav File: C:/pinball_vhdl_real/PinBallVHDL_Lab1/Quartus_Project/back_ground_draw.vhd Line: 20
+    Info (12023): Found entity 1: back_ground_draw File: C:/pinball_vhdl_real/PinBallVHDL_Lab1/Quartus_Project/back_ground_draw.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file hexss.vhd
-    Info (12022): Found design unit 1: hexss-arc_hexss File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/hexss.vhd Line: 8
-    Info (12023): Found entity 1: hexss File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/hexss.vhd Line: 3
+    Info (12022): Found design unit 1: hexss-arc_hexss File: C:/pinball_vhdl_real/PinBallVHDL_Lab1/Quartus_Project/hexss.vhd Line: 8
+    Info (12023): Found entity 1: hexss File: C:/pinball_vhdl_real/PinBallVHDL_Lab1/Quartus_Project/hexss.vhd Line: 3
 Info (12021): Found 2 design units, including 1 entities, in source file hp_down_counter.vhd
-    Info (12022): Found design unit 1: hp_down_counter-hp_down_counter_arch File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd Line: 17
-    Info (12023): Found entity 1: hp_down_counter File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd Line: 6
+    Info (12022): Found design unit 1: hp_down_counter-hp_down_counter_arch File: C:/pinball_vhdl_real/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd Line: 17
+    Info (12023): Found entity 1: hp_down_counter File: C:/pinball_vhdl_real/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file score_up_counter.vhd
-    Info (12022): Found design unit 1: score_up_counter-score_up_counter_arch File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/score_up_counter.vhd Line: 17
-    Info (12023): Found entity 1: score_up_counter File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/score_up_counter.vhd Line: 6
+    Info (12022): Found design unit 1: score_up_counter-score_up_counter_arch File: C:/pinball_vhdl_real/PinBallVHDL_Lab1/Quartus_Project/score_up_counter.vhd Line: 22
+    Info (12023): Found entity 1: score_up_counter File: C:/pinball_vhdl_real/PinBallVHDL_Lab1/Quartus_Project/score_up_counter.vhd Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file hp_score_module.bdf
     Info (12023): Found entity 1: HP_Score_Module
 Info (12021): Found 2 design units, including 1 entities, in source file ball_move.vhd
-    Info (12022): Found design unit 1: ball_move-arc_ball_move File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 24
-    Info (12023): Found entity 1: ball_move File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 6
+    Info (12022): Found design unit 1: ball_move-arc_ball_move File: C:/pinball_vhdl_real/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 24
+    Info (12023): Found entity 1: ball_move File: C:/pinball_vhdl_real/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file ball_object.vhd
-    Info (12022): Found design unit 1: ball_object-behav File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_object.vhd Line: 19
-    Info (12023): Found entity 1: ball_object File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_object.vhd Line: 4
+    Info (12022): Found design unit 1: ball_object-behav File: C:/pinball_vhdl_real/PinBallVHDL_Lab1/Quartus_Project/ball_object.vhd Line: 19
+    Info (12023): Found entity 1: ball_object File: C:/pinball_vhdl_real/PinBallVHDL_Lab1/Quartus_Project/ball_object.vhd Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file pin_ball_gameplay.bdf
     Info (12023): Found entity 1: PIN_BALL_GAMEPLAY
 Info (12127): Elaborating entity "PIN_BALL_GAMEPLAY" for the top level hierarchy
@@ -200,22 +200,22 @@ Info (12128): Elaborating entity "ball_object" for hierarchy "ball_object:inst3"
 Info (12128): Elaborating entity "ball_move" for hierarchy "ball_move:inst1"
 Info (12128): Elaborating entity "back_ground_draw" for hierarchy "back_ground_draw:inst2"
 Info (12128): Elaborating entity "LPM_CONSTANT" for hierarchy "LPM_CONSTANT:inst4"
-Warning (287013): Variable or input pin "ag" is defined but never used. File: c:/intelfpga/17.0/quartus/libraries/megafunctions/lpm_constant.tdf Line: 46
+Warning (287013): Variable or input pin "ag" is defined but never used. File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_constant.tdf Line: 46
 Info (12130): Elaborated megafunction instantiation "LPM_CONSTANT:inst4"
 Info (12133): Instantiated megafunction "LPM_CONSTANT:inst4" with the following parameter:
     Info (12134): Parameter "LPM_CVALUE" = "206"
     Info (12134): Parameter "LPM_WIDTH" = "32"
 Info (12128): Elaborating entity "LPM_CONSTANT" for hierarchy "LPM_CONSTANT:inst6"
-Warning (287013): Variable or input pin "ag" is defined but never used. File: c:/intelfpga/17.0/quartus/libraries/megafunctions/lpm_constant.tdf Line: 46
+Warning (287013): Variable or input pin "ag" is defined but never used. File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_constant.tdf Line: 46
 Info (12130): Elaborated megafunction instantiation "LPM_CONSTANT:inst6"
 Info (12133): Instantiated megafunction "LPM_CONSTANT:inst6" with the following parameter:
     Info (12134): Parameter "LPM_CVALUE" = "186"
     Info (12134): Parameter "LPM_WIDTH" = "32"
 Error (12006): Node instance "inst9" instantiates undefined entity "KBDINTF". Ensure that required library paths are specified correctly, define the specified entity, or change the instantiation. If this entity represents Intel FPGA or third-party IP, generate the synthesis files for the IP.
 Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 3 warnings
-    Error: Peak virtual memory: 706 megabytes
-    Error: Processing ended: Tue May 29 21:08:20 2018
-    Error: Elapsed time: 00:00:13
-    Error: Total CPU time (on all processors): 00:00:23
+    Error: Peak virtual memory: 695 megabytes
+    Error: Processing ended: Wed May 30 17:49:42 2018
+    Error: Elapsed time: 00:00:17
+    Error: Total CPU time (on all processors): 00:00:38
 
 
