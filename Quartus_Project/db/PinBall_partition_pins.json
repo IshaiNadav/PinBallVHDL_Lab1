@@ -4,559 +4,99 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "drawing_request",
+					"name" : "VGA_VS",
 					"strict" : false
 				},
 				{
-					"name" : "mVGA_RGB[0]",
+					"name" : "VGA_HS",
 					"strict" : false
 				},
 				{
-					"name" : "mVGA_RGB[1]",
+					"name" : "VGA_CLK",
 					"strict" : false
 				},
 				{
-					"name" : "mVGA_RGB[2]",
+					"name" : "VGA_BLANK_N",
 					"strict" : false
 				},
 				{
-					"name" : "mVGA_RGB[3]",
+					"name" : "led_out",
 					"strict" : false
 				},
 				{
-					"name" : "mVGA_RGB[4]",
+					"name" : "VGA_B[7]",
 					"strict" : false
 				},
 				{
-					"name" : "mVGA_RGB[5]",
+					"name" : "VGA_B[6]",
 					"strict" : false
 				},
 				{
-					"name" : "mVGA_RGB[6]",
+					"name" : "VGA_G[7]",
 					"strict" : false
 				},
 				{
-					"name" : "mVGA_RGB[7]",
+					"name" : "VGA_G[6]",
 					"strict" : false
 				},
 				{
-					"name" : "oCoord_X[22]",
+					"name" : "VGA_G[5]",
 					"strict" : false
 				},
 				{
-					"name" : "oCoord_X[25]",
+					"name" : "VGA_R[7]",
 					"strict" : false
 				},
 				{
-					"name" : "oCoord_X[23]",
+					"name" : "VGA_R[6]",
 					"strict" : false
 				},
 				{
-					"name" : "oCoord_X[28]",
+					"name" : "VGA_R[5]",
 					"strict" : false
 				},
 				{
-					"name" : "oCoord_X[27]",
+					"name" : "CLOCK_50",
 					"strict" : false
 				},
 				{
-					"name" : "oCoord_X[26]",
+					"name" : "resetN",
 					"strict" : false
 				},
 				{
-					"name" : "oCoord_X[24]",
+					"name" : "is_dead",
 					"strict" : false
 				},
 				{
-					"name" : "oCoord_X[15]",
+					"name" : "pin_name1",
 					"strict" : false
 				},
 				{
-					"name" : "oCoord_X[18]",
+					"name" : "game_over",
 					"strict" : false
 				},
 				{
-					"name" : "oCoord_X[16]",
+					"name" : "kbd_data",
 					"strict" : false
 				},
 				{
-					"name" : "oCoord_X[21]",
+					"name" : "kbd_clk",
 					"strict" : false
 				},
 				{
-					"name" : "oCoord_X[20]",
+					"name" : "bounce_eanble",
 					"strict" : false
 				},
 				{
-					"name" : "oCoord_X[19]",
+					"name" : "bounce_data[1]",
 					"strict" : false
 				},
 				{
-					"name" : "oCoord_X[17]",
+					"name" : "bounce_data[0]",
 					"strict" : false
 				},
 				{
-					"name" : "oCoord_X[11]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_X[14]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_X[13]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_X[12]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_X[5]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_X[7]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_X[6]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_X[4]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_X[3]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_X[0]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[0]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_X[1]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[1]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_X[2]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_X[10]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_X[9]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_X[8]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_X[29]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_X[31]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_X[30]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[4]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[7]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[6]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[5]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[3]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[2]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[9]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[8]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[12]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[11]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[14]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[13]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[10]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[17]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[16]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[19]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[18]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[21]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[20]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[15]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[23]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[22]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[25]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[24]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[28]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[27]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[26]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[31]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[30]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartX[29]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[31]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[30]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[4]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[4]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[7]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[6]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[5]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[7]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[6]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[5]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[3]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[2]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[3]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[2]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[1]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[1]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[0]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[0]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[9]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[8]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[9]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[12]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[11]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[12]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[14]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[13]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[14]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[13]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[11]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[10]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[10]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[8]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[17]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[16]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[17]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[19]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[18]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[19]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[21]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[20]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[21]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[20]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[18]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[16]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[15]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[15]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[23]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[22]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[23]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[25]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[24]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[25]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[28]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[27]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[26]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[28]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[27]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[26]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[24]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[22]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[31]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[30]",
-					"strict" : false
-				},
-				{
-					"name" : "ObjectStartY[29]",
-					"strict" : false
-				},
-				{
-					"name" : "oCoord_Y[29]",
-					"strict" : false
-				},
-				{
-					"name" : "CLK",
-					"strict" : false
-				},
-				{
-					"name" : "RESETn",
+					"name" : "flip_enable",
 					"strict" : false
 				}
 			]
