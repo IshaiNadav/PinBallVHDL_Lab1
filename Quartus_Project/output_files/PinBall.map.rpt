@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PinBall
-Fri Jun 01 18:46:53 2018
+Fri Jun 01 19:30:22 2018
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
 
 
@@ -54,7 +54,7 @@ agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Jun 01 18:46:53 2018           ;
+; Analysis & Synthesis Status     ; Successful - Fri Jun 01 19:30:22 2018           ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Standard Edition ;
 ; Revision Name                   ; PinBall                                         ;
 ; Top-level Entity Name           ; PIN_BALL_GAMEPLAY                               ;
@@ -220,14 +220,14 @@ agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 477            ;
+; Estimate of Logic utilization (ALMs needed) ; 504            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 726            ;
-;     -- 7 input functions                    ; 6              ;
-;     -- 6 input functions                    ; 208            ;
-;     -- 5 input functions                    ; 96             ;
-;     -- 4 input functions                    ; 79             ;
-;     -- <=3 input functions                  ; 337            ;
+; Combinational ALUT usage for logic          ; 753            ;
+;     -- 7 input functions                    ; 9              ;
+;     -- 6 input functions                    ; 231            ;
+;     -- 5 input functions                    ; 102            ;
+;     -- 4 input functions                    ; 85             ;
+;     -- <=3 input functions                  ; 326            ;
 ;                                             ;                ;
 ; Dedicated logic registers                   ; 363            ;
 ;                                             ;                ;
@@ -237,8 +237,8 @@ agreement for further details.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 250            ;
-; Total fan-out                               ; 4216           ;
-; Average fan-out                             ; 3.55           ;
+; Total fan-out                               ; 4410           ;
+; Average fan-out                             ; 3.64           ;
 +---------------------------------------------+----------------+
 
 
@@ -247,7 +247,7 @@ agreement for further details.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                           ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |PIN_BALL_GAMEPLAY                                                                                                                      ; 726 (2)             ; 363 (0)                   ; 0                 ; 0          ; 44   ; 0            ; |PIN_BALL_GAMEPLAY                                                                                                                                                                                                                                                                                                                                            ; PIN_BALL_GAMEPLAY                 ; work         ;
+; |PIN_BALL_GAMEPLAY                                                                                                                      ; 753 (2)             ; 363 (0)                   ; 0                 ; 0          ; 44   ; 0            ; |PIN_BALL_GAMEPLAY                                                                                                                                                                                                                                                                                                                                            ; PIN_BALL_GAMEPLAY                 ; work         ;
 ;    |KBDINTF:inst9|                                                                                                                      ; 67 (0)              ; 80 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|KBDINTF:inst9                                                                                                                                                                                                                                                                                                                              ; KBDINTF                           ; work         ;
 ;       |Debug_Bitrec_partial:DBP|                                                                                                        ; 35 (0)              ; 51 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|KBDINTF:inst9|Debug_Bitrec_partial:DBP                                                                                                                                                                                                                                                                                                     ; Debug_Bitrec_partial              ; work         ;
 ;          |bitrec:inst|                                                                                                                  ; 15 (15)             ; 28 (28)                   ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst                                                                                                                                                                                                                                                                                         ; bitrec                            ; work         ;
@@ -262,7 +262,7 @@ agreement for further details.
 ;    |VGA_Controller:inst|                                                                                                                ; 159 (159)           ; 140 (140)                 ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|VGA_Controller:inst                                                                                                                                                                                                                                                                                                                        ; VGA_Controller                    ; work         ;
 ;    |back_ground_draw:inst2|                                                                                                             ; 36 (36)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|back_ground_draw:inst2                                                                                                                                                                                                                                                                                                                     ; back_ground_draw                  ; work         ;
 ;    |ball_move:inst1|                                                                                                                    ; 70 (70)             ; 39 (39)                   ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|ball_move:inst1                                                                                                                                                                                                                                                                                                                            ; ball_move                         ; work         ;
-;    |ball_object:inst3|                                                                                                                  ; 274 (274)           ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|ball_object:inst3                                                                                                                                                                                                                                                                                                                          ; ball_object                       ; work         ;
+;    |ball_object:inst3|                                                                                                                  ; 301 (301)           ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|ball_object:inst3                                                                                                                                                                                                                                                                                                                          ; ball_object                       ; work         ;
 ;    |objects_mux:inst5|                                                                                                                  ; 19 (19)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|objects_mux:inst5                                                                                                                                                                                                                                                                                                                          ; objects_mux                       ; work         ;
 ;    |sld_hub:auto_hub|                                                                                                                   ; 99 (1)              ; 87 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld   ;
 ;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 98 (0)              ; 87 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input       ; altera_sld   ;
@@ -356,15 +356,15 @@ Encoding Type:  One-Hot
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                                                                                                                                                                                                                                                               ; Fan out ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; ball_move:inst1|ObjectStartY_t[0]                                                                                                                                                                                                                                                                                               ; 5       ;
-; ball_move:inst1|ObjectStartY_t[8]                                                                                                                                                                                                                                                                                               ; 4       ;
-; ball_move:inst1|ObjectStartY_t[7]                                                                                                                                                                                                                                                                                               ; 5       ;
-; ball_move:inst1|ObjectStartX_t[6]                                                                                                                                                                                                                                                                                               ; 3       ;
-; ball_move:inst1|ObjectStartX_t[2]                                                                                                                                                                                                                                                                                               ; 4       ;
+; ball_move:inst1|ObjectStartX_t[2]                                                                                                                                                                                                                                                                                               ; 2       ;
 ; ball_move:inst1|ObjectStartX_t[9]                                                                                                                                                                                                                                                                                               ; 3       ;
-; ball_move:inst1|Ball_Movement_Y[5]                                                                                                                                                                                                                                                                                              ; 3       ;
-; ball_move:inst1|Ball_Movement_X[7]                                                                                                                                                                                                                                                                                              ; 2       ;
+; ball_move:inst1|ObjectStartX_t[6]                                                                                                                                                                                                                                                                                               ; 3       ;
+; ball_move:inst1|ObjectStartY_t[0]                                                                                                                                                                                                                                                                                               ; 4       ;
+; ball_move:inst1|ObjectStartY_t[8]                                                                                                                                                                                                                                                                                               ; 6       ;
+; ball_move:inst1|ObjectStartY_t[7]                                                                                                                                                                                                                                                                                               ; 6       ;
 ; ball_move:inst1|Ball_Movement_X[8]                                                                                                                                                                                                                                                                                              ; 2       ;
+; ball_move:inst1|Ball_Movement_X[7]                                                                                                                                                                                                                                                                                              ; 2       ;
+; ball_move:inst1|Ball_Movement_Y[5]                                                                                                                                                                                                                                                                                              ; 3       ;
 ; ball_move:inst1|Ball_Movement_Y[9]                                                                                                                                                                                                                                                                                              ; 2       ;
 ; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[1] ; 3       ;
 ; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[2] ; 3       ;
@@ -377,15 +377,15 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |PIN_BALL_GAMEPLAY|KBDINTF:inst9|lpm_our:inst3|lpm_constant:LPM_CONSTANT_component|lpm_constant_458:ag|sld_mod_ram_rom:mgl_prim1|constant_shift_reg[1]                                               ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |PIN_BALL_GAMEPLAY|ball_move:inst1|Ball_Movement_X[3]                                                                                                                                                ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |PIN_BALL_GAMEPLAY|KBDINTF:inst9|lpm_our:inst3|lpm_constant:LPM_CONSTANT_component|lpm_constant_458:ag|sld_mod_ram_rom:mgl_prim1|sld_rom_sr:\constant_logic_gen:name_gen:info_rom_sr|word_counter[2] ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |PIN_BALL_GAMEPLAY|ball_move:inst1|Ball_Movement_Y[8]                                                                                                                                                ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; Yes        ; |PIN_BALL_GAMEPLAY|objects_mux:inst5|m_mVGA_t[2]                                                                                                                                                     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |PIN_BALL_GAMEPLAY|KBDINTF:inst9|lpm_our:inst3|lpm_constant:LPM_CONSTANT_component|lpm_constant_458:ag|sld_mod_ram_rom:mgl_prim1|constant_shift_reg[3]                                               ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |PIN_BALL_GAMEPLAY|ball_move:inst1|Ball_Movement_X[9]                                                                                                                                                ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |PIN_BALL_GAMEPLAY|KBDINTF:inst9|lpm_our:inst3|lpm_constant:LPM_CONSTANT_component|lpm_constant_458:ag|sld_mod_ram_rom:mgl_prim1|sld_rom_sr:\constant_logic_gen:name_gen:info_rom_sr|word_counter[0] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |PIN_BALL_GAMEPLAY|ball_move:inst1|Ball_Movement_Y[6]                                                                                                                                                ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; Yes        ; |PIN_BALL_GAMEPLAY|objects_mux:inst5|m_mVGA_t[1]                                                                                                                                                     ;
 ; 16:1               ; 4 bits    ; 40 LEs        ; 28 LEs               ; 12 LEs                 ; Yes        ; |PIN_BALL_GAMEPLAY|KBDINTF:inst9|lpm_our:inst3|lpm_constant:LPM_CONSTANT_component|lpm_constant_458:ag|sld_mod_ram_rom:mgl_prim1|sld_rom_sr:\constant_logic_gen:name_gen:info_rom_sr|WORD_SR[1]      ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |PIN_BALL_GAMEPLAY|ball_move:inst1|Ball_Movement_X[8]                                                                                                                                                ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |PIN_BALL_GAMEPLAY|ball_move:inst1|Ball_Movement_X[7]                                                                                                                                                ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |PIN_BALL_GAMEPLAY|ball_move:inst1|Ball_Movement_Y[9]                                                                                                                                                ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |PIN_BALL_GAMEPLAY|KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst|Selector3                                                                                                                      ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |PIN_BALL_GAMEPLAY|KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst|Selector1                                                                                                                      ;
 ; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |PIN_BALL_GAMEPLAY|KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst|Selector0                                                                                                                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -460,27 +460,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA CLR           ; 23                          ;
 ;     ENA CLR SCLR      ; 43                          ;
 ;     ENA SLD           ; 16                          ;
-; arriav_lcell_comb     ; 626                         ;
-;     arith             ; 188                         ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 165                         ;
-;         2 data inputs ; 21                          ;
-;     extend            ; 6                           ;
-;         7 data inputs ; 6                           ;
-;     normal            ; 422                         ;
+; arriav_lcell_comb     ; 653                         ;
+;     arith             ; 178                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 157                         ;
+;         2 data inputs ; 20                          ;
+;     extend            ; 9                           ;
+;         7 data inputs ; 9                           ;
+;     normal            ; 455                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 7                           ;
-;         2 data inputs ; 47                          ;
-;         3 data inputs ; 33                          ;
-;         4 data inputs ; 64                          ;
-;         5 data inputs ; 76                          ;
-;         6 data inputs ; 194                         ;
-;     shared            ; 10                          ;
-;         2 data inputs ; 10                          ;
+;         2 data inputs ; 44                          ;
+;         3 data inputs ; 34                          ;
+;         4 data inputs ; 70                          ;
+;         5 data inputs ; 82                          ;
+;         6 data inputs ; 217                         ;
+;     shared            ; 11                          ;
+;         2 data inputs ; 11                          ;
 ; boundary_port         ; 71                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 10.00                       ;
-; Average LUT depth     ; 4.83                        ;
+; Average LUT depth     ; 5.12                        ;
 +-----------------------+-----------------------------+
 
 
@@ -489,7 +489,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -499,7 +499,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
-    Info: Processing started: Fri Jun 01 18:46:22 2018
+    Info: Processing started: Fri Jun 01 19:29:50 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PinBall -c PinBall
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -604,7 +604,7 @@ Info (12133): Instantiated megafunction "lpm_constant:inst6" with the following 
     Info (12134): Parameter "LPM_CVALUE" = "186"
     Info (12134): Parameter "LPM_WIDTH" = "32"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2018.06.01.18:46:41 Progress: Loading sldcc85be97/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2018.06.01.19:30:09 Progress: Loading sldcc85be97/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -654,12 +654,12 @@ Critical Warning (18061): Ignored Power-Up Level option on the following registe
     Critical Warning (18010): Register VGA_Controller:inst|oCoord_Y[31] will power up to Low File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/VGA_Controller.vhd Line: 84
     Critical Warning (18010): Register VGA_Controller:inst|oCoord_X[0] will power up to Low File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/VGA_Controller.vhd Line: 84
     Critical Warning (18010): Register VGA_Controller:inst|oCoord_Y[0] will power up to Low File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/VGA_Controller.vhd Line: 84
-    Critical Warning (18010): Register ball_move:inst1|ObjectStartY_t[0] will power up to High File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 44
-    Critical Warning (18010): Register ball_move:inst1|ObjectStartY_t[8] will power up to High File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 44
-    Critical Warning (18010): Register ball_move:inst1|ObjectStartY_t[7] will power up to High File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 44
     Critical Warning (18010): Register ball_move:inst1|ObjectStartX_t[9] will power up to High File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 44
     Critical Warning (18010): Register ball_move:inst1|ObjectStartX_t[6] will power up to High File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 44
     Critical Warning (18010): Register ball_move:inst1|ObjectStartX_t[2] will power up to High File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 44
+    Critical Warning (18010): Register ball_move:inst1|ObjectStartY_t[8] will power up to High File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 44
+    Critical Warning (18010): Register ball_move:inst1|ObjectStartY_t[7] will power up to High File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 44
+    Critical Warning (18010): Register ball_move:inst1|ObjectStartY_t[0] will power up to High File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 44
     Critical Warning (18010): Register VGA_Controller:inst|V_Cont[0] will power up to Low File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/VGA_Controller.vhd Line: 152
 Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -668,14 +668,14 @@ Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "flip_data[2]"
     Warning (15610): No output dependent on input pin "flip_data[1]"
     Warning (15610): No output dependent on input pin "flip_data[0]"
-Info (21057): Implemented 868 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 895 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 17 input pins
     Info (21059): Implemented 31 output pins
-    Info (21061): Implemented 819 logic cells
+    Info (21061): Implemented 846 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 41 warnings
-    Info: Peak virtual memory: 741 megabytes
-    Info: Processing ended: Fri Jun 01 18:46:53 2018
-    Info: Elapsed time: 00:00:31
-    Info: Total CPU time (on all processors): 00:00:49
+    Info: Peak virtual memory: 740 megabytes
+    Info: Processing ended: Fri Jun 01 19:30:22 2018
+    Info: Elapsed time: 00:00:32
+    Info: Total CPU time (on all processors): 00:00:48
 
 
