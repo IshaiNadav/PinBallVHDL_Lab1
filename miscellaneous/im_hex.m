@@ -33,13 +33,13 @@ function [IMAGE,MASK] = im_hex( image, width, height, filter )
     IMAGE = out;
     MASK = msk;
     
-    file_name = strcat(image,'_post_im_hex.txt');
-    headerStr = sprintf('%s\n Object Dimentions:\n X: %d\nY:  %d\n\n',image,width,hight);
+    %file_name = strcat(image,'_post_im_hex.txt');
+    %headerStr = sprintf('%s\n Object Dimentions:\n X: %d\nY:  %d\n\n',image,width,hight);
     
-    fileID = fopen(file_name,'wt');
-    fprintf(fileID,headerStr);
-    fprintf(fileID,'constant object_colors: ram_array := (\n%s\n);\n\n',out);
-    fprintf(fileID,'constant object : object_form := (\n%s\n);\n\n',msk);
-    fclose(fileID);
+    %fileID = fopen(file_name,'wt');
+    %fprintf(fileID,headerStr);
+    %fprintf(fileID,'constant object_colors: ram_array := (\n%s\n);\n\n',out);
+    %fprintf(fileID,'constant object : object_form := (\n%s\n);\n\n',msk);
+    %fclose(fileID);
     
 end
