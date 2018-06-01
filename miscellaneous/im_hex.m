@@ -32,4 +32,12 @@ function [IMAGE,MASK] = im_hex( image, width, height, filter )
     end
     IMAGE = out;
     MASK = msk;
+    
+    file_name = strcat(image,'_post_im_hex.txt');
+    
+    fileID = fopen(file_name,'wt');
+    fprintf(fileID,'\tIMAGE=\n\n %s \n\n',out);
+    fprintf(fileID,'\tMASK=\n\n %s \n\n',msk);
+    fclose(fileID);
+    
 end
