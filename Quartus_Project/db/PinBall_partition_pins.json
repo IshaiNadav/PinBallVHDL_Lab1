@@ -84,15 +84,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "bounce_data[0]",
+					"strict" : false
+				},
+				{
 					"name" : "bounce_eanble",
 					"strict" : false
 				},
 				{
 					"name" : "bounce_data[1]",
-					"strict" : false
-				},
-				{
-					"name" : "bounce_data[0]",
 					"strict" : false
 				},
 				{
