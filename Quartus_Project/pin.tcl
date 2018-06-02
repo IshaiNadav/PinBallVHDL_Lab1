@@ -20,17 +20,17 @@ set_location_assignment PIN_AF14 -to CLOCK_50
 # KEY
 #============================================================
 set_location_assignment PIN_AJ4 -to resetN  ; # KEY[0]
-set_location_assignment PIN_AK4 -to KEY[1]
-set_location_assignment PIN_AA14 -to KEY[2]
-set_location_assignment PIN_AA15 -to KEY[3]
+set_location_assignment PIN_AK4 -to scored
+set_location_assignment PIN_AA14 -to died
+set_location_assignment PIN_AA15 -to start_shot
 
 #============================================================
 # SW
 #============================================================
 set_location_assignment PIN_AB30 -to recording ; #SW[0]
 set_location_assignment PIN_Y27 -to playing ; #SW[1]
-set_location_assignment PIN_AB28 -to mux[0] ; #SW[2]
-set_location_assignment PIN_AC30 -to mux[1] ; #SW[3]
+set_location_assignment PIN_AB28 -to turbo ; #SW[2]
+set_location_assignment PIN_AC30 -to mux[0] ; #SW[3]
 set_location_assignment PIN_W25 -to mux[2] ; #SW[4]
 set_location_assignment PIN_V25 -to mux[3] ; #SW[5]
 set_location_assignment PIN_AC28 -to freq[0] ;# SW[6]
@@ -42,8 +42,8 @@ set_location_assignment PIN_AA30 -to MICROPHON_ON ; #SW[9]
 # LED
 #============================================================ #LEDR[0]
 set_location_assignment PIN_AA24 -to play_check 
-set_location_assignment PIN_AB23 -to LEDR[1]
-set_location_assignment PIN_AC23 -to LEDR[2]
+set_location_assignment PIN_AB23 -to game_over
+set_location_assignment PIN_AC23 -to one_sec
 set_location_assignment PIN_AD24 -to LEDR[3]
 set_location_assignment PIN_AG25 -to LEDR[4]
 set_location_assignment PIN_AF25 -to LEDR[5]

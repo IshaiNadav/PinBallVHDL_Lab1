@@ -8,15 +8,14 @@ use ieee.numeric_std.all;
 entity objects_mux is
 port 	(
 		CLK	: in std_logic; --						//	27 MHz
-		b_drawing_request : in std_logic;
-		b_mVGA_RGB 	: in std_logic_vector(7 downto 0); --	, -- b  input signal 
+		ball_drawing_request : in std_logic;
+		ball_mVGA_RGB 	: in std_logic_vector(7 downto 0); --	, -- b  input signal 
 		
-		--rect_drawing_request: in std_logic;
-		--rect_mVGA_RGB 	: in std_logic_vector(7 downto 0); --	, -- b  input signal 
+		obj_drawing_request: in std_logic;
+		obj_mVGA_RGB 	: in std_logic_vector(7 downto 0); --	, -- b  input signal 
 
 		y_drawing_request : in std_logic;	-- not used in this exammple 
 		y_mVGA_RGB 	: in std_logic_vector(7 downto 0); --	,  -- y input signal 
-
 
 		m_mVGA_R 	: out std_logic_vector(7 downto 0); --	,  
 		m_mVGA_G 	: out std_logic_vector(7 downto 0); --	, 
@@ -39,10 +38,10 @@ begin
 			m_mVGA_t	<=  (others => '0') ; 	
 
 	elsif rising_edge(CLK) then
-		--if (rect_drawing_request = '1') then
-			--m_mVGA_t <= rect_mVGA_RGB;  --first priority from B 
-		if (b_drawing_request = '1' ) then  
-			m_mVGA_t <= b_mVGA_RGB;  --first priority from B 
+		if (obj_drawing_request = '1') then
+			m_mVGA_t <= obj_mVGA_RGB;  --first priority from B 
+		elsif (ball_drawing_request = '1' ) then  
+			m_mVGA_t <= ball_mVGA_RGB;  --first priority from B 
 		else
 			m_mVGA_t <= y_mVGA_RGB ; -- second priority from y
 		end if; 

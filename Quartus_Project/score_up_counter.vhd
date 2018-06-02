@@ -29,13 +29,12 @@ architecture score_up_counter_arch of score_up_counter is
 
 begin
 --	score_out <= score_keeper;
-	score_out_3 <= score_keeper_3;
-	score_out_2 <= score_keeper_2;
-	score_out_1 <= score_keeper_1;
-	score_out_0 <= score_keeper_0;
-	
 	process (clk, resetN)
 	begin
+		score_out_3 <= score_keeper_3;
+		score_out_2 <= score_keeper_2;
+		score_out_1 <= score_keeper_1;
+		score_out_0 <= score_keeper_0;
 		if (resetN = '0') then
 			score_keeper_3 <= "0000";
 			score_keeper_2 <= "0000";

@@ -21,7 +21,7 @@ agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 232 160)
+	(rect 16 16 240 160)
 	(text "score_up_counter" (rect 5 0 78 12)(font "Arial" ))
 	(text "inst" (rect 8 128 20 140)(font "Arial" ))
 	(port
@@ -60,13 +60,34 @@ agreement for further details.
 		(line (pt 0 96)(pt 16 96)(line_width 1))
 	)
 	(port
-		(pt 216 32)
+		(pt 224 32)
 		(output)
-		(text "score_out[16..0]" (rect 0 0 63 12)(font "Arial" ))
-		(text "score_out[16..0]" (rect 132 27 195 39)(font "Arial" ))
-		(line (pt 216 32)(pt 200 32)(line_width 3))
+		(text "score_out_3[3..0]" (rect 0 0 70 12)(font "Arial" ))
+		(text "score_out_3[3..0]" (rect 133 27 203 39)(font "Arial" ))
+		(line (pt 224 32)(pt 208 32)(line_width 3))
+	)
+	(port
+		(pt 224 48)
+		(output)
+		(text "score_out_2[3..0]" (rect 0 0 70 12)(font "Arial" ))
+		(text "score_out_2[3..0]" (rect 133 43 203 55)(font "Arial" ))
+		(line (pt 224 48)(pt 208 48)(line_width 3))
+	)
+	(port
+		(pt 224 64)
+		(output)
+		(text "score_out_1[3..0]" (rect 0 0 69 12)(font "Arial" ))
+		(text "score_out_1[3..0]" (rect 134 59 203 71)(font "Arial" ))
+		(line (pt 224 64)(pt 208 64)(line_width 3))
+	)
+	(port
+		(pt 224 80)
+		(output)
+		(text "score_out_0[3..0]" (rect 0 0 70 12)(font "Arial" ))
+		(text "score_out_0[3..0]" (rect 133 75 203 87)(font "Arial" ))
+		(line (pt 224 80)(pt 208 80)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 200 128)(line_width 1))
+		(rectangle (rect 16 16 208 128)(line_width 1))
 	)
 )
