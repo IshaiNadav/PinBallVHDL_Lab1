@@ -20,7 +20,13 @@ port 	(
 		m_mVGA_R 	: out std_logic_vector(7 downto 0); --	,  
 		m_mVGA_G 	: out std_logic_vector(7 downto 0); --	, 
 		m_mVGA_B 	: out std_logic_vector(7 downto 0); --	, 
-		RESETn : in std_logic
+		RESETn : in std_logic;
+		
+		left_flipper_drawing_request : in std_logic;
+		left_flipper_mVGA_RGB : in std_logic_vector(7 downto 0);
+		
+		right_flipper_drawing_request : in std_logic;
+		right_flipper_mVGA_RGB : in std_logic_vector(7 downto 0)
 
 	);
 end objects_mux;
@@ -38,12 +44,17 @@ begin
 			m_mVGA_t	<=  (others => '0') ; 	
 
 	elsif rising_edge(CLK) then
-		if (obj_drawing_request = '1') then
-			m_mVGA_t <= obj_mVGA_RGB;  --first priority from B 
+		if (left_flipper_drawing_request = '1') then
+			m_mVGA_t <= left_flipper_mVGA_RGB;
+		elsif (right_flipper_drawing_request = '1') then
+			m_mVGA_t <= right_flipper_mVGA_RGB;
+		elsif (obj_drawing_request = '1') then
+			m_mVGA_t <= obj_mVGA_RGB; 
+		
 		elsif (ball_drawing_request = '1' ) then  
-			m_mVGA_t <= ball_mVGA_RGB;  --first priority from B 
+			m_mVGA_t <= ball_mVGA_RGB;  
 		else
-			m_mVGA_t <= y_mVGA_RGB ; -- second priority from y
+			m_mVGA_t <= y_mVGA_RGB ;
 		end if; 
 	end if ; 
 

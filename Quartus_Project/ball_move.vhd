@@ -26,10 +26,10 @@ end entity;
 
 architecture arc_ball_move of ball_move is
 
-		constant StartX : integer := 500;   -- starting point
+		constant StartX : integer := 570;   -- starting point
 		constant StartY : integer := 350;
 		
-		constant start_shot_speed : integer := -10;
+		constant start_shot_speed : integer := -12;
 		constant gravity : integer := 1;
 		constant speed_devider : integer := 4;
 		constant max_speed : integer := 12;
@@ -42,7 +42,9 @@ architecture arc_ball_move of ball_move is
 		signal sigSpeedX : integer;
 		signal sigSpeedY : integer;
 		
-		constant Y_FLOOR : integer := 449;
+		constant Y_FLOOR : integer := 380;
+		constant X_Left_Stage : integer := 190;
+		constant X_Right_Stage : integer := 380;
 		constant BallDrawY_Size : integer := 27;
 
 	begin
@@ -80,7 +82,7 @@ architecture arc_ball_move of ball_move is
 				
 					
 					if start_shot = '0' then
-							Ball_Movement_X := -7;--just for simulation
+							Ball_Movement_X := 0;--just for simulation
 							Ball_Movement_Y := start_shot_speed*speed_devider;
 							game_started <= '1';
 					elsif (flipper_hit_enable = '1') then			-- flipper hit movement.
@@ -145,7 +147,7 @@ architecture arc_ball_move of ball_move is
 					sigCurrLocationX <= ObjectStartX_t;
 					sigCurrLocationY <= ObjectStartY_t;	-- usual movement. Gravity.
 					
-					if (ObjectStartY_t + BallDrawY_Size < Y_FLOOR) then
+					if (ObjectStartY_t + BallDrawY_Size < Y_FLOOR) or ((ObjectStartX_t + 12 > X_Left_Stage) and ((ObjectStartX_t + 12 < X_Right_Stage)))then
 						Ball_Movement_Y := Ball_Movement_Y + gravity;
 					end if;
 					

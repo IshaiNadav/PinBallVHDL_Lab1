@@ -48,14 +48,12 @@ set_location_assignment PIN_AF14 -to CLOCK_50
 set_location_assignment PIN_AJ4 -to resetN
 set_location_assignment PIN_AB30 -to recording
 set_location_assignment PIN_Y27 -to playing
-set_location_assignment PIN_W25 -to mux[2]
 set_location_assignment PIN_V25 -to mux[3]
 set_location_assignment PIN_AC28 -to freq[0]
 set_location_assignment PIN_AD30 -to freq[1]
 set_location_assignment PIN_AC29 -to freq[2]
 set_location_assignment PIN_AA30 -to MICROPHON_ON
 set_location_assignment PIN_AA24 -to play_check
-set_location_assignment PIN_AD24 -to LEDR[3]
 set_location_assignment PIN_AG25 -to LEDR[4]
 set_location_assignment PIN_AF25 -to LEDR[5]
 set_location_assignment PIN_AE24 -to LEDR[6]
@@ -260,7 +258,14 @@ set_global_assignment -name VHDL_FILE objects_draw.vhd
 set_global_assignment -name VHDL_FILE bounce.vhd
 set_location_assignment PIN_AC30 -to bounceEnable
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to bounceEnable
+set_global_assignment -name VHDL_FILE ball_location_signal.vhd
+set_global_assignment -name VHDL_FILE Flipper_Object_Left.vhd
+set_location_assignment PIN_W25 -to Left_Flipper_On
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Left_Flipper_On
+set_global_assignment -name VHDL_FILE Flipper_Object_Right.vhd
+set_location_assignment PIN_AD24 -to space
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to space
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

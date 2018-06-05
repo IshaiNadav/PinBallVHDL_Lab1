@@ -1,13 +1,13 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="180df25bcd069445af82"/>
+    <hash md5_digest_80b="253e34a03c196408bd40"/>
   </project>
   <file_info>
     <file device="5CSXFC6D6F31C6" path="PinBall.sof" usercode="0xFFFFFFFF"/>
   </file_info>
   <hub_info hub_ir_width="8" ir_width="8" node_addr_width="1" node_count="1"/>
   <node_info>
-    <node hpath="KBDINTF:inst9|lpm_our:inst3|lpm_constant:LPM_CONSTANT_component|lpm_constant_458:ag|sld_mod_ram_rom:mgl_prim1" instance_id="0" mfg_id="110" node_id="3" sld_node_info="0x10186E00" version="2">
+    <node hpath="KBDINTF:inst9|lpm_our:inst3|lpm_constant:LPM_CONSTANT_component|lpm_constant_p48:ag|sld_mod_ram_rom:mgl_prim1" instance_id="0" mfg_id="110" node_id="3" sld_node_info="0x10186E00" version="2">
       <parameters>
         <parameter name="SLD_NODE_INFO" type="dec" value="270036480"/>
         <parameter name="SLD_AUTO_INSTANCE_INDEX" type="string" value="yes"/>
@@ -18,7 +18,7 @@
         <parameter name="numwords" type="unknown" value="1"/>
         <parameter name="widthad" type="unknown" value="1"/>
         <parameter name="shift_count_bits" type="unknown" value="4"/>
-        <parameter name="cvalue" type="unknown" value="00101001"/>
+        <parameter name="cvalue" type="unknown" value="00000000"/>
         <parameter name="is_data_in_ram" type="unknown" value="0"/>
         <parameter name="is_readable" type="unknown" value="0"/>
         <parameter name="BACKPRESSURE_ENABLED" type="dec" value="0"/>

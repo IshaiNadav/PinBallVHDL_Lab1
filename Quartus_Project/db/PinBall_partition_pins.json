@@ -28,6 +28,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "space",
+					"strict" : false
+				},
+				{
 					"name" : "HEX0[6]",
 					"strict" : false
 				},
@@ -216,6 +220,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "kbd_data",
+					"strict" : false
+				},
+				{
+					"name" : "Left_Flipper_On",
+					"strict" : false
+				},
+				{
 					"name" : "start_shot",
 					"strict" : false
 				},
@@ -225,6 +237,10 @@
 				},
 				{
 					"name" : "turbo",
+					"strict" : false
+				},
+				{
+					"name" : "kbd_clk",
 					"strict" : false
 				}
 			]

@@ -19,3 +19,23 @@ present_state.wait_ext 0 0 0 1 0 0 0 0 0 1
 present_state.sample_ext 0 0 1 0 0 0 0 0 0 1 
 present_state.wait_ext_rel 0 1 0 0 0 0 0 0 0 1 
 present_state.sample_ext_rel 1 0 0 0 0 0 0 0 0 1 
+
+State Machine - |PIN_BALL_GAMEPLAY|Flipper_Object_Right:inst26|current_pos
+Name current_pos.pos_30 current_pos.pos_20 current_pos.pos_10 current_pos.val_0 current_pos.neg_10 current_pos.neg_20 current_pos.neg_30 
+current_pos.neg_30 0 0 0 0 0 0 0 
+current_pos.neg_20 0 0 0 0 0 1 1 
+current_pos.neg_10 0 0 0 0 1 0 1 
+current_pos.val_0 0 0 0 1 0 0 1 
+current_pos.pos_10 0 0 1 0 0 0 1 
+current_pos.pos_20 0 1 0 0 0 0 1 
+current_pos.pos_30 1 0 0 0 0 0 1 
+
+State Machine - |PIN_BALL_GAMEPLAY|Flipper_Object_Left:inst25|current_pos
+Name current_pos.pos_30 current_pos.pos_20 current_pos.pos_10 current_pos.val_0 current_pos.neg_10 current_pos.neg_20 current_pos.neg_30 
+current_pos.neg_30 0 0 0 0 0 0 0 
+current_pos.neg_20 0 0 0 0 0 1 1 
+current_pos.neg_10 0 0 0 0 1 0 1 
+current_pos.val_0 0 0 0 1 0 0 1 
+current_pos.pos_10 0 0 1 0 0 0 1 
+current_pos.pos_20 0 1 0 0 0 0 1 
+current_pos.pos_30 1 0 0 0 0 0 1 
