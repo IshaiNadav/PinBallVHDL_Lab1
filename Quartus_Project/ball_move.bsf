@@ -62,8 +62,8 @@ agreement for further details.
 	(port
 		(pt 0 112)
 		(input)
-		(text "bounce_data[1..0]" (rect 0 0 69 12)(font "Arial" ))
-		(text "bounce_data[1..0]" (rect 21 107 90 119)(font "Arial" ))
+		(text "bounce_data[4..0]" (rect 0 0 71 12)(font "Arial" ))
+		(text "bounce_data[4..0]" (rect 21 107 92 119)(font "Arial" ))
 		(line (pt 0 112)(pt 16 112)(line_width 3))
 	)
 	(port
@@ -104,16 +104,30 @@ agreement for further details.
 	(port
 		(pt 272 32)
 		(output)
-		(text "currLocation_X[31..0]" (rect 0 0 84 12)(font "Arial" ))
-		(text "currLocation_X[31..0]" (rect 167 27 251 39)(font "Arial" ))
+		(text "ballSpeedX[31..0]" (rect 0 0 66 12)(font "Arial" ))
+		(text "ballSpeedX[31..0]" (rect 185 27 251 39)(font "Arial" ))
 		(line (pt 272 32)(pt 256 32)(line_width 3))
 	)
 	(port
 		(pt 272 48)
 		(output)
-		(text "currLocation_Y[31..0]" (rect 0 0 86 12)(font "Arial" ))
-		(text "currLocation_Y[31..0]" (rect 165 43 251 55)(font "Arial" ))
+		(text "ballSpeedY[31..0]" (rect 0 0 67 12)(font "Arial" ))
+		(text "ballSpeedY[31..0]" (rect 184 43 251 55)(font "Arial" ))
 		(line (pt 272 48)(pt 256 48)(line_width 3))
+	)
+	(port
+		(pt 272 64)
+		(output)
+		(text "currLocation_X[31..0]" (rect 0 0 84 12)(font "Arial" ))
+		(text "currLocation_X[31..0]" (rect 167 59 251 71)(font "Arial" ))
+		(line (pt 272 64)(pt 256 64)(line_width 3))
+	)
+	(port
+		(pt 272 80)
+		(output)
+		(text "currLocation_Y[31..0]" (rect 0 0 86 12)(font "Arial" ))
+		(text "currLocation_Y[31..0]" (rect 165 75 251 87)(font "Arial" ))
+		(line (pt 272 80)(pt 256 80)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 256 224)(line_width 1))

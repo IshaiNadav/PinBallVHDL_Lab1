@@ -55,8 +55,8 @@ agreement for further details.
 	(port
 		(pt 248 32)
 		(output)
-		(text "bounce_type[1..0]" (rect 0 0 70 12)(font "Arial" ))
-		(text "bounce_type[1..0]" (rect 157 27 227 39)(font "Arial" ))
+		(text "bounce_type[4..0]" (rect 0 0 73 12)(font "Arial" ))
+		(text "bounce_type[4..0]" (rect 154 27 227 39)(font "Arial" ))
 		(line (pt 248 32)(pt 232 32)(line_width 3))
 	)
 	(port

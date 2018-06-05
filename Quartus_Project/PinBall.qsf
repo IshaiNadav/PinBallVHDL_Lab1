@@ -48,7 +48,6 @@ set_location_assignment PIN_AF14 -to CLOCK_50
 set_location_assignment PIN_AJ4 -to resetN
 set_location_assignment PIN_AB30 -to recording
 set_location_assignment PIN_Y27 -to playing
-set_location_assignment PIN_AC30 -to mux[0]
 set_location_assignment PIN_W25 -to mux[2]
 set_location_assignment PIN_V25 -to mux[3]
 set_location_assignment PIN_AC28 -to freq[0]
@@ -150,8 +149,6 @@ set_location_assignment PIN_V23 -to ADC_DOUT
 set_location_assignment PIN_W24 -to ADC_SCLK
 set_location_assignment PIN_Y24 -to AUD_I2C_SCLK
 set_location_assignment PIN_Y23 -to AUD_I2C_SDAT
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to bounce_data[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to bounce_data[1]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to flip_data[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to flip_data[1]
@@ -260,6 +257,9 @@ set_location_assignment PIN_AB28 -to turbo
 set_location_assignment PIN_AA15 -to start_shot
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to start_shot
 set_global_assignment -name VHDL_FILE objects_draw.vhd
+set_global_assignment -name VHDL_FILE bounce.vhd
+set_location_assignment PIN_AC30 -to bounceEnable
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to bounceEnable
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

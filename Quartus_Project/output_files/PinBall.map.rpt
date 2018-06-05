@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PinBall
-Sat Jun 02 21:11:19 2018
+Tue Jun 05 13:44:38 2018
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
 
 
@@ -10,7 +10,26 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis IP Cores Summary
+  9. State Machine - |PIN_BALL_GAMEPLAY|KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst|present_state
+ 10. State Machine - |PIN_BALL_GAMEPLAY|KBDINTF:inst9|Debug_Bitrec_partial:DBP|byterec:byterec|present_state
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. Removed Registers Triggering Further Register Optimizations
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Parameter Settings for User Entity Instance: LPM_CONSTANT:inst
+ 18. Parameter Settings for User Entity Instance: LPM_CONSTANT:inst20
+ 19. Parameter Settings for User Entity Instance: KBDINTF:inst9|Debug_Bitrec_partial:DBP|lpf:cleaner
+ 20. Parameter Settings for User Entity Instance: KBDINTF:inst9|lpm_our:inst3|LPM_CONSTANT:LPM_CONSTANT_component
+ 21. In-System Memory Content Editor Settings
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
 
 
 
@@ -34,22 +53,27 @@ agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+-----------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Sat Jun 02 21:11:19 2018               ;
-; Quartus Prime Version       ; 17.0.0 Build 595 04/25/2017 SJ Standard Edition ;
-; Revision Name               ; PinBall                                         ;
-; Top-level Entity Name       ; PIN_BALL_GAMEPLAY                               ;
-; Family                      ; Cyclone V                                       ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                       ;
-; Total registers             ; N/A until Partition Merge                       ;
-; Total pins                  ; N/A until Partition Merge                       ;
-; Total virtual pins          ; N/A until Partition Merge                       ;
-; Total block memory bits     ; N/A until Partition Merge                       ;
-; Total PLLs                  ; N/A until Partition Merge                       ;
-; Total DLLs                  ; N/A until Partition Merge                       ;
-+-----------------------------+-------------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++---------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Jun 05 13:44:38 2018           ;
+; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Standard Edition ;
+; Revision Name                   ; PinBall                                         ;
+; Top-level Entity Name           ; PIN_BALL_GAMEPLAY                               ;
+; Family                          ; Cyclone V                                       ;
+; Logic utilization (in ALMs)     ; N/A                                             ;
+; Total registers                 ; 405                                             ;
+; Total pins                      ; 78                                              ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 0                                               ;
+; Total DSP Blocks                ; 0                                               ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 0                                               ;
+; Total DLLs                      ; 0                                               ;
++---------------------------------+-------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -148,11 +172,419 @@ agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                    ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+-------------+
+; File Name with User-Entered Path                                   ; Used in Netlist ; File Type                                    ; File Name with Absolute Path                                                                                          ; Library     ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+-------------+
+; TCounter.vhd                                                       ; yes             ; User VHDL File                               ; Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/TCounter.vhd                                                       ;             ;
+; KBDINTF.bdf                                                        ; yes             ; User Block Diagram/Schematic File            ; Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/KBDINTF.bdf                                                        ;             ;
+; lpm_our.vhd                                                        ; yes             ; User Wizard-Generated File                   ; Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/lpm_our.vhd                                                        ;             ;
+; NUM_LOCK.vhd                                                       ; yes             ; User VHDL File                               ; Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/NUM_LOCK.vhd                                                       ;             ;
+; Debug_Bitrec_partial.bdf                                           ; yes             ; User Block Diagram/Schematic File            ; Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/Debug_Bitrec_partial.bdf                                           ;             ;
+; byterec.vhd                                                        ; yes             ; User VHDL File                               ; Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/byterec.vhd                                                        ;             ;
+; lpf.vhd                                                            ; yes             ; User VHDL File                               ; Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/lpf.vhd                                                            ;             ;
+; bitrec.vhd                                                         ; yes             ; User VHDL File                               ; Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/bitrec.vhd                                                         ;             ;
+; VGA_Controller.vhd                                                 ; yes             ; User VHDL File                               ; Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/VGA_Controller.vhd                                                 ;             ;
+; objects_mux.vhd                                                    ; yes             ; User VHDL File                               ; Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/objects_mux.vhd                                                    ;             ;
+; back_ground_draw.vhd                                               ; yes             ; User VHDL File                               ; Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/back_ground_draw.vhd                                               ;             ;
+; hexss.vhd                                                          ; yes             ; User VHDL File                               ; Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/hexss.vhd                                                          ;             ;
+; hp_down_counter.vhd                                                ; yes             ; User VHDL File                               ; Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd                                                ;             ;
+; score_up_counter.vhd                                               ; yes             ; User VHDL File                               ; Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/score_up_counter.vhd                                               ;             ;
+; ball_move.vhd                                                      ; yes             ; User VHDL File                               ; Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd                                                      ;             ;
+; ball_object.vhd                                                    ; yes             ; User VHDL File                               ; Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_object.vhd                                                    ;             ;
+; PIN_BALL_GAMEPLAY.bdf                                              ; yes             ; User Block Diagram/Schematic File            ; Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/PIN_BALL_GAMEPLAY.bdf                                              ;             ;
+; objects_draw.vhd                                                   ; yes             ; User VHDL File                               ; Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/objects_draw.vhd                                                   ;             ;
+; bounce.vhd                                                         ; yes             ; User VHDL File                               ; Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/bounce.vhd                                                         ;             ;
+; lpm_constant.tdf                                                   ; yes             ; Megafunction                                 ; c:/intelfpga/17.0/quartus/libraries/megafunctions/lpm_constant.tdf                                                    ;             ;
+; db/lpm_constant_458.tdf                                            ; yes             ; Auto-Generated Megafunction                  ; Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/db/lpm_constant_458.tdf                                            ;             ;
+; sld_mod_ram_rom.vhd                                                ; yes             ; Encrypted Megafunction                       ; c:/intelfpga/17.0/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd                                                 ;             ;
+; sld_jtag_endpoint_adapter.vhd                                      ; yes             ; Encrypted Megafunction                       ; c:/intelfpga/17.0/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd                                       ;             ;
+; sld_jtag_endpoint_adapter_impl.sv                                  ; yes             ; Encrypted Megafunction                       ; c:/intelfpga/17.0/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter_impl.sv                                   ;             ;
+; sld_rom_sr.vhd                                                     ; yes             ; Encrypted Megafunction                       ; c:/intelfpga/17.0/quartus/libraries/megafunctions/sld_rom_sr.vhd                                                      ;             ;
+; sld_hub.vhd                                                        ; yes             ; Encrypted Megafunction                       ; c:/intelfpga/17.0/quartus/libraries/megafunctions/sld_hub.vhd                                                         ; altera_sld  ;
+; db/ip/sldcc85be97/alt_sld_fab.v                                    ; yes             ; Encrypted Auto-Found Verilog HDL File        ; Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/db/ip/sldcc85be97/alt_sld_fab.v                                    ; alt_sld_fab ;
+; db/ip/sldcc85be97/submodules/alt_sld_fab_alt_sld_fab.v             ; yes             ; Encrypted Auto-Found Verilog HDL File        ; Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/db/ip/sldcc85be97/submodules/alt_sld_fab_alt_sld_fab.v             ; alt_sld_fab ;
+; db/ip/sldcc85be97/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; yes             ; Auto-Found SystemVerilog HDL File            ; Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/db/ip/sldcc85be97/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; alt_sld_fab ;
+; db/ip/sldcc85be97/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/db/ip/sldcc85be97/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; alt_sld_fab ;
+; db/ip/sldcc85be97/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; yes             ; Encrypted Auto-Found VHDL File               ; Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/db/ip/sldcc85be97/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; alt_sld_fab ;
+; db/ip/sldcc85be97/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/db/ip/sldcc85be97/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; alt_sld_fab ;
+; sld_jtag_hub.vhd                                                   ; yes             ; Encrypted Megafunction                       ; c:/intelfpga/17.0/quartus/libraries/megafunctions/sld_jtag_hub.vhd                                                    ;             ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+-------------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 1002           ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 1561           ;
+;     -- 7 input functions                    ; 95             ;
+;     -- 6 input functions                    ; 328            ;
+;     -- 5 input functions                    ; 223            ;
+;     -- 4 input functions                    ; 335            ;
+;     -- <=3 input functions                  ; 580            ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 405            ;
+;                                             ;                ;
+; I/O pins                                    ; 78             ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 272            ;
+; Total fan-out                               ; 8103           ;
+; Average fan-out                             ; 3.80           ;
++---------------------------------------------+----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                           ; Entity Name                       ; Library Name ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+; |PIN_BALL_GAMEPLAY                                                                                                                      ; 1561 (2)            ; 405 (0)                   ; 0                 ; 0          ; 78   ; 0            ; |PIN_BALL_GAMEPLAY                                                                                                                                                                                                                                                                                                                                            ; PIN_BALL_GAMEPLAY                 ; work         ;
+;    |KBDINTF:inst9|                                                                                                                      ; 28 (0)              ; 27 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|KBDINTF:inst9                                                                                                                                                                                                                                                                                                                              ; KBDINTF                           ; work         ;
+;       |lpm_our:inst3|                                                                                                                   ; 28 (0)              ; 27 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|KBDINTF:inst9|lpm_our:inst3                                                                                                                                                                                                                                                                                                                ; lpm_our                           ; work         ;
+;          |lpm_constant:LPM_CONSTANT_component|                                                                                          ; 28 (0)              ; 27 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|KBDINTF:inst9|lpm_our:inst3|lpm_constant:LPM_CONSTANT_component                                                                                                                                                                                                                                                                            ; lpm_constant                      ; work         ;
+;             |lpm_constant_458:ag|                                                                                                       ; 28 (0)              ; 27 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|KBDINTF:inst9|lpm_our:inst3|lpm_constant:LPM_CONSTANT_component|lpm_constant_458:ag                                                                                                                                                                                                                                                        ; lpm_constant_458                  ; work         ;
+;                |sld_mod_ram_rom:mgl_prim1|                                                                                              ; 28 (14)             ; 27 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|KBDINTF:inst9|lpm_our:inst3|lpm_constant:LPM_CONSTANT_component|lpm_constant_458:ag|sld_mod_ram_rom:mgl_prim1                                                                                                                                                                                                                              ; sld_mod_ram_rom                   ; work         ;
+;                   |sld_rom_sr:\constant_logic_gen:name_gen:info_rom_sr|                                                                 ; 14 (14)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|KBDINTF:inst9|lpm_our:inst3|lpm_constant:LPM_CONSTANT_component|lpm_constant_458:ag|sld_mod_ram_rom:mgl_prim1|sld_rom_sr:\constant_logic_gen:name_gen:info_rom_sr                                                                                                                                                                          ; sld_rom_sr                        ; work         ;
+;    |TCounter:inst22|                                                                                                                    ; 79 (79)             ; 34 (34)                   ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|TCounter:inst22                                                                                                                                                                                                                                                                                                                            ; TCounter                          ; work         ;
+;    |VGA_Controller:inst21|                                                                                                              ; 159 (159)           ; 140 (140)                 ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|VGA_Controller:inst21                                                                                                                                                                                                                                                                                                                      ; VGA_Controller                    ; work         ;
+;    |back_ground_draw:inst2|                                                                                                             ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|back_ground_draw:inst2                                                                                                                                                                                                                                                                                                                     ; back_ground_draw                  ; work         ;
+;    |ball_move:inst5|                                                                                                                    ; 170 (170)           ; 53 (53)                   ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|ball_move:inst5                                                                                                                                                                                                                                                                                                                            ; ball_move                         ; work         ;
+;    |ball_object:inst3|                                                                                                                  ; 284 (284)           ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|ball_object:inst3                                                                                                                                                                                                                                                                                                                          ; ball_object                       ; work         ;
+;    |bounce:inst6|                                                                                                                       ; 16 (16)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|bounce:inst6                                                                                                                                                                                                                                                                                                                               ; bounce                            ; work         ;
+;    |hexss:inst11|                                                                                                                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|hexss:inst11                                                                                                                                                                                                                                                                                                                               ; hexss                             ; work         ;
+;    |hexss:inst12|                                                                                                                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|hexss:inst12                                                                                                                                                                                                                                                                                                                               ; hexss                             ; work         ;
+;    |hexss:inst13|                                                                                                                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|hexss:inst13                                                                                                                                                                                                                                                                                                                               ; hexss                             ; work         ;
+;    |hexss:inst14|                                                                                                                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|hexss:inst14                                                                                                                                                                                                                                                                                                                               ; hexss                             ; work         ;
+;    |hexss:inst17|                                                                                                                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|hexss:inst17                                                                                                                                                                                                                                                                                                                               ; hexss                             ; work         ;
+;    |hp_down_counter:inst8|                                                                                                              ; 7 (7)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|hp_down_counter:inst8                                                                                                                                                                                                                                                                                                                      ; hp_down_counter                   ; work         ;
+;    |objects_draw:inst10|                                                                                                                ; 619 (619)           ; 11 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|objects_draw:inst10                                                                                                                                                                                                                                                                                                                        ; objects_draw                      ; work         ;
+;    |objects_mux:inst4|                                                                                                                  ; 11 (11)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|objects_mux:inst4                                                                                                                                                                                                                                                                                                                          ; objects_mux                       ; work         ;
+;    |score_up_counter:inst18|                                                                                                            ; 22 (22)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|score_up_counter:inst18                                                                                                                                                                                                                                                                                                                    ; score_up_counter                  ; work         ;
+;    |sld_hub:auto_hub|                                                                                                                   ; 99 (1)              ; 87 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld   ;
+;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 98 (0)              ; 87 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input       ; altera_sld   ;
+;          |alt_sld_fab:instrumentation_fabric|                                                                                           ; 98 (0)              ; 87 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                        ; alt_sld_fab                       ; alt_sld_fab  ;
+;             |alt_sld_fab_alt_sld_fab:alt_sld_fab|                                                                                       ; 98 (1)              ; 87 (5)                    ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                                                                                                    ; alt_sld_fab_alt_sld_fab           ; alt_sld_fab  ;
+;                |alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|                                                                            ; 97 (0)              ; 82 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric                                                                        ; alt_sld_fab_alt_sld_fab_sldfabric ; alt_sld_fab  ;
+;                   |sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|                                                                        ; 97 (65)             ; 82 (54)                   ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub                           ; sld_jtag_hub                      ; work         ;
+;                      |sld_rom_sr:hub_info_reg|                                                                                          ; 14 (14)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg   ; sld_rom_sr                        ; work         ;
+;                      |sld_shadow_jsm:shadow_jsm|                                                                                        ; 18 (18)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |PIN_BALL_GAMEPLAY|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_shadow_jsm:shadow_jsm ; sld_shadow_jsm                    ; altera_sld   ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                                                                                                                                                                                                    ;
++--------+--------------+---------+--------------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                                                                                                                                                                                                                                        ; IP Include File ;
++--------+--------------+---------+--------------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |PIN_BALL_GAMEPLAY|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                 ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |PIN_BALL_GAMEPLAY|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                             ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |PIN_BALL_GAMEPLAY|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_presplit:presplit   ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |PIN_BALL_GAMEPLAY|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |PIN_BALL_GAMEPLAY|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_splitter:splitter   ;                 ;
++--------+--------------+---------+--------------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |PIN_BALL_GAMEPLAY|KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst|present_state                                       ;
++-----------------------+-----------------------+-----------------------+----------------------+-----------------------+--------------------+
+; Name                  ; present_state.NewData ; present_state.ChkData ; present_state.LowClk ; present_state.HighClk ; present_state.idle ;
++-----------------------+-----------------------+-----------------------+----------------------+-----------------------+--------------------+
+; present_state.idle    ; 0                     ; 0                     ; 0                    ; 0                     ; 0                  ;
+; present_state.HighClk ; 0                     ; 0                     ; 0                    ; 1                     ; 1                  ;
+; present_state.LowClk  ; 0                     ; 0                     ; 1                    ; 0                     ; 1                  ;
+; present_state.ChkData ; 0                     ; 1                     ; 0                    ; 0                     ; 1                  ;
+; present_state.NewData ; 1                     ; 0                     ; 0                    ; 0                     ; 1                  ;
++-----------------------+-----------------------+-----------------------+----------------------+-----------------------+--------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |PIN_BALL_GAMEPLAY|KBDINTF:inst9|Debug_Bitrec_partial:DBP|byterec:byterec|present_state                                                                                                                                                                                             ;
++------------------------------+------------------------------+----------------------------+--------------------------+------------------------+-------------------------+--------------------------+------------------------+------------------------+--------------------------+--------------------+
+; Name                         ; present_state.sample_ext_rel ; present_state.wait_ext_rel ; present_state.sample_ext ; present_state.wait_ext ; present_state.new_break ; present_state.sample_rel ; present_state.wait_rel ; present_state.new_make ; present_state.sample_nor ; present_state.idle ;
++------------------------------+------------------------------+----------------------------+--------------------------+------------------------+-------------------------+--------------------------+------------------------+------------------------+--------------------------+--------------------+
+; present_state.idle           ; 0                            ; 0                          ; 0                        ; 0                      ; 0                       ; 0                        ; 0                      ; 0                      ; 0                        ; 0                  ;
+; present_state.sample_nor     ; 0                            ; 0                          ; 0                        ; 0                      ; 0                       ; 0                        ; 0                      ; 0                      ; 1                        ; 1                  ;
+; present_state.new_make       ; 0                            ; 0                          ; 0                        ; 0                      ; 0                       ; 0                        ; 0                      ; 1                      ; 0                        ; 1                  ;
+; present_state.wait_rel       ; 0                            ; 0                          ; 0                        ; 0                      ; 0                       ; 0                        ; 1                      ; 0                      ; 0                        ; 1                  ;
+; present_state.sample_rel     ; 0                            ; 0                          ; 0                        ; 0                      ; 0                       ; 1                        ; 0                      ; 0                      ; 0                        ; 1                  ;
+; present_state.new_break      ; 0                            ; 0                          ; 0                        ; 0                      ; 1                       ; 0                        ; 0                      ; 0                      ; 0                        ; 1                  ;
+; present_state.wait_ext       ; 0                            ; 0                          ; 0                        ; 1                      ; 0                       ; 0                        ; 0                      ; 0                      ; 0                        ; 1                  ;
+; present_state.sample_ext     ; 0                            ; 0                          ; 1                        ; 0                      ; 0                       ; 0                        ; 0                      ; 0                      ; 0                        ; 1                  ;
+; present_state.wait_ext_rel   ; 0                            ; 1                          ; 0                        ; 0                      ; 0                       ; 0                        ; 0                      ; 0                      ; 0                        ; 1                  ;
+; present_state.sample_ext_rel ; 1                            ; 0                          ; 0                        ; 0                      ; 0                       ; 0                        ; 0                      ; 0                      ; 0                        ; 1                  ;
++------------------------------+------------------------------+----------------------------+--------------------------+------------------------+-------------------------+--------------------------+------------------------+------------------------+--------------------------+--------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; hp_down_counter:inst8|game_over                    ; GND                 ; yes                    ;
+; Number of user-specified and inferred latches = 1  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                     ;
++-------------------------------------------------------------------------------------+--------------------------------------------------+
+; Register name                                                                       ; Reason for Removal                               ;
++-------------------------------------------------------------------------------------+--------------------------------------------------+
+; objects_draw:inst10|sig_bounce_type[4]                                              ; Stuck at GND due to stuck port data_in           ;
+; objects_draw:inst10|bounce_type[4]                                                  ; Stuck at GND due to stuck port data_in           ;
+; VGA_Controller:inst21|oVGA_R[0..4]                                                  ; Stuck at GND due to stuck port data_in           ;
+; VGA_Controller:inst21|oVGA_G[0..4]                                                  ; Stuck at GND due to stuck port data_in           ;
+; VGA_Controller:inst21|oVGA_B[0..5]                                                  ; Stuck at GND due to stuck port data_in           ;
+; bounce:inst6|sigDataIn[4]                                                           ; Stuck at GND due to stuck port data_in           ;
+; bounce:inst6|data_prev[4]                                                           ; Stuck at GND due to stuck port data_in           ;
+; objects_draw:inst10|mVGA_RGB[1,4]                                                   ; Merged with objects_draw:inst10|mVGA_RGB[0]      ;
+; objects_draw:inst10|mVGA_RGB[3,5..7]                                                ; Merged with objects_draw:inst10|mVGA_RGB[2]      ;
+; objects_draw:inst10|sig_draw_data[1,4]                                              ; Merged with objects_draw:inst10|sig_draw_data[0] ;
+; objects_draw:inst10|sig_draw_data[3,5..7]                                           ; Merged with objects_draw:inst10|sig_draw_data[2] ;
+; objects_draw:inst10|sig_draw_data[2]                                                ; Stuck at GND due to stuck port data_in           ;
+; objects_draw:inst10|mVGA_RGB[2]                                                     ; Stuck at GND due to stuck port data_in           ;
+; bounce:inst6|bounce_data_out[4]                                                     ; Stuck at GND due to stuck port data_in           ;
+; objects_draw:inst10|sig_draw_data[0]                                                ; Stuck at VCC due to stuck port data_in           ;
+; KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst|shift_reg[0..8]                  ; Lost fanout                                      ;
+; KBDINTF:inst9|Debug_Bitrec_partial:DBP|lpf:cleaner|dout                             ; Lost fanout                                      ;
+; KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst|count[0..3]                      ; Lost fanout                                      ;
+; KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst|dout[0..7]                       ; Lost fanout                                      ;
+; KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst|dout_new                         ; Lost fanout                                      ;
+; KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst|shift_reg[9]                     ; Lost fanout                                      ;
+; KBDINTF:inst9|Debug_Bitrec_partial:DBP|lpf:cleaner|shiftreg[0..3]                   ; Lost fanout                                      ;
+; KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst|present_state.idle               ; Lost fanout                                      ;
+; KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst|present_state.HighClk            ; Lost fanout                                      ;
+; KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst|present_state.LowClk             ; Lost fanout                                      ;
+; KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst|present_state.ChkData            ; Lost fanout                                      ;
+; KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst|present_state.NewData            ; Lost fanout                                      ;
+; KBDINTF:inst9|Debug_Bitrec_partial:DBP|byterec:byterec|present_state.idle           ; Lost fanout                                      ;
+; KBDINTF:inst9|Debug_Bitrec_partial:DBP|byterec:byterec|present_state.sample_nor     ; Lost fanout                                      ;
+; KBDINTF:inst9|Debug_Bitrec_partial:DBP|byterec:byterec|present_state.new_make       ; Lost fanout                                      ;
+; KBDINTF:inst9|Debug_Bitrec_partial:DBP|byterec:byterec|present_state.wait_rel       ; Lost fanout                                      ;
+; KBDINTF:inst9|Debug_Bitrec_partial:DBP|byterec:byterec|present_state.sample_rel     ; Lost fanout                                      ;
+; KBDINTF:inst9|Debug_Bitrec_partial:DBP|byterec:byterec|present_state.new_break      ; Lost fanout                                      ;
+; KBDINTF:inst9|Debug_Bitrec_partial:DBP|byterec:byterec|present_state.wait_ext       ; Lost fanout                                      ;
+; KBDINTF:inst9|Debug_Bitrec_partial:DBP|byterec:byterec|present_state.sample_ext     ; Lost fanout                                      ;
+; KBDINTF:inst9|Debug_Bitrec_partial:DBP|byterec:byterec|present_state.wait_ext_rel   ; Lost fanout                                      ;
+; KBDINTF:inst9|Debug_Bitrec_partial:DBP|byterec:byterec|present_state.sample_ext_rel ; Lost fanout                                      ;
+; Total Number of Removed Registers = 79                                              ;                                                  ;
++-------------------------------------------------------------------------------------+--------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                            ;
++-----------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------+
+; Register name                                                   ; Reason for Removal        ; Registers Removed due to This Register                                   ;
++-----------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------+
+; KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst|shift_reg[8] ; Lost Fanouts              ; KBDINTF:inst9|Debug_Bitrec_partial:DBP|lpf:cleaner|dout,                 ;
+;                                                                 ;                           ; KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst|shift_reg[9],         ;
+;                                                                 ;                           ; KBDINTF:inst9|Debug_Bitrec_partial:DBP|lpf:cleaner|shiftreg[1],          ;
+;                                                                 ;                           ; KBDINTF:inst9|Debug_Bitrec_partial:DBP|lpf:cleaner|shiftreg[3],          ;
+;                                                                 ;                           ; KBDINTF:inst9|Debug_Bitrec_partial:DBP|lpf:cleaner|shiftreg[2],          ;
+;                                                                 ;                           ; KBDINTF:inst9|Debug_Bitrec_partial:DBP|lpf:cleaner|shiftreg[0],          ;
+;                                                                 ;                           ; KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst|present_state.LowClk  ;
+; objects_draw:inst10|sig_bounce_type[4]                          ; Stuck at GND              ; objects_draw:inst10|bounce_type[4], bounce:inst6|sigDataIn[4],           ;
+;                                                                 ; due to stuck port data_in ; bounce:inst6|bounce_data_out[4]                                          ;
+; KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst|count[1]     ; Lost Fanouts              ; KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst|count[2],             ;
+;                                                                 ;                           ; KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst|count[3]              ;
+; objects_draw:inst10|sig_draw_data[2]                            ; Stuck at GND              ; objects_draw:inst10|mVGA_RGB[2]                                          ;
+;                                                                 ; due to stuck port data_in ;                                                                          ;
+; KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst|count[0]     ; Lost Fanouts              ; KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst|present_state.NewData ;
+; KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst|dout[0]      ; Lost Fanouts              ; KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst|present_state.ChkData ;
++-----------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 405   ;
+; Number of registers using Synchronous Clear  ; 136   ;
+; Number of registers using Synchronous Load   ; 35    ;
+; Number of registers using Asynchronous Clear ; 276   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 211   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                                                                                                                                                                                                                                                              ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                                                                                                                                                                                                                                                               ; Fan out ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; hp_down_counter:inst8|current_lives_sig[0]                                                                                                                                                                                                                                                                                      ; 13      ;
+; hp_down_counter:inst8|current_lives_sig[3]                                                                                                                                                                                                                                                                                      ; 13      ;
+; ball_move:inst5|sigCurrLocationX[2]                                                                                                                                                                                                                                                                                             ; 2       ;
+; ball_move:inst5|sigCurrLocationY[3]                                                                                                                                                                                                                                                                                             ; 8       ;
+; ball_move:inst5|sigCurrLocationY[4]                                                                                                                                                                                                                                                                                             ; 9       ;
+; ball_move:inst5|sigCurrLocationY[6]                                                                                                                                                                                                                                                                                             ; 6       ;
+; ball_move:inst5|sigCurrLocationY[8]                                                                                                                                                                                                                                                                                             ; 5       ;
+; ball_move:inst5|sigCurrLocationY[2]                                                                                                                                                                                                                                                                                             ; 2       ;
+; ball_move:inst5|sigCurrLocationY[1]                                                                                                                                                                                                                                                                                             ; 2       ;
+; ball_move:inst5|sigCurrLocationX[6]                                                                                                                                                                                                                                                                                             ; 3       ;
+; ball_move:inst5|sigCurrLocationX[5]                                                                                                                                                                                                                                                                                             ; 4       ;
+; ball_move:inst5|sigCurrLocationX[4]                                                                                                                                                                                                                                                                                             ; 4       ;
+; ball_move:inst5|sigCurrLocationX[8]                                                                                                                                                                                                                                                                                             ; 3       ;
+; ball_move:inst5|sigCurrLocationX[7]                                                                                                                                                                                                                                                                                             ; 3       ;
+; ball_move:inst5|Ball_Movement_X[4]                                                                                                                                                                                                                                                                                              ; 7       ;
+; ball_move:inst5|Ball_Movement_Y[6]                                                                                                                                                                                                                                                                                              ; 14      ;
+; ball_move:inst5|Ball_Movement_Y[4]                                                                                                                                                                                                                                                                                              ; 4       ;
+; ball_move:inst5|Ball_Movement_X[6]                                                                                                                                                                                                                                                                                              ; 15      ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[1] ; 3       ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[2] ; 3       ;
+; Total number of inverted registers = 20                                                                                                                                                                                                                                                                                         ;         ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |PIN_BALL_GAMEPLAY|KBDINTF:inst9|lpm_our:inst3|lpm_constant:LPM_CONSTANT_component|lpm_constant_458:ag|sld_mod_ram_rom:mgl_prim1|constant_shift_reg[3]                                               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |PIN_BALL_GAMEPLAY|objects_mux:inst4|m_mVGA_t[6]                                                                                                                                                     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |PIN_BALL_GAMEPLAY|objects_mux:inst4|m_mVGA_t[7]                                                                                                                                                     ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |PIN_BALL_GAMEPLAY|KBDINTF:inst9|lpm_our:inst3|lpm_constant:LPM_CONSTANT_component|lpm_constant_458:ag|sld_mod_ram_rom:mgl_prim1|sld_rom_sr:\constant_logic_gen:name_gen:info_rom_sr|word_counter[0] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |PIN_BALL_GAMEPLAY|objects_mux:inst4|m_mVGA_t[4]                                                                                                                                                     ;
+; 17:1               ; 7 bits    ; 77 LEs        ; 42 LEs               ; 35 LEs                 ; Yes        ; |PIN_BALL_GAMEPLAY|bounce:inst6|bounce_data_out[1]                                                                                                                                                   ;
+; 16:1               ; 4 bits    ; 40 LEs        ; 28 LEs               ; 12 LEs                 ; Yes        ; |PIN_BALL_GAMEPLAY|KBDINTF:inst9|lpm_our:inst3|lpm_constant:LPM_CONSTANT_component|lpm_constant_458:ag|sld_mod_ram_rom:mgl_prim1|sld_rom_sr:\constant_logic_gen:name_gen:info_rom_sr|WORD_SR[2]      ;
+; 34:1               ; 6 bits    ; 132 LEs       ; 18 LEs               ; 114 LEs                ; No         ; |PIN_BALL_GAMEPLAY|ball_move:inst5|Ball_Movement_X                                                                                                                                                   ;
+; 34:1               ; 5 bits    ; 110 LEs       ; 15 LEs               ; 95 LEs                 ; No         ; |PIN_BALL_GAMEPLAY|ball_move:inst5|Ball_Movement_Y                                                                                                                                                   ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |PIN_BALL_GAMEPLAY|KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst|Selector1                                                                                                                      ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |PIN_BALL_GAMEPLAY|KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst|Selector0                                                                                                                      ;
+; 18:1               ; 2 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; No         ; |PIN_BALL_GAMEPLAY|ball_move:inst5|Ball_Movement_Y                                                                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LPM_CONSTANT:inst ;
++--------------------+------------------+------------------------+
+; Parameter Name     ; Value            ; Type                   ;
++--------------------+------------------+------------------------+
+; LPM_WIDTH          ; 4                ; Untyped                ;
+; LPM_CVALUE         ; 1001             ; Unsigned Binary        ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                ;
+; CBXI_PARAMETER     ; lpm_constant_874 ; Untyped                ;
++--------------------+------------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LPM_CONSTANT:inst20 ;
++--------------------+------------------+--------------------------+
+; Parameter Name     ; Value            ; Type                     ;
++--------------------+------------------+--------------------------+
+; LPM_WIDTH          ; 4                ; Untyped                  ;
+; LPM_CVALUE         ; 0011             ; Unsigned Binary          ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                  ;
+; CBXI_PARAMETER     ; lpm_constant_274 ; Untyped                  ;
++--------------------+------------------+--------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: KBDINTF:inst9|Debug_Bitrec_partial:DBP|lpf:cleaner ;
++----------------+-------+------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                   ;
++----------------+-------+------------------------------------------------------------------------+
+; width          ; 4     ; Untyped                                                                ;
++----------------+-------+------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: KBDINTF:inst9|lpm_our:inst3|LPM_CONSTANT:LPM_CONSTANT_component ;
++--------------------+------------------+----------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                                 ;
++--------------------+------------------+----------------------------------------------------------------------+
+; LPM_WIDTH          ; 8                ; Signed Integer                                                       ;
+; LPM_CVALUE         ; 41               ; Signed Integer                                                       ;
+; ENABLE_RUNTIME_MOD ; YES              ; Untyped                                                              ;
+; CBXI_PARAMETER     ; lpm_constant_458 ; Untyped                                                              ;
++--------------------+------------------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; In-System Memory Content Editor Settings                                                                                                        ;
++----------------+-------------+-------+-------+------------+-------------------------------------------------------------------------------------+
+; Instance Index ; Instance ID ; Width ; Depth ; Mode       ; Hierarchy Location                                                                  ;
++----------------+-------------+-------+-------+------------+-------------------------------------------------------------------------------------+
+; 0              ; 5           ; 8     ; 1     ; Read/Write ; KBDINTF:inst9|lpm_our:inst3|lpm_constant:LPM_CONSTANT_component|lpm_constant_458:ag ;
++----------------+-------------+-------+-------+------------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 318                         ;
+;     CLR               ; 69                          ;
+;     CLR SCLR          ; 98                          ;
+;     ENA               ; 49                          ;
+;     ENA CLR           ; 37                          ;
+;     ENA CLR SCLR      ; 31                          ;
+;     ENA CLR SLD       ; 7                           ;
+;     ENA SLD           ; 27                          ;
+; arriav_lcell_comb     ; 1466                        ;
+;     arith             ; 243                         ;
+;         0 data inputs ; 3                           ;
+;         1 data inputs ; 198                         ;
+;         2 data inputs ; 12                          ;
+;         3 data inputs ; 9                           ;
+;         4 data inputs ; 20                          ;
+;         5 data inputs ; 1                           ;
+;     extend            ; 95                          ;
+;         7 data inputs ; 95                          ;
+;     normal            ; 1096                        ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 14                          ;
+;         2 data inputs ; 92                          ;
+;         3 data inputs ; 173                         ;
+;         4 data inputs ; 300                         ;
+;         5 data inputs ; 202                         ;
+;         6 data inputs ; 314                         ;
+;     shared            ; 32                          ;
+;         2 data inputs ; 30                          ;
+;         3 data inputs ; 2                           ;
+; boundary_port         ; 105                         ;
+;                       ;                             ;
+; Max LUT depth         ; 11.00                       ;
+; Average LUT depth     ; 7.05                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:06     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -161,7 +593,7 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
-    Info: Processing started: Sat Jun 02 21:11:07 2018
+    Info: Processing started: Tue Jun 05 13:44:01 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PinBall -c PinBall
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -211,30 +643,171 @@ Info (12021): Found 2 design units, including 1 entities, in source file score_u
 Info (12021): Found 1 design units, including 1 entities, in source file hp_score_module.bdf
     Info (12023): Found entity 1: HP_Score_Module
 Info (12021): Found 2 design units, including 1 entities, in source file ball_move.vhd
-    Info (12022): Found design unit 1: ball_move-arc_ball_move File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 25
+    Info (12022): Found design unit 1: ball_move-arc_ball_move File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 27
     Info (12023): Found entity 1: ball_move File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file ball_object.vhd
     Info (12022): Found design unit 1: ball_object-behav File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_object.vhd Line: 19
     Info (12023): Found entity 1: ball_object File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_object.vhd Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file pin_ball_gameplay.bdf
     Info (12023): Found entity 1: PIN_BALL_GAMEPLAY
-Error (10500): VHDL syntax error at objects_draw.vhd(113) near text "if";  expecting "end", or "(", or an identifier ("if" is a reserved keyword), or a concurrent statement File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/objects_draw.vhd Line: 113
-Error (10500): VHDL syntax error at objects_draw.vhd(113) near text "then";  expecting "<=" File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/objects_draw.vhd Line: 113
-Error (10500): VHDL syntax error at objects_draw.vhd(117) near text "if";  expecting ";", or an identifier ("if" is a reserved keyword), or "architecture" File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/objects_draw.vhd Line: 117
-Error (10500): VHDL syntax error at objects_draw.vhd(121) near text "if";  expecting "end", or "(", or an identifier ("if" is a reserved keyword), or a concurrent statement File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/objects_draw.vhd Line: 121
-Error (10500): VHDL syntax error at objects_draw.vhd(121) near text "then";  expecting "<=" File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/objects_draw.vhd Line: 121
-Error (10500): VHDL syntax error at objects_draw.vhd(125) near text "if";  expecting ";", or an identifier ("if" is a reserved keyword), or "architecture" File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/objects_draw.vhd Line: 125
-Error (10500): VHDL syntax error at objects_draw.vhd(129) near text "if";  expecting "end", or "(", or an identifier ("if" is a reserved keyword), or a concurrent statement File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/objects_draw.vhd Line: 129
-Error (10500): VHDL syntax error at objects_draw.vhd(129) near text "then";  expecting "<=" File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/objects_draw.vhd Line: 129
-Error (10500): VHDL syntax error at objects_draw.vhd(133) near text "if";  expecting ";", or an identifier ("if" is a reserved keyword), or "architecture" File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/objects_draw.vhd Line: 133
-Error (10500): VHDL syntax error at objects_draw.vhd(137) near text "if";  expecting "end", or "(", or an identifier ("if" is a reserved keyword), or a concurrent statement File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/objects_draw.vhd Line: 137
-Error (10500): VHDL syntax error at objects_draw.vhd(137) near text "then";  expecting "<=" File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/objects_draw.vhd Line: 137
-Error (10500): VHDL syntax error at objects_draw.vhd(141) near text "if";  expecting ";", or an identifier ("if" is a reserved keyword), or "architecture" File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/objects_draw.vhd Line: 141
-Info (12021): Found 0 design units, including 0 entities, in source file objects_draw.vhd
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 12 errors, 1 warning
-    Error: Peak virtual memory: 703 megabytes
-    Error: Processing ended: Sat Jun 02 21:11:19 2018
-    Error: Elapsed time: 00:00:12
-    Error: Total CPU time (on all processors): 00:00:22
+Info (12021): Found 2 design units, including 1 entities, in source file objects_draw.vhd
+    Info (12022): Found design unit 1: objects_draw-behav File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/objects_draw.vhd Line: 21
+    Info (12023): Found entity 1: objects_draw File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/objects_draw.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file bounce.vhd
+    Info (12022): Found design unit 1: bounce-behav File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/bounce.vhd Line: 25
+    Info (12023): Found entity 1: bounce File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/bounce.vhd Line: 6
+Info (12127): Elaborating entity "PIN_BALL_GAMEPLAY" for the top level hierarchy
+Info (12128): Elaborating entity "VGA_Controller" for hierarchy "VGA_Controller:inst21"
+Info (12128): Elaborating entity "objects_mux" for hierarchy "objects_mux:inst4"
+Info (12128): Elaborating entity "ball_object" for hierarchy "ball_object:inst3"
+Info (12128): Elaborating entity "ball_move" for hierarchy "ball_move:inst5"
+Info (12128): Elaborating entity "bounce" for hierarchy "bounce:inst6"
+Info (12128): Elaborating entity "objects_draw" for hierarchy "objects_draw:inst10"
+Warning (10036): Verilog HDL or VHDL warning at objects_draw.vhd(516): object "right_middle_slope_end_x" assigned a value but never read File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/objects_draw.vhd Line: 516
+Warning (10036): Verilog HDL or VHDL warning at objects_draw.vhd(517): object "right_middle_slope_end_y" assigned a value but never read File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/objects_draw.vhd Line: 517
+Warning (10540): VHDL Signal Declaration warning at objects_draw.vhd(518): used explicit default value for signal "right_middle_slope_drawing_X" because signal was never assigned a value File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/objects_draw.vhd Line: 518
+Warning (10540): VHDL Signal Declaration warning at objects_draw.vhd(519): used explicit default value for signal "right_middle_slope_drawing_Y" because signal was never assigned a value File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/objects_draw.vhd Line: 519
+Info (12128): Elaborating entity "back_ground_draw" for hierarchy "back_ground_draw:inst2"
+Info (12128): Elaborating entity "hp_down_counter" for hierarchy "hp_down_counter:inst8"
+Warning (10492): VHDL Process Statement warning at hp_down_counter.vhd(23): signal "current_lives_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd Line: 23
+Warning (10492): VHDL Process Statement warning at hp_down_counter.vhd(25): signal "lives_num_start" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd Line: 25
+Warning (10492): VHDL Process Statement warning at hp_down_counter.vhd(37): signal "current_lives_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd Line: 37
+Warning (10631): VHDL Process Statement warning at hp_down_counter.vhd(21): inferring latch(es) for signal or variable "game_over", which holds its previous value in one or more paths through the process File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd Line: 21
+Info (10041): Inferred latch for "game_over" at hp_down_counter.vhd(21) File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd Line: 21
+Info (12128): Elaborating entity "TCounter" for hierarchy "TCounter:inst22"
+Info (12128): Elaborating entity "LPM_CONSTANT" for hierarchy "LPM_CONSTANT:inst"
+Info (12130): Elaborated megafunction instantiation "LPM_CONSTANT:inst"
+Info (12133): Instantiated megafunction "LPM_CONSTANT:inst" with the following parameter:
+    Info (12134): Parameter "LPM_CVALUE" = "1001"
+    Info (12134): Parameter "LPM_WIDTH" = "4"
+Info (12128): Elaborating entity "hexss" for hierarchy "hexss:inst13"
+Info (12128): Elaborating entity "score_up_counter" for hierarchy "score_up_counter:inst18"
+Warning (10492): VHDL Process Statement warning at score_up_counter.vhd(34): signal "score_keeper_3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/score_up_counter.vhd Line: 34
+Warning (10492): VHDL Process Statement warning at score_up_counter.vhd(35): signal "score_keeper_2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/score_up_counter.vhd Line: 35
+Warning (10492): VHDL Process Statement warning at score_up_counter.vhd(36): signal "score_keeper_1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/score_up_counter.vhd Line: 36
+Warning (10492): VHDL Process Statement warning at score_up_counter.vhd(37): signal "score_keeper_0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/score_up_counter.vhd Line: 37
+Info (12128): Elaborating entity "LPM_CONSTANT" for hierarchy "LPM_CONSTANT:inst20"
+Info (12130): Elaborated megafunction instantiation "LPM_CONSTANT:inst20"
+Info (12133): Instantiated megafunction "LPM_CONSTANT:inst20" with the following parameter:
+    Info (12134): Parameter "LPM_CVALUE" = "0011"
+    Info (12134): Parameter "LPM_WIDTH" = "4"
+Info (12128): Elaborating entity "KBDINTF" for hierarchy "KBDINTF:inst9"
+Info (12128): Elaborating entity "NUM_LOCK" for hierarchy "KBDINTF:inst9|NUM_LOCK:CCC"
+Warning (10492): VHDL Process Statement warning at NUM_LOCK.vhd(49): signal "out_led" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/NUM_LOCK.vhd Line: 49
+Info (12128): Elaborating entity "Debug_Bitrec_partial" for hierarchy "KBDINTF:inst9|Debug_Bitrec_partial:DBP"
+Info (12128): Elaborating entity "byterec" for hierarchy "KBDINTF:inst9|Debug_Bitrec_partial:DBP|byterec:byterec"
+Info (12128): Elaborating entity "bitrec" for hierarchy "KBDINTF:inst9|Debug_Bitrec_partial:DBP|bitrec:inst"
+Info (12128): Elaborating entity "lpf" for hierarchy "KBDINTF:inst9|Debug_Bitrec_partial:DBP|lpf:cleaner"
+Info (12128): Elaborating entity "lpm_our" for hierarchy "KBDINTF:inst9|lpm_our:inst3"
+Info (12128): Elaborating entity "LPM_CONSTANT" for hierarchy "KBDINTF:inst9|lpm_our:inst3|LPM_CONSTANT:LPM_CONSTANT_component" File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/lpm_our.vhd Line: 72
+Info (12130): Elaborated megafunction instantiation "KBDINTF:inst9|lpm_our:inst3|LPM_CONSTANT:LPM_CONSTANT_component" File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/lpm_our.vhd Line: 72
+Info (12133): Instantiated megafunction "KBDINTF:inst9|lpm_our:inst3|LPM_CONSTANT:LPM_CONSTANT_component" with the following parameter: File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/lpm_our.vhd Line: 72
+    Info (12134): Parameter "lpm_cvalue" = "41"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=YES, INSTANCE_NAME=5"
+    Info (12134): Parameter "lpm_type" = "LPM_CONSTANT"
+    Info (12134): Parameter "lpm_width" = "8"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_constant_458.tdf
+    Info (12023): Found entity 1: lpm_constant_458 File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/db/lpm_constant_458.tdf Line: 26
+Info (12128): Elaborating entity "lpm_constant_458" for hierarchy "KBDINTF:inst9|lpm_our:inst3|LPM_CONSTANT:LPM_CONSTANT_component|lpm_constant_458:ag" File: c:/intelfpga/17.0/quartus/libraries/megafunctions/lpm_constant.tdf Line: 46
+Info (12128): Elaborating entity "sld_mod_ram_rom" for hierarchy "KBDINTF:inst9|lpm_our:inst3|LPM_CONSTANT:LPM_CONSTANT_component|lpm_constant_458:ag|sld_mod_ram_rom:mgl_prim1" File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/db/lpm_constant_458.tdf Line: 31
+Info (12130): Elaborated megafunction instantiation "KBDINTF:inst9|lpm_our:inst3|LPM_CONSTANT:LPM_CONSTANT_component|lpm_constant_458:ag|sld_mod_ram_rom:mgl_prim1" File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/db/lpm_constant_458.tdf Line: 31
+Info (12133): Instantiated megafunction "KBDINTF:inst9|lpm_our:inst3|LPM_CONSTANT:LPM_CONSTANT_component|lpm_constant_458:ag|sld_mod_ram_rom:mgl_prim1" with the following parameter: File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/db/lpm_constant_458.tdf Line: 31
+    Info (12134): Parameter "CVALUE" = "00101001"
+    Info (12134): Parameter "IS_DATA_IN_RAM" = "0"
+    Info (12134): Parameter "IS_READABLE" = "0"
+    Info (12134): Parameter "NODE_NAME" = "889192448"
+    Info (12134): Parameter "NUMWORDS" = "1"
+    Info (12134): Parameter "SHIFT_COUNT_BITS" = "4"
+    Info (12134): Parameter "WIDTH_WORD" = "8"
+    Info (12134): Parameter "WIDTHAD" = "1"
+Info (12128): Elaborating entity "sld_jtag_endpoint_adapter" for hierarchy "KBDINTF:inst9|lpm_our:inst3|LPM_CONSTANT:LPM_CONSTANT_component|lpm_constant_458:ag|sld_mod_ram_rom:mgl_prim1|sld_jtag_endpoint_adapter:jtag_signal_adapter" File: c:/intelfpga/17.0/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd Line: 302
+Info (12128): Elaborating entity "sld_jtag_endpoint_adapter_impl" for hierarchy "KBDINTF:inst9|lpm_our:inst3|LPM_CONSTANT:LPM_CONSTANT_component|lpm_constant_458:ag|sld_mod_ram_rom:mgl_prim1|sld_jtag_endpoint_adapter:jtag_signal_adapter|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst" File: c:/intelfpga/17.0/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd Line: 232
+Info (12128): Elaborating entity "sld_rom_sr" for hierarchy "KBDINTF:inst9|lpm_our:inst3|LPM_CONSTANT:LPM_CONSTANT_component|lpm_constant_458:ag|sld_mod_ram_rom:mgl_prim1|sld_rom_sr:\constant_logic_gen:name_gen:info_rom_sr" File: c:/intelfpga/17.0/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd Line: 485
+Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
+Info (11172): 2018.06.05.13:44:21 Progress: Loading sldcc85be97/alt_sld_fab_wrapper_hw.tcl
+Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
+Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
+Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
+Info (11172): Presplit: "alt_sld_fab" instantiated altera_super_splitter "presplit"
+Info (11172): Splitter: "alt_sld_fab" instantiated altera_sld_splitter "splitter"
+Info (11172): Sldfabric: "alt_sld_fab" instantiated altera_sld_jtag_hub "sldfabric"
+Info (11172): Ident: "alt_sld_fab" instantiated altera_connection_identification_hub "ident"
+Info (11172): Alt_sld_fab: Done "alt_sld_fab" with 6 modules, 6 files
+Info (11171): Finished IP generation for the debug fabric: alt_sld_fab.
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sldcc85be97/alt_sld_fab.v
+    Info (12023): Found entity 1: alt_sld_fab File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/db/ip/sldcc85be97/alt_sld_fab.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sldcc85be97/submodules/alt_sld_fab_alt_sld_fab.v
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/db/ip/sldcc85be97/submodules/alt_sld_fab_alt_sld_fab.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sldcc85be97/submodules/alt_sld_fab_alt_sld_fab_ident.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_ident File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/db/ip/sldcc85be97/submodules/alt_sld_fab_alt_sld_fab_ident.sv Line: 33
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sldcc85be97/submodules/alt_sld_fab_alt_sld_fab_presplit.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_presplit File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/db/ip/sldcc85be97/submodules/alt_sld_fab_alt_sld_fab_presplit.sv Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file db/ip/sldcc85be97/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd
+    Info (12022): Found design unit 1: alt_sld_fab_alt_sld_fab_sldfabric-rtl File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/db/ip/sldcc85be97/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 102
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/db/ip/sldcc85be97/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sldcc85be97/submodules/alt_sld_fab_alt_sld_fab_splitter.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/db/ip/sldcc85be97/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
+Info (13000): Registers with preset signals will power-up high File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/hp_down_counter.vhd Line: 24
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "VGA_SYNC_N" is stuck at GND
+    Warning (13410): Pin "VGA_B[5]" is stuck at GND
+    Warning (13410): Pin "VGA_B[4]" is stuck at GND
+    Warning (13410): Pin "VGA_B[3]" is stuck at GND
+    Warning (13410): Pin "VGA_B[2]" is stuck at GND
+    Warning (13410): Pin "VGA_B[1]" is stuck at GND
+    Warning (13410): Pin "VGA_B[0]" is stuck at GND
+    Warning (13410): Pin "VGA_G[4]" is stuck at GND
+    Warning (13410): Pin "VGA_G[3]" is stuck at GND
+    Warning (13410): Pin "VGA_G[2]" is stuck at GND
+    Warning (13410): Pin "VGA_G[1]" is stuck at GND
+    Warning (13410): Pin "VGA_G[0]" is stuck at GND
+    Warning (13410): Pin "VGA_R[4]" is stuck at GND
+    Warning (13410): Pin "VGA_R[3]" is stuck at GND
+    Warning (13410): Pin "VGA_R[2]" is stuck at GND
+    Warning (13410): Pin "VGA_R[1]" is stuck at GND
+    Warning (13410): Pin "VGA_R[0]" is stuck at GND
+Info (286031): Timing-Driven Synthesis is running on partition "Top"
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register VGA_Controller:inst21|V_Cont[31] will power up to Low File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/VGA_Controller.vhd Line: 152
+    Critical Warning (18010): Register VGA_Controller:inst21|H_Cont[31] will power up to Low File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/VGA_Controller.vhd Line: 127
+    Critical Warning (18010): Register VGA_Controller:inst21|H_Cont[0] will power up to Low File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/VGA_Controller.vhd Line: 127
+    Critical Warning (18010): Register TCounter:inst22|counter[31] will power up to Low File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/TCounter.vhd Line: 26
+    Critical Warning (18010): Register VGA_Controller:inst21|oCoord_Y[31] will power up to Low File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/VGA_Controller.vhd Line: 84
+    Critical Warning (18010): Register VGA_Controller:inst21|oCoord_X[31] will power up to Low File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/VGA_Controller.vhd Line: 84
+    Critical Warning (18010): Register VGA_Controller:inst21|oCoord_X[0] will power up to Low File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/VGA_Controller.vhd Line: 84
+    Critical Warning (18010): Register VGA_Controller:inst21|oCoord_Y[0] will power up to Low File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/VGA_Controller.vhd Line: 84
+    Critical Warning (18010): Register VGA_Controller:inst21|V_Cont[0] will power up to Low File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/VGA_Controller.vhd Line: 152
+    Critical Warning (18010): Register ball_move:inst5|sigCurrLocationX[8] will power up to High File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 66
+    Critical Warning (18010): Register ball_move:inst5|sigCurrLocationX[7] will power up to High File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 66
+    Critical Warning (18010): Register ball_move:inst5|sigCurrLocationX[6] will power up to High File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 66
+    Critical Warning (18010): Register ball_move:inst5|sigCurrLocationX[5] will power up to High File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 66
+    Critical Warning (18010): Register ball_move:inst5|sigCurrLocationX[4] will power up to High File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 66
+    Critical Warning (18010): Register ball_move:inst5|sigCurrLocationX[2] will power up to High File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 66
+    Critical Warning (18010): Register ball_move:inst5|sigCurrLocationY[8] will power up to High File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 66
+    Critical Warning (18010): Register ball_move:inst5|sigCurrLocationY[6] will power up to High File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 66
+    Critical Warning (18010): Register ball_move:inst5|sigCurrLocationY[4] will power up to High File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 66
+    Critical Warning (18010): Register ball_move:inst5|sigCurrLocationY[3] will power up to High File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 66
+    Critical Warning (18010): Register ball_move:inst5|sigCurrLocationY[2] will power up to High File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 66
+    Critical Warning (18010): Register ball_move:inst5|sigCurrLocationY[1] will power up to High File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/ball_move.vhd Line: 66
+    Critical Warning (18010): Register TCounter:inst22|counter[0] will power up to Low File: Z:/PinBallProject/PinBallVHDL_Lab1/Quartus_Project/TCounter.vhd Line: 26
+Info (17049): 43 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 9 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 5 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "flip_data[2]"
+    Warning (15610): No output dependent on input pin "flip_data[1]"
+    Warning (15610): No output dependent on input pin "flip_data[0]"
+    Warning (15610): No output dependent on input pin "kbd_data"
+    Warning (15610): No output dependent on input pin "kbd_clk"
+Info (21057): Implemented 1739 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 15 input pins
+    Info (21059): Implemented 67 output pins
+    Info (21061): Implemented 1656 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 61 warnings
+    Info: Peak virtual memory: 763 megabytes
+    Info: Processing ended: Tue Jun 05 13:44:38 2018
+    Info: Elapsed time: 00:00:37
+    Info: Total CPU time (on all processors): 00:00:52
 
 

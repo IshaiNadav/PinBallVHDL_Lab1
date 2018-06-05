@@ -1,5 +1,5 @@
 Flow report for PinBall
-Sat Jun 02 21:11:19 2018
+Tue Jun 05 13:46:04 2018
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
 
 
@@ -38,24 +38,29 @@ agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------+
-; Flow Summary                                                                  ;
-+-----------------------------+-------------------------------------------------+
-; Flow Status                 ; Flow Failed - Sat Jun 02 21:11:19 2018          ;
-; Quartus Prime Version       ; 17.0.0 Build 595 04/25/2017 SJ Standard Edition ;
-; Revision Name               ; PinBall                                         ;
-; Top-level Entity Name       ; PIN_BALL_GAMEPLAY                               ;
-; Family                      ; Cyclone V                                       ;
-; Device                      ; 5CSXFC6D6F31C6                                  ;
-; Timing Models               ; Final                                           ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                       ;
-; Total registers             ; N/A until Partition Merge                       ;
-; Total pins                  ; N/A until Partition Merge                       ;
-; Total virtual pins          ; N/A until Partition Merge                       ;
-; Total block memory bits     ; N/A until Partition Merge                       ;
-; Total PLLs                  ; N/A until Partition Merge                       ;
-; Total DLLs                  ; N/A until Partition Merge                       ;
-+-----------------------------+-------------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Flow Summary                                                                      ;
++---------------------------------+-------------------------------------------------+
+; Flow Status                     ; Successful - Tue Jun 05 13:45:50 2018           ;
+; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Standard Edition ;
+; Revision Name                   ; PinBall                                         ;
+; Top-level Entity Name           ; PIN_BALL_GAMEPLAY                               ;
+; Family                          ; Cyclone V                                       ;
+; Device                          ; 5CSXFC6D6F31C6                                  ;
+; Timing Models                   ; Final                                           ;
+; Logic utilization (in ALMs)     ; 966 / 41,910 ( 2 % )                            ;
+; Total registers                 ; 428                                             ;
+; Total pins                      ; 78 / 499 ( 16 % )                               ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 0 / 5,662,720 ( 0 % )                           ;
+; Total DSP Blocks                ; 0 / 112 ( 0 % )                                 ;
+; Total HSSI RX PCSs              ; 0 / 9 ( 0 % )                                   ;
+; Total HSSI PMA RX Deserializers ; 0 / 9 ( 0 % )                                   ;
+; Total HSSI TX PCSs              ; 0 / 9 ( 0 % )                                   ;
+; Total HSSI PMA TX Serializers   ; 0 / 9 ( 0 % )                                   ;
+; Total PLLs                      ; 0 / 15 ( 0 % )                                  ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                                   ;
++---------------------------------+-------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -63,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/02/2018 21:11:08 ;
+; Start date & time ; 06/05/2018 13:44:03 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; PinBall             ;
 +-------------------+---------------------+
@@ -74,7 +79,7 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name       ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 48710646987603.152796306801084         ; --            ; --                ; --         ;
+; COMPILER_SIGNATURE_ID               ; 48710646987603.152819544208116         ; --            ; --                ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; PIN_BALL_GAMEPLAY ; Top        ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; PIN_BALL_GAMEPLAY ; Top        ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; PIN_BALL_GAMEPLAY ; Top        ;
@@ -83,29 +88,38 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------------+------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                        ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 703 MB              ; 00:00:22                           ;
-; Total                ; 00:00:12     ; --                      ; --                  ; 00:00:22                           ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:35     ; 1.0                     ; 763 MB              ; 00:00:51                           ;
+; Fitter                    ; 00:00:48     ; 1.1                     ; 2564 MB             ; 00:01:33                           ;
+; Assembler                 ; 00:00:11     ; 1.0                     ; 705 MB              ; 00:00:08                           ;
+; TimeQuest Timing Analyzer ; 00:00:12     ; 1.3                     ; 1024 MB             ; 00:00:11                           ;
+; Total                     ; 00:01:46     ; --                      ; --                  ; 00:02:43                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+-----------------------------------------------------------------------------------+
-; Flow OS Summary                                                                   ;
-+----------------------+------------------+-----------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
-+----------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis ; ee-206-14        ; Windows 7 ; 6.1        ; x86_64         ;
-+----------------------+------------------+-----------+------------+----------------+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++---------------------------+------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++---------------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; ee-206-14        ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; ee-206-14        ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; ee-206-14        ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; ee-206-14        ; Windows 7 ; 6.1        ; x86_64         ;
++---------------------------+------------------+-----------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off PinBall -c PinBall
+quartus_fit --read_settings_files=off --write_settings_files=off PinBall -c PinBall
+quartus_asm --read_settings_files=off --write_settings_files=off PinBall -c PinBall
+quartus_sta PinBall -c PinBall
 
 
 

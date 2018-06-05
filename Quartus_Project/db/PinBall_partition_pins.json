@@ -220,6 +220,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "bounceEnable",
+					"strict" : false
+				},
+				{
 					"name" : "turbo",
 					"strict" : false
 				}

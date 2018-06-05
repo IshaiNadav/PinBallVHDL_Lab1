@@ -1,13 +1,13 @@
-Fitter Status : Successful - Sat Jun 02 20:17:51 2018
+Fitter Status : Successful - Tue Jun 05 13:45:28 2018
 Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Standard Edition
 Revision Name : PinBall
 Top-level Entity Name : PIN_BALL_GAMEPLAY
 Family : Cyclone V
 Device : 5CSXFC6D6F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 562 / 41,910 ( 1 % )
-Total registers : 399
-Total pins : 79 / 499 ( 16 % )
+Logic utilization (in ALMs) : 966 / 41,910 ( 2 % )
+Total registers : 428
+Total pins : 78 / 499 ( 16 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 5,662,720 ( 0 % )
 Total RAM Blocks : 0 / 553 ( 0 % )

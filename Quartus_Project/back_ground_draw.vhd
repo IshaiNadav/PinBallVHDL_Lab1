@@ -49,7 +49,7 @@ begin
 			  if (oCoord_X > 156 and oCoord_y >= 256 ) then  mVGA_R <= "111" ; else mVGA_R <= "010" ; end if ; 	
 			  if (oCoord_X <  220 and oCoord_Y < 350 ) then  mVGA_G <= "011" ; else mVGA_G <= "110" ; end if ; 	
 			  if (oCoord_X <  300 and oCoord_Y < 200 ) then  mVGA_B <= "10"  ; else mVGA_B <= "00";	 end if ;
-			  if (oCoord_X < 50 and oCoord_Y < 70) then mVGA_R <= "000"; mVGA_G <= "000"; mVGA_B <= "11"; end if; 
+			  --if (oCoord_X < 50 and oCoord_Y < 70) then mVGA_R <= "000"; mVGA_G <= "000"; mVGA_B <= "11"; end if; 
 		
 		end if ; 
 	end if ; 

@@ -30,7 +30,7 @@ set_location_assignment PIN_AA15 -to start_shot
 set_location_assignment PIN_AB30 -to recording ; #SW[0]
 set_location_assignment PIN_Y27 -to playing ; #SW[1]
 set_location_assignment PIN_AB28 -to turbo ; #SW[2]
-set_location_assignment PIN_AC30 -to mux[0] ; #SW[3]
+set_location_assignment PIN_AC30 -to bounceEnable ; #SW[3]
 set_location_assignment PIN_W25 -to mux[2] ; #SW[4]
 set_location_assignment PIN_V25 -to mux[3] ; #SW[5]
 set_location_assignment PIN_AC28 -to freq[0] ;# SW[6]
