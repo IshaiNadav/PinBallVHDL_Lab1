@@ -53,6 +53,13 @@ agreement for further details.
 		(line (pt 0 80)(pt 16 80))
 	)
 	(port
+		(pt 0 96)
+		(input)
+		(text "key[7..0]" (rect 0 0 51 19)(font "Intel Clear" (font_size 8)))
+		(text "key[7..0]" (rect 21 91 72 110)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
 		(pt 160 32)
 		(output)
 		(text "led_out" (rect 0 0 44 19)(font "Intel Clear" (font_size 8)))

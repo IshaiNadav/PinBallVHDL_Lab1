@@ -118,7 +118,7 @@ begin
 				was_hit_out <= sigWasHit;
 				sigWasHit <= '0';
 				data_prev <= sigDataIn;
-
+				
 			end if; -- end of frame
 		end if; --enable
 			

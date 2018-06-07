@@ -8,6 +8,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "game_over",
+					"strict" : false
+				},
+				{
 					"name" : "VGA_HS",
 					"strict" : false
 				},
@@ -20,15 +24,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "game_over",
-					"strict" : false
-				},
-				{
-					"name" : "one_sec",
-					"strict" : false
-				},
-				{
-					"name" : "space",
+					"name" : "duty_50",
 					"strict" : false
 				},
 				{
@@ -212,31 +208,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "scored",
-					"strict" : false
-				},
-				{
-					"name" : "died",
-					"strict" : false
-				},
-				{
-					"name" : "kbd_data",
-					"strict" : false
-				},
-				{
-					"name" : "Left_Flipper_On",
-					"strict" : false
-				},
-				{
-					"name" : "start_shot",
-					"strict" : false
-				},
-				{
 					"name" : "bounceEnable",
 					"strict" : false
 				},
 				{
 					"name" : "turbo",
+					"strict" : false
+				},
+				{
+					"name" : "kbd_data",
 					"strict" : false
 				},
 				{

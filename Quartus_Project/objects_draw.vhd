@@ -119,7 +119,7 @@ architecture behav of objects_draw is
 	
 	type left_down_slope_object_form is array (0 to left_down_slope_Y_size - 1 , 0 to left_down_slope_X_size - 1) of std_logic;
 	constant left_down_slope_object : left_down_slope_object_form := (
-("0000000000000000000000000000000000000000000000000000000000000000000000"),
+("1000000000000000000000000000000000000000000000000000000000000000000000"),
 ("1100000000000000000000000000000000000000000000000000000000000000000000"),
 ("1110000000000000000000000000000000000000000000000000000000000000000000"),
 ("1111000000000000000000000000000000000000000000000000000000000000000000"),
@@ -188,7 +188,7 @@ architecture behav of objects_draw is
 ("1111111111111111111111111111111111111111111111111111111111111111111000"),
 ("1111111111111111111111111111111111111111111111111111111111111111111100"),
 ("1111111111111111111111111111111111111111111111111111111111111111111110"),
-("1111111111111111111111111111111111111111111111111111111111111111111110")
+("1111111111111111111111111111111111111111111111111111111111111111111111")
 );
 	
 	--left_up_slope:
@@ -384,9 +384,11 @@ architecture behav of objects_draw is
 	signal right_up_slope_end_x2 : integer;
 	signal right_up_slope_end_y : integer;
 	signal right_up_slope_drawing_X : std_logic := '0';
+	signal right_up_slope_drawing_X2 : std_logic := '0';
 	signal right_up_slope_drawing_Y : std_logic := '0';
 	signal right_up_slope_drawing_req : std_logic := '0';
 	signal right_up_slope_Coord_X : integer := 0;-- offset from start position 
+	signal right_up_slope_Coord_X2 : integer := 0;-- offset from start position 
 	signal right_up_slope_Coord_Y : integer := 0;
 	--/right_up_slope
 
@@ -503,14 +505,14 @@ architecture behav of objects_draw is
 ("00000000000000000000000000000000000000000000000000"),
 ("00000000000000000000000000000000000000000000000000"),
 ("00000000000000000000000000000000000000000000000000"),
-("11111111110000000000000000000000000000000000000000"),
-("11111111110000000000000000000000000000000000000000"),
-("11111111110000000000000000000000000000000000000000"),
-("11111111110000000000000000000000000000000000000000"),
-("11111111110000000000000000000000000000000000000000"),
-("11111111110000000000000000000000000000000000000000"),
-("11111111110000000000000000000000000000000000000000"),
-("11111111110000000000000000000000000000000000000000"),
+("00000000000000000000000000000000000000000000000000"),
+("00000000000000000000000000000000000000000000000000"),
+("00000000000000000000000000000000000000000000000000"),
+("00000000000000000000000000000000000000000000000000"),
+("00000000000000000000000000000000000000000000000000"),
+("00000000000000000000000000000000000000000000000000"),
+("00000000000000000000000000000000000000000000000000"),
+("00000000000000000000000000000000000000000000000000"),
 ("11111111110000000000000000000000000000000000000000"),
 ("11111111110000000000000000000000000000000000000000"),
 ("11111111110000000000000000000000000000000000000000"),
@@ -782,7 +784,7 @@ architecture behav of objects_draw is
 	signal stage_left_drawing_req : std_logic := '0';
 --/stage_left
 
---stage_right:
+ --stage_right:
 	constant stage_right_start_x 	: integer := 380;
 	constant stage_right_start_y 	: integer := 380;
 	constant stage_right_X_size 	: integer := 190;
@@ -797,8 +799,243 @@ architecture behav of objects_draw is
 	signal stage_right_drawing_req : std_logic := '0';
 --/stage_right
 
+------------------------------- obsticle -------------------------------------------------------------------
 
+
+
+-- obsticle_up
+	constant obsticle_up_start_x 	: integer := 150;
+	constant obsticle_up_start_y 	: integer := 100;
+	constant obsticle_up_X_size 	: integer := 20;
+	constant obsticle_up_Y_size 	: integer := 20;
+	constant obsticle_up_color  	: std_logic_vector(7 downto 0) := x"13";
+	constant obsticle_up_bounce_type : std_logic_vector(4 downto 0) := horizontal_floor;
+	signal obsticle_up_end_x : integer;
+	signal obsticle_up_end_y : integer;
+	signal obsticle_up_drawing_X : std_logic := '0';
+	signal obsticle_up_drawing_Y : std_logic := '0';
+	signal obsticle_up_drawing_req : std_logic := '0';
+--/obsticle_up
+
+
+-- obsticle_left_up
+	constant obsticle_left_up_start_x 	: integer := 130;
+	constant obsticle_left_up_start_y 	: integer := 100;
+	constant obsticle_left_up_X_size 	: integer := 20;
+	constant obsticle_left_up_Y_size 	: integer := 20;
+	constant obsticle_left_up_color  	: std_logic_vector(7 downto 0) := x"13";
+	constant obsticle_left_up_bounce_type : std_logic_vector(4 downto 0) := right_down_slope;
+	signal obsticle_left_up_end_x : integer;
+	signal obsticle_left_up_end_y : integer;
+	signal obsticle_left_up_drawing_X : std_logic := '0';
+	signal obsticle_left_up_drawing_Y : std_logic := '0';
+	signal obsticle_left_up_drawing_req : std_logic := '0';
+	signal obsticle_left_up_Coord_X : integer := 0;-- offset from start position 
+	signal obsticle_left_up_Coord_Y : integer := 0;
+
+--/obsticle_left_up
+
+-- obsticle_left
+	constant obsticle_left_start_x 	: integer := 130;
+	constant obsticle_left_start_y 	: integer := 120;
+	constant obsticle_left_X_size 	: integer := 30;
+	constant obsticle_left_Y_size 	: integer := 20;
+	constant obsticle_left_color  	: std_logic_vector(7 downto 0) := x"13";
+	constant obsticle_left_bounce_type : std_logic_vector(4 downto 0) := left_vertical_wall;
+	signal obsticle_left_end_x : integer;
+	signal obsticle_left_end_y : integer;
+	signal obsticle_left_drawing_X : std_logic := '0';
+	signal obsticle_left_drawing_Y : std_logic := '0';
+	signal obsticle_left_drawing_req : std_logic := '0';
+--/obsticle_left
+
+
+-- obsticle_left_down
+	constant obsticle_left_down_start_x 	: integer := 130;
+	constant obsticle_left_down_start_y 	: integer := 140;
+	constant obsticle_left_down_X_size 	: integer := 20;
+	constant obsticle_left_down_Y_size 	: integer := 20;
+	constant obsticle_left_down_color  	: std_logic_vector(7 downto 0) := x"13";
+	constant obsticle_left_down_bounce_type : std_logic_vector(4 downto 0) := right_up_slope;
+	signal obsticle_left_down_end_x : integer;
+	signal obsticle_left_down_end_y : integer;
+	signal obsticle_left_down_drawing_X : std_logic := '0';
+	signal obsticle_left_down_drawing_Y : std_logic := '0';
+	signal obsticle_left_down_drawing_req : std_logic := '0';
+	signal obsticle_left_down_Coord_X : integer := 0;-- offset from start position 
+	signal obsticle_left_down_Coord_Y : integer := 0;
+
+
+--/obsticle_left_down
+
+-- obsticle_down
+	constant obsticle_down_start_x 	: integer := 150;
+	constant obsticle_down_start_y 	: integer := 140;
+	constant obsticle_down_X_size 	: integer := 20;
+	constant obsticle_down_Y_size 	: integer := 20;
+	constant obsticle_down_color  	: std_logic_vector(7 downto 0) := x"13";
+	constant obsticle_down_bounce_type : std_logic_vector(4 downto 0) := horizontal_ceiling;
+	signal obsticle_down_end_x : integer;
+	signal obsticle_down_end_y : integer;
+	signal obsticle_down_drawing_X : std_logic := '0';
+	signal obsticle_down_drawing_Y : std_logic := '0';
+	signal obsticle_down_drawing_req : std_logic := '0';
+--/obsticle_down
+
+-- obsticle_right_down
+	constant obsticle_right_down_start_x 	: integer := 170;
+	constant obsticle_right_down_start_y 	: integer := 140;
+	constant obsticle_right_down_X_size 	: integer := 20;
+	constant obsticle_right_down_Y_size 	: integer := 20;
+	constant obsticle_right_down_color  	: std_logic_vector(7 downto 0) := x"13";
+	constant obsticle_right_down_bounce_type : std_logic_vector(4 downto 0) := left_up_slope;
+	signal obsticle_right_down_end_x : integer;
+	signal obsticle_right_down_end_y : integer;
+	signal obsticle_right_down_drawing_X : std_logic := '0';
+	signal obsticle_right_down_drawing_Y : std_logic := '0';
+	signal obsticle_right_down_drawing_req : std_logic := '0';
+	signal obsticle_right_down_Coord_X : integer := 0;-- offset from start position 
+	signal obsticle_right_down_Coord_Y : integer := 0;
+
+
+--/obsticle_right_down
+
+
+
+-- obsticle_right
+	constant obsticle_right_start_x 	: integer := 160;
+	constant obsticle_right_start_y 	: integer := 120;
+	constant obsticle_right_X_size 	: integer := 30;
+	constant obsticle_right_Y_size 	: integer := 20;
+	constant obsticle_right_color  	: std_logic_vector(7 downto 0) := x"13";
+	constant obsticle_right_bounce_type : std_logic_vector(4 downto 0) := right_vertical_wall;
+	signal obsticle_right_end_x : integer;
+	signal obsticle_right_end_y : integer;
+	signal obsticle_right_drawing_X : std_logic := '0';
+	signal obsticle_right_drawing_Y : std_logic := '0';
+	signal obsticle_right_drawing_req : std_logic := '0';
+--/obsticle_right
+
+
+
+-- obsticle_right_up
+
+	constant obsticle_right_up_start_x 	: integer := 170;
+	constant obsticle_right_up_start_y 	: integer := 100;
+	constant obsticle_right_up_X_size 	: integer := 20;
+	constant obsticle_right_up_Y_size 	: integer := 20;
+	constant obsticle_right_up_color  	: std_logic_vector(7 downto 0) := x"13";
+	constant obsticle_right_up_bounce_type : std_logic_vector(4 downto 0) := left_down_slope;
+	signal obsticle_right_up_end_x : integer;
+	signal obsticle_right_up_end_y : integer;
+	signal obsticle_right_up_drawing_X : std_logic := '0';
+	signal obsticle_right_up_drawing_Y : std_logic := '0';
+	signal obsticle_right_up_drawing_req : std_logic := '0';
+	signal obsticle_right_up_Coord_X : integer := 0;-- offset from start position 
+	signal obsticle_right_up_Coord_Y : integer := 0;
+
+--/obsticle_right_up
+
+
+type obsticle_array is array (0 to obsticle_left_up_Y_size - 1 , 0 to obsticle_left_up_X_size - 1) of std_logic;
+
+
+	constant obsticle_left_up_mask : obsticle_array :=  (
+		("00000000000000000001"),
+		("00000000000000000011"),
+		("00000000000000000111"),
+		("00000000000000001111"),
+		("00000000000000011111"),
+		("00000000000000111111"),
+		("00000000000001111111"),
+		("00000000000011111111"),
+		("00000000000111111111"),
+		("00000000001111111111"),
+		("00000000011111111111"),
+		("00000000111111111111"),
+		("00000001111111111111"),
+		("00000011111111111111"),
+		("00000111111111111111"),
+		("00001111111111111111"),
+		("00011111111111111111"),
+		("00111111111111111111"),
+		("01111111111111111111"),
+		("11111111111111111111")
+		);
 	
+	
+	constant obsticle_left_down_mask : obsticle_array := (
+		("11111111111111111111"),
+		("01111111111111111111"),
+		("00111111111111111111"),
+		("00011111111111111111"),
+		("00001111111111111111"),
+		("00000111111111111111"),
+		("00000011111111111111"),
+		("00000001111111111111"),
+		("00000000111111111111"),
+		("00000000011111111111"),
+		("00000000001111111111"),
+		("00000000000111111111"),
+		("00000000000011111111"),
+		("00000000000001111111"),
+		("00000000000000111111"),
+		("00000000000000011111"),
+		("00000000000000001111"),
+		("00000000000000000111"),
+		("00000000000000000011"),
+		("00000000000000000001")
+		);
+	
+		
+	constant obsticle_right_down_mask : obsticle_array :=  (
+		("11111111111111111111"),
+		("11111111111111111110"),
+		("11111111111111111100"),
+		("11111111111111111000"),
+		("11111111111111110000"),
+		("11111111111111100000"),
+		("11111111111111000000"),
+		("11111111111110000000"),
+		("11111111111100000000"),
+		("11111111111000000000"),
+		("11111111110000000000"),
+		("11111111100000000000"),
+		("11111111000000000000"),
+		("11111110000000000000"),
+		("11111100000000000000"),
+		("11111000000000000000"),
+		("11110000000000000000"),
+		("11100000000000000000"),
+		("11000000000000000000"),
+		("10000000000000000000")
+		);
+
+
+	constant obsticle_right_up_mask : obsticle_array :=  (
+		("10000000000000000000"),
+		("11000000000000000000"),
+		("11100000000000000000"),
+		("11110000000000000000"),
+		("11111000000000000000"),
+		("11111100000000000000"),
+		("11111110000000000000"),
+		("11111111000000000000"),
+		("11111111100000000000"),
+		("11111111110000000000"),
+		("11111111111000000000"),
+		("11111111111100000000"),
+		("11111111111110000000"),
+		("11111111111111000000"),
+		("11111111111111100000"),
+		("11111111111111110000"),
+		("11111111111111111000"),
+		("11111111111111111100"),
+		("11111111111111111110"),
+		("11111111111111111111")
+		);
+	
+------------------------------- /obsticle -------------------------------------------------------------------
 
 
 	
@@ -820,6 +1057,8 @@ begin
 	
 	right_up_slope_end_x	<= right_up_slope_X_size + right_up_slope_start_x;
 	right_up_slope_end_y	<= right_up_slope_Y_size + right_up_slope_start_y;
+	
+	right_up_slope_end_x2<= right_up_slope_X_size + right_up_slope_start_x2;
 	
 	tunnel_wall_end_x	<= tunnel_wall_X_size + tunnel_wall_start_x;
 	tunnel_wall_end_y	<= tunnel_wall_Y_size + tunnel_wall_start_y;
@@ -852,6 +1091,32 @@ begin
 	
 	------------------------------------------------------------------
 	
+	obsticle_up_end_x <= obsticle_up_X_size + obsticle_up_start_x;
+	obsticle_up_end_y <= obsticle_up_Y_size + obsticle_up_start_Y;
+	
+	obsticle_left_up_end_x <= obsticle_left_up_X_size + obsticle_left_up_start_x;
+	obsticle_left_up_end_y <= obsticle_left_up_Y_size + obsticle_left_up_start_Y;
+	
+	obsticle_left_end_x <= obsticle_left_X_size + obsticle_left_start_x;
+	obsticle_left_end_y <= obsticle_left_Y_size + obsticle_left_start_Y;
+
+	obsticle_left_down_end_x <= obsticle_left_down_X_size + obsticle_left_down_start_x;
+	obsticle_left_down_end_y <= obsticle_left_down_Y_size + obsticle_left_down_start_Y;
+
+	obsticle_down_end_x <= obsticle_down_X_size + obsticle_down_start_x;
+	obsticle_down_end_y <= obsticle_down_Y_size + obsticle_down_start_Y;
+
+	obsticle_right_down_end_x <= obsticle_right_down_X_size + obsticle_right_down_start_x;
+	obsticle_right_down_end_y <= obsticle_right_down_Y_size + obsticle_right_down_start_Y;
+
+	obsticle_right_end_x <= obsticle_right_X_size + obsticle_right_start_x;
+	obsticle_right_end_y <= obsticle_right_Y_size + obsticle_right_start_Y;
+
+	obsticle_right_up_end_x <= obsticle_right_up_X_size + obsticle_right_up_start_x;
+	obsticle_right_up_end_y <= obsticle_right_up_Y_size + obsticle_right_up_start_Y;
+
+
+	----------------------------------------------------------------------------------
 	
 	-- test if ooCoord is in the rectangle defined by Start and End 
    floor_drawing_X	<= '1' when  (oCoord_X  >= floor_start_x) and  (oCoord_X < floor_end_x) else '0';
@@ -878,6 +1143,8 @@ begin
 	
    right_up_slope_drawing_X	<= '1' when  (oCoord_X  >= right_up_slope_start_x) and  (oCoord_X < right_up_slope_end_x) else '0';
    right_up_slope_drawing_Y	<= '1' when  (oCoord_Y  >= right_up_slope_start_y) and  (oCoord_Y < right_up_slope_end_y) else '0';
+	
+	right_up_slope_drawing_X2	<= '1' when  (oCoord_X  >= right_up_slope_start_x2) and  (oCoord_X < right_up_slope_end_x2) else '0';
    
    tunnel_wall_drawing_X	<= '1' when  (oCoord_X  >= tunnel_wall_start_x) and  (oCoord_X < tunnel_wall_end_x) else '0';
    tunnel_wall_drawing_Y	<= '1' when  (oCoord_Y  >= tunnel_wall_start_y) and  (oCoord_Y < tunnel_wall_end_y) else '0';
@@ -904,9 +1171,58 @@ begin
 	
 	right_up_slope_Coord_X 	<= (oCoord_X - right_up_slope_start_x) when ( right_up_slope_drawing_X = '1' and  right_up_slope_drawing_Y = '1'  ) else 0 ; 
 	right_up_slope_Coord_Y 	<= (oCoord_Y - right_up_slope_start_y) when ( right_up_slope_drawing_X = '1' and  right_up_slope_drawing_Y = '1'  ) else 0 ;
+	
+	right_up_slope_Coord_X2 	<= (oCoord_X - right_up_slope_start_x2) when ( right_up_slope_drawing_X2 = '1' and  right_up_slope_drawing_Y = '1'  ) else 0 ; 
+
 
 	tunnel_wall_Coord_X 	<= (oCoord_X - tunnel_wall_start_x) when ( tunnel_wall_drawing_X = '1' and  tunnel_wall_drawing_Y = '1'  ) else 0 ; 
 	tunnel_wall_Coord_Y 	<= (oCoord_Y - tunnel_wall_start_y) when ( tunnel_wall_drawing_X = '1' and  tunnel_wall_drawing_Y = '1'  ) else 0 ;
+	
+	
+	
+	
+	-------------------------------------------------------------------
+	
+	obsticle_up_drawing_X	<= '1' when  (oCoord_X  >= obsticle_up_start_x) and  (oCoord_X < obsticle_up_end_x) else '0';
+   obsticle_up_drawing_Y	<= '1' when  (oCoord_Y  >= obsticle_up_start_y) and  (oCoord_Y < obsticle_up_end_y) else '0';
+
+	obsticle_left_up_drawing_X	<= '1' when  (oCoord_X  >= obsticle_left_up_start_x) and  (oCoord_X < obsticle_left_up_end_x) else '0';
+   obsticle_left_up_drawing_Y	<= '1' when  (oCoord_Y  >= obsticle_left_up_start_y) and  (oCoord_Y < obsticle_left_up_end_y) else '0';
+
+	obsticle_left_drawing_X	<= '1' when  (oCoord_X  >= obsticle_left_start_x) and  (oCoord_X < obsticle_left_end_x) else '0';
+   obsticle_left_drawing_Y	<= '1' when  (oCoord_Y  >= obsticle_left_start_y) and  (oCoord_Y < obsticle_left_end_y) else '0';
+
+	obsticle_left_down_drawing_X	<= '1' when  (oCoord_X  >= obsticle_left_down_start_x) and  (oCoord_X < obsticle_left_down_end_x) else '0';
+   obsticle_left_down_drawing_Y	<= '1' when  (oCoord_Y  >= obsticle_left_down_start_y) and  (oCoord_Y < obsticle_left_down_end_y) else '0';
+
+	obsticle_down_drawing_X	<= '1' when  (oCoord_X  >= obsticle_down_start_x) and  (oCoord_X < obsticle_down_end_x) else '0';
+   obsticle_down_drawing_Y	<= '1' when  (oCoord_Y  >= obsticle_down_start_y) and  (oCoord_Y < obsticle_down_end_y) else '0';
+
+	obsticle_right_down_drawing_X	<= '1' when  (oCoord_X  >= obsticle_right_down_start_x) and  (oCoord_X < obsticle_right_down_end_x) else '0';
+   obsticle_right_down_drawing_Y	<= '1' when  (oCoord_Y  >= obsticle_right_down_start_y) and  (oCoord_Y < obsticle_right_down_end_y) else '0';
+
+	obsticle_right_drawing_X	<= '1' when  (oCoord_X  >= obsticle_right_start_x) and  (oCoord_X < obsticle_right_end_x) else '0';
+   obsticle_right_drawing_Y	<= '1' when  (oCoord_Y  >= obsticle_right_start_y) and  (oCoord_Y < obsticle_right_end_y) else '0';
+
+	obsticle_right_up_drawing_X	<= '1' when  (oCoord_X  >= obsticle_right_up_start_x) and  (oCoord_X < obsticle_right_up_end_x) else '0';
+   obsticle_right_up_drawing_Y	<= '1' when  (oCoord_Y  >= obsticle_right_up_start_y) and  (oCoord_Y < obsticle_right_up_end_y) else '0';
+
+
+	-- calculate offset from start corner 
+	obsticle_left_up_Coord_X 	<= (oCoord_X - obsticle_left_up_start_x) when ( obsticle_left_up_drawing_X = '1' and  obsticle_left_up_drawing_Y = '1'  ) else 0 ; 
+	obsticle_left_up_Coord_Y 	<= (oCoord_Y - obsticle_left_up_start_y) when ( obsticle_left_up_drawing_X = '1' and  obsticle_left_up_drawing_Y = '1'  ) else 0 ;
+	
+	obsticle_left_down_Coord_X 	<= (oCoord_X - obsticle_left_down_start_x) when ( obsticle_left_down_drawing_X = '1' and  obsticle_left_down_drawing_Y = '1'  ) else 0 ; 
+	obsticle_left_down_Coord_Y 	<= (oCoord_Y - obsticle_left_down_start_y) when ( obsticle_left_down_drawing_X = '1' and  obsticle_left_down_drawing_Y = '1'  ) else 0 ;
+	
+	obsticle_right_down_Coord_X 	<= (oCoord_X - obsticle_right_down_start_x) when ( obsticle_right_down_drawing_X = '1' and  obsticle_right_down_drawing_Y = '1'  ) else 0 ; 
+	obsticle_right_down_Coord_Y 	<= (oCoord_Y - obsticle_right_down_start_y) when ( obsticle_right_down_drawing_X = '1' and  obsticle_right_down_drawing_Y = '1'  ) else 0 ;
+	
+	obsticle_right_up_Coord_X 	<= (oCoord_X - obsticle_right_up_start_x) when ( obsticle_right_up_drawing_X = '1' and  obsticle_right_up_drawing_Y = '1'  ) else 0 ; 
+	obsticle_right_up_Coord_Y 	<= (oCoord_Y - obsticle_right_up_start_y) when ( obsticle_right_up_drawing_X = '1' and  obsticle_right_up_drawing_Y = '1'  ) else 0 ;
+
+	
+	-------------------------------------------------------------------
 
 	
 process ( RESETn, CLK)
@@ -926,7 +1242,12 @@ process ( RESETn, CLK)
 		if ( (floor_drawing_X ='1') and (floor_drawing_Y = '1') ) then
 			sig_draw_req <= '1';
 			sig_draw_data <= floor_color;
-			sig_bounce_type <= floor_bounce_type;
+			if (oCoord_Y <= fell_to_pit_upper_Y_bound) then
+				sig_bounce_type <= floor_bounce_type;
+			else
+				sig_bounce_type <= death;
+			end if;
+			
 		end if;
 		
 
@@ -1001,28 +1322,134 @@ process ( RESETn, CLK)
 			end if;
 		end if;
 		
-		if ((right_up_slope_drawing_X ='1') and (right_up_slope_drawing_Y = '1')) then
-			sig_draw_req <= right_up_slope_object(right_up_slope_Coord_Y,right_up_slope_Coord_X);
-			sig_draw_data <= right_up_slope_color;
-			if right_up_slope_object(right_up_slope_Coord_Y,right_up_slope_Coord_X) = '1' then
-				sig_bounce_type <= right_up_slope_bounce_type;
-			else
-				sig_bounce_type <= no_bounce;
+		
+		--if ((right_up_slope_drawing_X ='1' or right_up_slope_drawing_X2 = '1') and (right_up_slope_drawing_Y = '1')) then
+		--	sig_draw_data <= right_up_slope_color;
+		--	if (game_started = '0') then
+		--		sig_draw_req <= right_up_slope_object(right_up_slope_Coord_Y,right_up_slope_Coord_X);
+		--		if right_up_slope_object(right_up_slope_Coord_Y,right_up_slope_Coord_X) = '1' then
+		--			sig_bounce_type <= right_up_slope_bounce_type;
+		--		else
+		--			sig_bounce_type <= no_bounce;
+		--		end if;
+		--	else
+		--		sig_draw_req <= right_up_slope_object(right_up_slope_Coord_Y,right_up_slope_Coord_X2);
+		--		if right_up_slope_object(right_up_slope_Coord_Y,right_up_slope_Coord_X2) = '1' then
+		--			sig_bounce_type <= right_up_slope_bounce_type;
+		--		else
+		--			sig_bounce_type <= no_bounce;
+		--		end if;
+		--
+		--	end if;
+		--end if;
+		
+		if (game_started = '0') then
+			if ((right_up_slope_drawing_X ='1' ) and (right_up_slope_drawing_Y = '1')) then
+				sig_draw_req <= right_up_slope_object(right_up_slope_Coord_Y,right_up_slope_Coord_X);
+				sig_draw_data <= right_up_slope_color;
+				if right_up_slope_object(right_up_slope_Coord_Y,right_up_slope_Coord_X) = '1' then
+					sig_bounce_type <= right_up_slope_bounce_type;
+				else
+					sig_bounce_type <= no_bounce;
+				end if;
+			end if;
+		else
+			if ((right_up_slope_drawing_X2 ='1' ) and (right_up_slope_drawing_Y = '1')) then
+				sig_draw_req <= right_up_slope_object(right_up_slope_Coord_Y,right_up_slope_Coord_X2);
+				sig_draw_data <= right_up_slope_color;
+				if right_up_slope_object(right_up_slope_Coord_Y,right_up_slope_Coord_X2) = '1' then
+					sig_bounce_type <= right_up_slope_bounce_type;
+				else
+					sig_bounce_type <= no_bounce;
+				end if;
 			end if;
 		end if;
+			
+
 		
 		
 		if ((tunnel_wall_drawing_X ='1') and (tunnel_wall_drawing_Y = '1')) then
 			if game_started = '1' then 
 				sig_draw_req <= '1';
+				sig_bounce_type <= tunnel_wall_bounce_type;
 			else
 				sig_draw_req <= tunnel_wall_object(tunnel_wall_Coord_Y,tunnel_wall_Coord_X);
+				if tunnel_wall_object(tunnel_wall_Coord_Y,tunnel_wall_Coord_X) = '1' then
+					sig_bounce_type <= tunnel_wall_bounce_type;
+				else
+					sig_bounce_type <= no_bounce;
+				end if;
 			end if;
 			sig_draw_data <= tunnel_wall_color;
 			sig_bounce_type <= tunnel_wall_bounce_type;
 		end if;
 
 		----------------------------------------------------------------------------
+		if ((obsticle_up_drawing_X ='1') and (obsticle_up_drawing_Y = '1')) then			-- obsticle up
+			sig_draw_req <= '1';
+			sig_draw_data <= obsticle_up_color;
+			sig_bounce_type <= obsticle_up_bounce_type;
+		end if;
+
+		if ((obsticle_left_up_drawing_X ='1') and (obsticle_left_up_drawing_Y = '1')) then			-- obsticle left up
+			sig_draw_req <= obsticle_left_up_mask(obsticle_left_up_Coord_Y,obsticle_left_up_Coord_X);
+			sig_draw_data <= obsticle_left_up_color;
+			if obsticle_left_up_mask(obsticle_left_up_Coord_Y,obsticle_left_up_Coord_X) = '1' then
+				sig_bounce_type <= obsticle_left_up_bounce_type;
+			else
+				sig_bounce_type <= no_bounce;
+			end if;
+		end if;
+
+		if ((obsticle_left_drawing_X ='1') and (obsticle_left_drawing_Y = '1')) then		-- obsticke left
+			sig_draw_req <= '1';
+			sig_draw_data <= obsticle_left_color;
+			sig_bounce_type <= obsticle_left_bounce_type;
+		end if;
+
+		if ((obsticle_left_down_drawing_X ='1') and (obsticle_left_down_drawing_Y = '1')) then			-- obsticle left down
+			sig_draw_req <= obsticle_left_down_mask(obsticle_left_down_Coord_Y,obsticle_left_down_Coord_X);
+			sig_draw_data <= obsticle_left_down_color;
+			if obsticle_left_down_mask(obsticle_left_down_Coord_Y,obsticle_left_down_Coord_X) = '1' then
+				sig_bounce_type <= obsticle_left_down_bounce_type;
+			else
+				sig_bounce_type <= no_bounce;
+			end if;
+		end if;
+
+		if ((obsticle_down_drawing_X ='1') and (obsticle_down_drawing_Y = '1')) then		-- obsticle down
+			sig_draw_req <= '1';
+			sig_draw_data <= obsticle_down_color;
+			sig_bounce_type <= obsticle_down_bounce_type;
+		end if;
+
+		if ((obsticle_right_down_drawing_X ='1') and (obsticle_right_down_drawing_Y = '1')) then			-- obsticle right down
+			sig_draw_req <= obsticle_right_down_mask(obsticle_right_down_Coord_Y,obsticle_right_down_Coord_X);
+			sig_draw_data <= obsticle_right_down_color;
+			if obsticle_right_down_mask(obsticle_right_down_Coord_Y,obsticle_right_down_Coord_X) = '1' then
+				sig_bounce_type <= obsticle_right_down_bounce_type;
+			else
+				sig_bounce_type <= no_bounce;
+			end if;
+		end if;
+
+		if ((obsticle_right_drawing_X ='1') and (obsticle_right_drawing_Y = '1')) then		-- obsticle right
+			sig_draw_req <= '1';
+			sig_draw_data <= obsticle_right_color;
+			sig_bounce_type <= obsticle_right_bounce_type;
+		end if;
+
+		if ((obsticle_right_up_drawing_X ='1') and (obsticle_right_up_drawing_Y = '1')) then		-- obsticle right up
+			sig_draw_req <= obsticle_right_up_mask(obsticle_right_up_Coord_Y,obsticle_right_up_Coord_X);
+			sig_draw_data <= obsticle_right_up_color;
+			if obsticle_right_up_mask(obsticle_right_up_Coord_Y,obsticle_right_up_Coord_X) = '1' then
+				sig_bounce_type <= obsticle_right_up_bounce_type;
+			else
+				sig_bounce_type <= no_bounce;
+			end if;
+		end if;
+		
+		-----------------------------------------------------------------------------
 	
 			mVGA_RGB	<=  sig_draw_data;	--get from colors table 
 			drawing_request	<=  sig_draw_req ; -- get from mask table if inside rectangle

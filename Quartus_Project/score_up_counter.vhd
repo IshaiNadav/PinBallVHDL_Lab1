@@ -43,38 +43,26 @@ begin
 			--score_keeper <= (others => '0');
 		elsif rising_edge(clk) then
 			if (enable = '1') then
-				if (scored = '1') then
+				if (scored = '1' and (not(score_keeper_3 = "1001" and score_keeper_2 = "1001" and score_keeper_1 = "1001" and score_keeper_0 = "1001"))) then
 				
---					if (score_keeper (3 downto 0) < ("1010" - score_in)) then
---						score_keeper <= score_keeper + score_in;
 					if (score_keeper_0 < "1010" - score_in) then
 						score_keeper_0 <= score_keeper_0 + score_in;
 					else
---						score_keeper <= score_keeper + score_in - "1010";
 						score_keeper_0 <= score_keeper_0 + score_in - "1010";
 						
---						if (score_keeper (7 downto 4) < "1001") then
---							score_keeper(7 downto 4) <= score_keeper(7 downto 4) + "0001";
 						if (score_keeper_1 < "1001") then
 							score_keeper_1 <= score_keeper_1 + "0001";
 						else
---							score_keeper(7 downto 4) <= "0000";
 							score_keeper_1 <= "0000";
 							
---							if (score_keeper(11 downto 8) < "1001") then
---								score_keeper (11 downto 8) <= score_keeper(11 downto 8) + "0001";
 							if (score_keeper_2 < "1001") then
 								score_keeper_2 <= score_keeper_2 + "0001";
 							else
---								score_keeper (11 downto 8) <= "0000";
 								score_keeper_2 <= "0000";
 								
---								if (score_keeper(15 downto 12) < "1001") then
---									score_keeper (15 downto 12) <= score_keeper (15 downto 12) + "0001";
 								if (score_keeper_3 < "1001") then
 									score_keeper_3 <= score_keeper_3 + "0001";
 								else
---									score_keeper (15 downto 12) <= "0000";
 									score_keeper_3 <= "0000";
 								end if;
 							end if;

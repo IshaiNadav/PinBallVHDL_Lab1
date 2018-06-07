@@ -28,15 +28,20 @@ begin
 			if (enable = '1') then
 				if (died = '1') then
 					if (current_lives_sig /= "0000") then
+						game_over <= '0';
 						current_lives_sig <= current_lives_sig - 1;
 					end if;
 				end if;
 			end if;
+			if (current_lives_sig = "0000") then	
+				game_over <= '1';
+			end if;
+
 		end if;
 
-		if (current_lives_sig = "0000") then	
-			game_over <= '1';
-		end if;
+--		if (current_lives_sig = "0000") then	
+--			game_over <= '1';
+--		end if;
 
 	end process;
 end hp_down_counter_arch;
