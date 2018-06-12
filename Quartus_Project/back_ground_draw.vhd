@@ -13,6 +13,7 @@ port 	(
 		RESETn	: in std_logic;
 		oCoord_X : in integer;
 		oCoord_Y : in integer;
+		random	: in std_logic_vector (1 downto 0);
 		mVGA_RGB	: out std_logic_vector(7 downto 0) --	,//	VGA composite RGB
 	);
 end back_ground_draw;
@@ -35,24 +36,26 @@ mVGA_RGB <=  mVGA_R & mVGA_G &  mVGA_B ;
 
 process ( oCoord_X,oCoord_y )
 begin 
-
-	if (oCoord_X = 0 or oCoord_y = 0  or oCoord_X = x_frame or oCoord_y = y_frame) then 
-			mVGA_R <= "111" ;	
-			mVGA_G <= "111"  ;	
-			mVGA_B <= "00" ;	 
 	
-	else if (oCoord_X = int_frame or oCoord_y = int_frame or oCoord_X = x_frame-int_frame or oCoord_y = y_frame-int_frame) then 
-			mVGA_R <= "111" ;	
-			mVGA_G <= "111"  ;	
-			mVGA_B <= "11" ;	 
-		else 
-			  if (oCoord_X > 156 and oCoord_y >= 256 ) then  mVGA_R <= "111" ; else mVGA_R <= "010" ; end if ; 	
-			  if (oCoord_X <  220 and oCoord_Y < 350 ) then  mVGA_G <= "011" ; else mVGA_G <= "110" ; end if ; 	
-			  if (oCoord_X <  300 and oCoord_Y < 200 ) then  mVGA_B <= "10"  ; else mVGA_B <= "00";	 end if ;
-			  --if (oCoord_X < 50 and oCoord_Y < 70) then mVGA_R <= "000"; mVGA_G <= "000"; mVGA_B <= "11"; end if; 
-		
-		end if ; 
-	end if ; 
+	case random is
+	when "00" => -- black
+		mVGA_R <= "000";
+		mVGA_G <= "000";		
+		mVGA_B <= "00";
+	when "01" => --light blue
+		mVGA_R <= "000";
+		mVGA_G <= "111";		
+		mVGA_B <= "11";
+	when "10" =>--kinda pink
+		mVGA_R <= "111";
+		mVGA_G <= "100";		
+		mVGA_B <= "11";
+	when "11" =>--yellow
+		mVGA_R <= "111";
+		mVGA_G <= "110";		
+		mVGA_B <= "10";
+	end case;
+	
 
 end process ; 
 

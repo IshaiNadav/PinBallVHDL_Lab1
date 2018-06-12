@@ -26,7 +26,10 @@ port 	(
 		left_flipper_mVGA_RGB : in std_logic_vector(7 downto 0);
 		
 		right_flipper_drawing_request : in std_logic;
-		right_flipper_mVGA_RGB : in std_logic_vector(7 downto 0)
+		right_flipper_mVGA_RGB : in std_logic_vector(7 downto 0);
+		
+		middle_layer_drawing_request : in std_logic;
+		middle_layer_mVGA_RGB : in std_logic_vector(7 downto 0)
 
 	);
 end objects_mux;
@@ -52,7 +55,9 @@ begin
 			m_mVGA_t <= obj_mVGA_RGB; 
 		
 		elsif (ball_drawing_request = '1' ) then  
-			m_mVGA_t <= ball_mVGA_RGB;  
+			m_mVGA_t <= ball_mVGA_RGB;
+		elsif (middle_layer_drawing_request = '1') then
+			m_mVGA_t <= middle_layer_mVGA_RGB;
 		else
 			m_mVGA_t <= y_mVGA_RGB ;
 		end if; 

@@ -4,15 +4,43 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "MICROPHON_LED",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_DACDAT",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_XCK",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_I2C_SCLK",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_BCLK",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_DACLRCK",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_ADCDAT",
+					"strict" : false
+				},
+				{
+					"name" : "MICROPHON_ON",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_ADCLRCK",
+					"strict" : false
+				},
+				{
 					"name" : "VGA_VS",
-					"strict" : false
-				},
-				{
-					"name" : "game_over",
-					"strict" : false
-				},
-				{
-					"name" : "VGA_HS",
 					"strict" : false
 				},
 				{
@@ -20,11 +48,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "VGA_HS",
+					"strict" : false
+				},
+				{
 					"name" : "VGA_BLANK_N",
 					"strict" : false
 				},
 				{
-					"name" : "duty_50",
+					"name" : "AUD_I2C_SDAT",
 					"strict" : false
 				},
 				{
@@ -205,14 +237,6 @@
 				},
 				{
 					"name" : "resetN",
-					"strict" : false
-				},
-				{
-					"name" : "bounceEnable",
-					"strict" : false
-				},
-				{
-					"name" : "turbo",
 					"strict" : false
 				},
 				{

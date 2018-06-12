@@ -48,8 +48,6 @@ set_location_assignment PIN_AF14 -to CLOCK_50
 set_location_assignment PIN_AJ4 -to resetN
 set_location_assignment PIN_AB30 -to recording
 set_location_assignment PIN_Y27 -to playing
-set_location_assignment PIN_V25 -to mux[3]
-set_location_assignment PIN_AC28 -to freq[0]
 set_location_assignment PIN_AD30 -to freq[1]
 set_location_assignment PIN_AC29 -to freq[2]
 set_location_assignment PIN_AA30 -to MICROPHON_ON
@@ -147,83 +145,23 @@ set_location_assignment PIN_V23 -to ADC_DOUT
 set_location_assignment PIN_W24 -to ADC_SCLK
 set_location_assignment PIN_Y24 -to AUD_I2C_SCLK
 set_location_assignment PIN_Y23 -to AUD_I2C_SDAT
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to flip_data[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to flip_data[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to flip_data[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to game_over
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to kbd_clk
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to kbd_data
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to resetN
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[7]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_BLANK_N
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_CLK
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[7]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_HS
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[7]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_SYNC_N
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_VS
 set_location_assignment PIN_AK4 -to scored
 set_location_assignment PIN_AA14 -to died
 set_location_assignment PIN_AB23 -to game_over
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to scored
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to died
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[6]
+set_location_assignment PIN_AC23 -to one_sec
+set_location_assignment PIN_AB28 -to turbo
+set_location_assignment PIN_AA15 -to start_shot
+set_location_assignment PIN_AD24 -to space
+set_location_assignment PIN_AC30 -to SW[3]
+set_location_assignment PIN_W25 -to SW[4]
+set_location_assignment PIN_V25 -to SW[5]
+set_location_assignment PIN_AC28 -to SW[6]
+set_global_assignment -name VHDL_FILE random.vhd
+set_global_assignment -name BDF_FILE experiment_sinus_generator.bdf
+set_global_assignment -name VHDL_FILE SinTable.vhd
+set_global_assignment -name VHDL_FILE prescaler.vhd
+set_global_assignment -name QXP_FILE audio_codec_controller.qxp
+set_global_assignment -name VHDL_FILE addr_counter.vhd
 set_global_assignment -name VHDL_FILE TCounter.vhd
 set_global_assignment -name TCL_SCRIPT_FILE pin.tcl
 set_global_assignment -name BDF_FILE KBDINTF.bdf
@@ -248,23 +186,17 @@ set_global_assignment -name BDF_FILE HP_Score_Module.bdf
 set_global_assignment -name VHDL_FILE ball_move.vhd
 set_global_assignment -name VHDL_FILE ball_object.vhd
 set_global_assignment -name BDF_FILE PIN_BALL_GAMEPLAY.bdf
-set_location_assignment PIN_AC23 -to one_sec
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to one_sec
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to turbo
-set_location_assignment PIN_AB28 -to turbo
-set_location_assignment PIN_AA15 -to start_shot
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to start_shot
 set_global_assignment -name VHDL_FILE objects_draw.vhd
 set_global_assignment -name VHDL_FILE bounce.vhd
-set_location_assignment PIN_AC30 -to bounceEnable
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to bounceEnable
 set_global_assignment -name VHDL_FILE ball_location_signal.vhd
 set_global_assignment -name VHDL_FILE Flipper_Object_Left.vhd
-set_location_assignment PIN_W25 -to Left_Flipper_On
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Left_Flipper_On
 set_global_assignment -name VHDL_FILE Flipper_Object_Right.vhd
-set_location_assignment PIN_AD24 -to space
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to space
+set_global_assignment -name VHDL_FILE Beeper.vhd
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VHDL_FILE charge_draw.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

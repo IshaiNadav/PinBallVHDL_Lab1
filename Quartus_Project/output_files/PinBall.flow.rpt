@@ -1,5 +1,5 @@
 Flow report for PinBall
-Fri Jun 08 00:50:54 2018
+Tue Jun 12 01:42:11 2018
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
 
 
@@ -41,18 +41,18 @@ agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Flow Status                     ; Successful - Fri Jun 08 00:50:30 2018           ;
+; Flow Status                     ; Successful - Tue Jun 12 01:41:48 2018           ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Standard Edition ;
 ; Revision Name                   ; PinBall                                         ;
 ; Top-level Entity Name           ; PIN_BALL_GAMEPLAY                               ;
 ; Family                          ; Cyclone V                                       ;
 ; Device                          ; 5CSXFC6D6F31C6                                  ;
 ; Timing Models                   ; Final                                           ;
-; Logic utilization (in ALMs)     ; 5,349 / 41,910 ( 13 % )                         ;
-; Total registers                 ; 673                                             ;
-; Total pins                      ; 72 / 499 ( 14 % )                               ;
+; Logic utilization (in ALMs)     ; 6,266 / 41,910 ( 15 % )                         ;
+; Total registers                 ; 1346                                            ;
+; Total pins                      ; 78 / 499 ( 16 % )                               ;
 ; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 0 / 5,662,720 ( 0 % )                           ;
+; Total block memory bits         ; 1,024 / 5,662,720 ( < 1 % )                     ;
 ; Total DSP Blocks                ; 0 / 112 ( 0 % )                                 ;
 ; Total HSSI RX PCSs              ; 0 / 9 ( 0 % )                                   ;
 ; Total HSSI PMA RX Deserializers ; 0 / 9 ( 0 % )                                   ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/08/2018 00:45:22 ;
+; Start date & time ; 06/12/2018 01:36:37 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; PinBall             ;
 +-------------------+---------------------+
@@ -79,10 +79,14 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name       ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 48710646987603.152840792101184         ; --            ; --                ; --         ;
+; COMPILER_SIGNATURE_ID               ; 48710646987604.152875659606412         ; --            ; --                ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --                ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --                ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; PIN_BALL_GAMEPLAY ; Top        ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; PIN_BALL_GAMEPLAY ; Top        ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; PIN_BALL_GAMEPLAY ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --                ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --                ; --         ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --                ; --         ;
 ; TOP_LEVEL_ENTITY                    ; PIN_BALL_GAMEPLAY                      ; PinBall       ; --                ; --         ;
 +-------------------------------------+----------------------------------------+---------------+-------------------+------------+
@@ -93,11 +97,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:02:22     ; 1.3                     ; 1212 MB             ; 00:02:36                           ;
-; Fitter                    ; 00:02:01     ; 1.2                     ; 2631 MB             ; 00:05:38                           ;
-; Assembler                 ; 00:00:14     ; 1.0                     ; 748 MB              ; 00:00:09                           ;
-; TimeQuest Timing Analyzer ; 00:00:23     ; 1.8                     ; 1109 MB             ; 00:00:32                           ;
-; Total                     ; 00:05:00     ; --                      ; --                  ; 00:08:55                           ;
+; Analysis & Synthesis      ; 00:02:18     ; 1.3                     ; 1243 MB             ; 00:02:41                           ;
+; Fitter                    ; 00:02:14     ; 1.2                     ; 2700 MB             ; 00:06:04                           ;
+; Assembler                 ; 00:00:12     ; 1.0                     ; 769 MB              ; 00:00:10                           ;
+; TimeQuest Timing Analyzer ; 00:00:20     ; 2.1                     ; 1172 MB             ; 00:00:35                           ;
+; Total                     ; 00:05:04     ; --                      ; --                  ; 00:09:30                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -106,10 +110,10 @@ agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; ee-206-14        ; Windows 7 ; 6.1        ; x86_64         ;
-; Fitter                    ; ee-206-14        ; Windows 7 ; 6.1        ; x86_64         ;
-; Assembler                 ; ee-206-14        ; Windows 7 ; 6.1        ; x86_64         ;
-; TimeQuest Timing Analyzer ; ee-206-14        ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; ee-206-11        ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; ee-206-11        ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; ee-206-11        ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; ee-206-11        ; Windows 7 ; 6.1        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
